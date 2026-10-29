@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="Parade_Celebration" Size="parent,parent" Hidden="1" ColorSet="Beige_Black" FontStyle="Shadow">
+  <Container Size="parent,parent" ConsumeMouse="1" ConsumeMouseButton="1">
+    <Box Size="parent,parent" Color="0,0,0,0" />
+    <Grid Texture="Controls_LensHeaderSmall" SliceTextureSize="71,49" SliceCorner="20,24" Size="parent,64" Anchor="C,T" Offset="0,0">
+      <Label ID="CelebrationTitle" Style="FontFlair24" Color="244,216,154,255" Anchor="C,C" String="LOC_PARADE_CELEBRATION_FIRST" />
+      <Button ID="CloseX" Texture="Controls_CloseButtonAlt" Size="32,32" Anchor="R,C" Offset="20,0" />
+    </Grid>
+    <Label Hidden="1" ID="BuildStatus" Anchor="L,T" Offset="20,76" WrapWidth="520" Size="520,48" Style="FontNormal14" Color="235,211,153,255" String="3.20 B1" />
+    <Label ID="FocusName" Anchor="C,T" Offset="0,74" Style="FontNormal16" Color="244,216,154,255" String="" />
+    <Label ID="ReviewSignature" Anchor="C,T" Offset="0,104" Style="FontNormal14" Color="244,216,154,255" String="" />
+    <Label ID="StageLabel" Anchor="C,T" Offset="0,130" Style="FontFlair18" Color="244,216,154,255" String="" />
+    <Box ID="CeremonyPanel" Size="parent,250" Anchor="C,B" Color="12,23,34,245">
+      <Box Size="parent,2" Anchor="C,T" Color="187,148,71,255" />
+      <Grid ID="SealPanel" Texture="Controls_LensHeaderSmall" SliceTextureSize="71,49" SliceCorner="20,24" Size="360,76" Anchor="C,T" Offset="0,20">
+        <Image ID="SealIcon" Texture="MP34_COLOR_128.dds" Anchor="L,C" Offset="15,0" Size="48,48" />
+        <Label ID="SealTitle" Anchor="C,C" Offset="24,0" Style="FontFlair24" Color="244,216,154,255" String="" />
+      </Grid>
+      <Label ID="QuoteText" Anchor="C,T" Offset="0,20" WrapWidth="900" Align="Center" Style="FontFlair24" Color="244,216,154,255" String="" />
+      <Label ID="QuoteSource" Anchor="C,T" Offset="0,82" WrapWidth="900" Align="Center" Style="FontNormal14" Color="201,192,171,255" String="" />
+      <Label ID="AwardText" Anchor="C,T" Offset="0,113" WrapWidth="1000" Align="Center" Style="FontNormal16" Color="238,235,226,255" String="" />
+      <Label ID="GeneralAward" Anchor="C,T" Offset="0,163" Style="FontNormal14" Color="244,216,154,255" String="" />
+      <Label ID="EraAward" Anchor="C,T" Offset="0,189" Style="FontNormal14" Color="244,216,154,255" String="" />
+      <Label ID="CompletionTurn" Anchor="L,B" Offset="25,60" Style="FontNormal14" Color="160,170,180,255" String="" />
+      <GridButton ID="CloseCelebration" Anchor="C,B" Offset="0,16" Size="180,36" Style="ButtonMainSmall" String="LOC_PARADE_CELEBRATION_CLOSE" />
+    </Box>
+    <Box ID="EraMomentPanel" Size="800,640" Anchor="C,C" Offset="0,-35" Color="239,225,193,255" Hidden="1">
+      <Box Size="parent,2" Anchor="C,T" Color="139,102,42,255" />
+      <Box Size="parent,2" Anchor="C,B" Color="139,102,42,255" />
+      <Label ID="EraMomentTitle" Anchor="C,T" Offset="0,18" Style="FontFlair24" Color="63,43,24,255" String="" />
+      <Label ID="EraMomentSignature" Anchor="C,T" Offset="0,57" Style="FontNormal14" Color="90,65,37,255" String="" />
+      <Image ID="EraMomentArt" Texture="Parade_EraMoment.dds" Size="720,360" Anchor="C,T" Offset="0,84" />
+      <Label ID="EraMomentBody" Anchor="C,T" Offset="0,459" WrapWidth="720" Align="Center" Style="FontFlair18" Color="63,43,24,255" String="" />
+      <Label ID="EraMomentScore" Anchor="C,B" Offset="0,22" Style="FontFlair20" Color="112,74,19,255" String="" />
+    </Box>
+      <GridButton ID="SkipCeremony" Anchor="L,B" Offset="25,16" Size="132,30" Style="ButtonMainSmall" String="LOC_PARADE_SKIP_TO_AWARD" />
+      <GridButton ID="SoundTest" Anchor="R,B" Offset="25,16" Size="110,30" Style="ButtonMainSmall" String="LOC_PARADE_SOUND_TEST" />
+      <GridButton ID="ReplayCamera" Anchor="R,B" Offset="145,16" Size="110,30" Style="ButtonMainSmall" String="LOC_PARADE_REPLAY_CAMERA" />
+  </Container>
+</Context>

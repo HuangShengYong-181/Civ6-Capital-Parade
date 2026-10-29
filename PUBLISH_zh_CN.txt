@@ -1,0 +1,32 @@
+阅兵 · Military Parade 1.0.0 — Steam首发上传
+
+本包是待上传的发行材料，不表示已发布到Steam。
+
+1. 解压到固定目录，例如D:\Mods\MilitaryParade_1.0.0。保持Steam桌面客户端登录。
+2. 启动Sid Meier's Civilization VI Development Tools，选择Steam Workshop Uploader。
+   也可在ModBuddy中选择Tools → Launch Steam Uploader。上传发行成品不需要再Build。
+3. 在上传工具中选择Upload/新建项目，浏览到本包：
+   Release\MilitaryParade\MilitaryParade.modinfo
+   选择的是这个.modinfo，不是压缩包，不是.civ6proj，也不是Source目录。
+4. 标题：阅兵 · Military Parade
+   简介：复制Workshop\description_zh_CN.txt的全部内容（Steam BBCode）。
+   预览图：Workshop\preview.jpg（现有插画，原尺寸JPEG，小于1MiB）。
+   更新说明：Workshop\changelog_1.0.0.txt。
+   分类：Gameplay、UI，按上传器实际可用的分类选择。
+   可见性：公开（Public）。按上传工具提示完成上传。
+5. 首次上传若出现Steam Workshop协议提示，请自行阅读并处理。上传后到Steam个人资料的创意工坊物品中确认页面已出现、可见性为公开。
+6. 保存工坊页面链接中的id数字，后续更新这个现有物品，不要每次新建。未来保留模组GUID：
+   73377b9b-1e5f-448a-bbc3-6d79fc86d912
+
+需要“迭起兴衰”或“风云变幻”规则集，任选一种；不要误把两者都设置成同时必须拥有的DLC。
+
+上传范围只有Release\MilitaryParade。Source是完整源工程、素材源文件、构建工具与许可证，不要把外层整个包或Source目录上传成运行模组。
+
+发布说明已列出：原版历史年表自动弹出尚未解决，镜头仍需优化；使用固定检阅镜头，三维城市未完全隐藏。首发不再继续修改这些功能。
+
+订阅自检：若已经手动安装同GUID阅兵，先将手动安装目录移出Mods，再验证工坊订阅版；避免重复加载。此步骤可在发布后完成，不会改变工坊上传的内容。
+
+上传工具依据：文明6官方开发工具包含独立Steam Workshop Uploader。
+https://support.civilization.com/hc/en-us/articles/37688272651923-Patch-Notes-Feb-23-2017
+工具操作参考：
+https://steamcommunity.com/sharedfiles/filedetails/?id=1836201808

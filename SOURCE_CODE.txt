@@ -1,0 +1,3514 @@
+Military Parade 3.20 B1 complete text source. Resources must be retained.
+
+===== ArtDefs/Camera.artdef =====
+<?xml version='1.0' encoding='utf-8'?>
+<AssetObjects::ArtDefSet>
+  <m_Version>
+    <major>3</major>
+    <minor>0</minor>
+    <build>210</build>
+    <revision>410</revision>
+  </m_Version>
+  <m_TemplateName text="Camera" />
+  <m_RootCollections>
+    <Element>
+      <m_CollectionName text="Cameras" />
+      <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>2.000000</m_fValue>
+              <m_ParamName text="DefaultZoom" />
+            </Element>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>0.110000</m_fValue>
+              <m_ParamName text="Bloom_Width" />
+            </Element>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>0.600000</m_fValue>
+              <m_ParamName text="Bloom_Strength" />
+            </Element>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>1.000000</m_fValue>
+              <m_ParamName text="Bloom_Threshold" />
+            </Element>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>1.000000</m_fValue>
+              <m_ParamName text="ExtraExposureRange" />
+            </Element>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>3.000000</m_fValue>
+              <m_ParamName text="MinHexesVisible" />
+            </Element>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>16.000000</m_fValue>
+              <m_ParamName text="MaxHexesVisible" />
+            </Element>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>10.000000</m_fValue>
+              <m_ParamName text="NearClip" />
+            </Element>
+            <Element class="AssetObjects::FloatValue">
+              <m_fValue>10000.000000</m_fValue>
+              <m_ParamName text="FarClip" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="FOVCurve" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>45.000000</m_fValue>
+                    <m_ParamName text="FOV" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="FOVCurve001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="TiltCurve" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>100.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>45.000000</m_fValue>
+                    <m_ParamName text="Tilt" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="TiltCurve1" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>55.000000</m_fValue>
+                    <m_ParamName text="Tilt" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="TiltCurve2" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="HeightCurve" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>100.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>600.000000</m_fValue>
+                    <m_ParamName text="Height" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="HeightCurve2" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>65.000000</m_fValue>
+                    <m_ParamName text="Height" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="HeightCurve1" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>10.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>168.000000</m_fValue>
+                    <m_ParamName text="Height" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="MilitaryParadeNearReturn" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="Fog_Density" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.000500</m_fValue>
+                    <m_ParamName text="Fog_Density" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="Fog_Density002" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="Fog_Start" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>100.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>1000.000000</m_fValue>
+                    <m_ParamName text="Fog_Start" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="Fog_Start001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>300.000000</m_fValue>
+                    <m_ParamName text="Fog_Start" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="Fog_Start002" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>51.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>700.000000</m_fValue>
+                    <m_ParamName text="Fog_Start" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="Fog_Start003" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="Fog_RadialWeight" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>100.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.990000</m_fValue>
+                    <m_ParamName text="Fog_RadialWeight" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="Fog_RadialWeight001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>1.000000</m_fValue>
+                    <m_ParamName text="Fog_RadialWeight" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="Fog_RadialWeight002" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>0.000000</m_fValue>
+                    <m_ParamName text="Time" />
+                  </Element>
+                  <Element class="AssetObjects::FloatValue">
+                    <m_fValue>1.000000</m_fValue>
+                    <m_ParamName text="Fog_RadialWeight" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="Fog_RadialWeight003" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DEFAULT_CAMERA" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+    </Element>
+  </m_RootCollections>
+</AssetObjects::ArtDefSet>
+
+===== MilitaryParade.civ6proj =====
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup><Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration><Name>Military Parade</Name><Description>Early Empire, current capital and own combat garrison. Includes project icons. Use Rise and Fall or Gathering Storm rules; new game recommended. Single player only.</Description><Teaser>3.20 B1：ModBuddy资源构建修正、原版年表入口与可见诊断。</Teaser><Authors>21587</Authors><AffectsSavedGames>true</AffectsSavedGames><SupportsSinglePlayer>true</SupportsSinglePlayer><SupportsMultiplayer>false</SupportsMultiplayer><SupportsHotSeat>false</SupportsHotSeat><CompatibleVersions>2.0</CompatibleVersions><Guid>73377b9b-1e5f-448a-bbc3-6d79fc86d912</Guid><ProjectGuid>0ad0399b-ef3d-46ac-a28d-e4ced6faa6dc</ProjectGuid><ModVersion>22</ModVersion><AssemblyName>MilitaryParade</AssemblyName><RootNamespace>MilitaryParade</RootNamespace>
+<ActionCriteriaData><![CDATA[<ActionCriteria><Criteria id="ParadeXP2"><GameCoreInUse>Expansion2</GameCoreInUse></Criteria></ActionCriteria>]]></ActionCriteriaData>
+<InGameActionData><![CDATA[<InGameActions>
+    <UpdateDatabase id="ParadeV38_Data">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+      </Properties>
+      <File>Parade_Data.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="ParadeV38_XP2" criteria="ParadeXP2">
+      <Properties>
+        <LoadOrder>1001</LoadOrder>
+      </Properties>
+      <File>Parade_Data_XP2.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="ParadeV38_Quotes">
+      <Properties>
+        <LoadOrder>1002</LoadOrder>
+      </Properties>
+      <File>Parade_Quotes.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="ParadeV38_Text">
+      <File>Parade_Text.sql</File>
+    </UpdateText>
+    <UpdateIcons id="ParadeV38_Icons">
+      <File>Parade_Icons.sql</File>
+    </UpdateIcons>
+    <AddGameplayScripts id="ParadeV38_Gameplay">
+      <File>Parade_Script.lua</File>
+    </AddGameplayScripts>
+    <ImportFiles id="ParadeV38_Files">
+      <File>Parade_UI.lua</File>
+      <File>MP34_MONO_16.dds</File>
+      <File>MP34_MONO_20.dds</File>
+      <File>MP34_MONO_22.dds</File>
+      <File>MP34_MONO_24.dds</File>
+      <File>MP34_MONO_26.dds</File>
+      <File>MP34_MONO_28.dds</File>
+      <File>MP34_MONO_30.dds</File>
+      <File>MP34_MONO_32.dds</File>
+      <File>MP34_MONO_36.dds</File>
+      <File>MP34_MONO_38.dds</File>
+      <File>MP34_MONO_40.dds</File>
+      <File>MP34_MONO_42.dds</File>
+      <File>MP34_MONO_44.dds</File>
+      <File>MP34_MONO_45.dds</File>
+      <File>MP34_MONO_48.dds</File>
+      <File>MP34_MONO_50.dds</File>
+      <File>MP34_MONO_55.dds</File>
+      <File>MP34_MONO_64.dds</File>
+      <File>MP34_MONO_70.dds</File>
+      <File>MP34_MONO_80.dds</File>
+      <File>MP34_MONO_128.dds</File>
+      <File>MP34_MONO_256.dds</File>
+      <File>MP34_COLOR_16.dds</File>
+      <File>MP34_COLOR_20.dds</File>
+      <File>MP34_COLOR_22.dds</File>
+      <File>MP34_COLOR_24.dds</File>
+      <File>MP34_COLOR_26.dds</File>
+      <File>MP34_COLOR_28.dds</File>
+      <File>MP34_COLOR_30.dds</File>
+      <File>MP34_COLOR_32.dds</File>
+      <File>MP34_COLOR_36.dds</File>
+      <File>MP34_COLOR_38.dds</File>
+      <File>MP34_COLOR_40.dds</File>
+      <File>MP34_COLOR_42.dds</File>
+      <File>MP34_COLOR_44.dds</File>
+      <File>MP34_COLOR_45.dds</File>
+      <File>MP34_COLOR_48.dds</File>
+      <File>MP34_COLOR_50.dds</File>
+      <File>MP34_COLOR_55.dds</File>
+      <File>MP34_COLOR_64.dds</File>
+      <File>MP34_COLOR_70.dds</File>
+      <File>MP34_COLOR_80.dds</File>
+      <File>MP34_COLOR_128.dds</File>
+      <File>MP34_COLOR_256.dds</File>
+      <File>Parade_ProductionPanel.lua</File>
+      <File>Parade_CivicIcons.lua</File>
+      <File>Parade_CivicsTree.lua</File>
+      <File>Parade_CivicsChooser.lua</File>
+      <File>Parade_Celebration.lua</File>
+      <File>Parade_UnitFlagManager.lua</File>
+      <File>Parade_Camera.lua</File>
+      <File>Parade_Audio.lua</File>
+      <File>Parade_EraMoment.dds</File>
+      <File>Parade_HistoricMoments.lua</File>
+      <File>Parade_TimelineMoment.dds</File>
+    </ImportFiles>
+    <AddUserInterfaces id="ParadeV38_UI">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>Parade_UI.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="ParadeV38_ProductionPanel">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>ProductionPanel</LuaContext>
+        <LuaReplace>Parade_ProductionPanel.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="ParadeV38_CivicsTree">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>CivicsTree</LuaContext>
+        <LuaReplace>Parade_CivicsTree.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="ParadeV38_CivicsChooser">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>CivicsChooser</LuaContext>
+        <LuaReplace>Parade_CivicsChooser.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <AddUserInterfaces id="ParadeV38_Celebration">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>Parade_Celebration.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="ParadeV38_UnitFlags">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>UnitFlagManager</LuaContext>
+        <LuaReplace>Parade_UnitFlagManager.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <UpdateAudio id="ParadeV39_Audio">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+      </Properties>
+      <File>Platforms/Windows/Audio/MilitaryParadeBanks.ini</File>
+      <File>Platforms/Windows/Audio/MilitaryParade_Internationale_V311_Bank.bnk</File>
+    </UpdateAudio>
+    <ReplaceUIScript id="ParadeV314_HistoricMoments">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>HistoricMoments</LuaContext>
+        <LuaReplace>Parade_HistoricMoments.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <UpdateArt id="MilitaryParade_Camera">
+      <Properties>
+        <LoadOrder>1100</LoadOrder>
+      </Properties>
+      <File>(Mod Art Dependency File)</File>
+    </UpdateArt>
+  </InGameActions>]]></InGameActionData></PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)' == 'Default' "><OutputPath>.</OutputPath></PropertyGroup>
+<ItemGroup>
+  <Folder Include="Platforms\"/><Folder Include="Platforms\Windows\"/><Folder Include="Platforms\Windows\Audio\"/><Folder Include="Icons\" />
+  <Content Include="Parade_Data.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Data_XP2.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Text.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Icons.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Script.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_UI.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_UI.xml"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_16.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_20.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_22.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_24.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_26.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_28.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_30.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_32.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_36.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_38.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_40.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_42.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_44.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_45.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_48.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_50.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_55.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_64.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_70.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_80.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_128.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_256.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_16.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_20.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_22.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_24.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_26.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_28.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_30.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_32.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_36.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_38.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_40.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_42.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_44.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_45.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_48.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_50.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_55.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_64.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_70.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_80.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_128.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_256.dds"><SubType>Content</SubType></Content>
+  <Content Include="Parade_ProductionPanel.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_CivicIcons.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_CivicsTree.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_CivicsChooser.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Quotes.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Celebration.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Celebration.xml"><SubType>Content</SubType></Content>
+  <Content Include="Parade_UnitFlagManager.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Camera.lua"><SubType>Content</SubType></Content>
+<Content Include="Platforms\Windows\Audio\MilitaryParadeBanks.ini"><SubType>Content</SubType></Content>
+<Content Include="Platforms\Windows\Audio\MilitaryParade_Internationale_V311_Bank.bnk"><SubType>Content</SubType></Content>
+<Content Include="Parade_Audio.lua"><SubType>Content</SubType></Content>
+<Content Include="Parade_EraMoment.dds"><SubType>Content</SubType></Content>
+<Content Include="Parade_HistoricMoments.lua"><SubType>Content</SubType></Content>
+<Content Include="Parade_TimelineMoment.dds"><SubType>Content</SubType></Content>
+<Content Include="ArtDefs\Camera.artdef"><SubType>Content</SubType></Content>
+<Content Include="MilitaryParade.dep"><SubType>Content</SubType></Content>
+<Content Include="CREDITS.txt"><SubType>Content</SubType></Content>
+<None Include="Mod.Art.xml" />
+</ItemGroup>
+<Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" /></Project>
+
+
+===== MilitaryParade.dep =====
+<?xml version="1.0" encoding="UTF-8"?>
+<AssetObjects::GameDependencyData>
+  <ID><name text="MilitaryParadeCamera"/><id text="24c1d57a-9b8a-5a13-bbe9-a0b559828b96"/></ID>
+  <SystemDependencies><Element>
+    <ConsumerName text="Camera"/>
+    <ArtDefDependencyPaths><Element text="Camera.artdef"/></ArtDefDependencyPaths>
+  </Element></SystemDependencies>
+</AssetObjects::GameDependencyData>
+
+
+===== MilitaryParade.modinfo =====
+<?xml version='1.0' encoding='utf-8'?>
+<Mod id="73377b9b-1e5f-448a-bbc3-6d79fc86d912" version="22">
+  <Properties>
+    <Name>阅兵 · Military Parade 3.20 B1</Name>
+    <Description>Early Empire, current capital and own combat garrison. Includes project icons. Use Rise and Fall or Gathering Storm rules; new game recommended. Single player only.</Description>
+    <Teaser>3.20 B1：ModBuddy资源构建修正、原版年表入口与可见诊断。</Teaser>
+    <Authors>21587</Authors>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>0</SupportsMultiplayer>
+    <SupportsHotSeat>0</SupportsHotSeat>
+    <CompatibleVersions>2.0</CompatibleVersions>
+  </Properties>
+  <ActionCriteria>
+    <Criteria id="ParadeXP2">
+      <GameCoreInUse>Expansion2</GameCoreInUse>
+    </Criteria>
+  </ActionCriteria>
+  <InGameActions>
+    <UpdateDatabase id="ParadeV38_Data">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+      </Properties>
+      <File>Parade_Data.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="ParadeV38_XP2" criteria="ParadeXP2">
+      <Properties>
+        <LoadOrder>1001</LoadOrder>
+      </Properties>
+      <File>Parade_Data_XP2.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="ParadeV38_Quotes">
+      <Properties>
+        <LoadOrder>1002</LoadOrder>
+      </Properties>
+      <File>Parade_Quotes.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="ParadeV38_Text">
+      <File>Parade_Text.sql</File>
+    </UpdateText>
+    <UpdateIcons id="ParadeV38_Icons">
+      <File>Parade_Icons.sql</File>
+    </UpdateIcons>
+    <AddGameplayScripts id="ParadeV38_Gameplay">
+      <File>Parade_Script.lua</File>
+    </AddGameplayScripts>
+    <ImportFiles id="ParadeV38_Files">
+      <File>Parade_UI.lua</File>
+      <File>MP34_MONO_16.dds</File>
+      <File>MP34_MONO_20.dds</File>
+      <File>MP34_MONO_22.dds</File>
+      <File>MP34_MONO_24.dds</File>
+      <File>MP34_MONO_26.dds</File>
+      <File>MP34_MONO_28.dds</File>
+      <File>MP34_MONO_30.dds</File>
+      <File>MP34_MONO_32.dds</File>
+      <File>MP34_MONO_36.dds</File>
+      <File>MP34_MONO_38.dds</File>
+      <File>MP34_MONO_40.dds</File>
+      <File>MP34_MONO_42.dds</File>
+      <File>MP34_MONO_44.dds</File>
+      <File>MP34_MONO_45.dds</File>
+      <File>MP34_MONO_48.dds</File>
+      <File>MP34_MONO_50.dds</File>
+      <File>MP34_MONO_55.dds</File>
+      <File>MP34_MONO_64.dds</File>
+      <File>MP34_MONO_70.dds</File>
+      <File>MP34_MONO_80.dds</File>
+      <File>MP34_MONO_128.dds</File>
+      <File>MP34_MONO_256.dds</File>
+      <File>MP34_COLOR_16.dds</File>
+      <File>MP34_COLOR_20.dds</File>
+      <File>MP34_COLOR_22.dds</File>
+      <File>MP34_COLOR_24.dds</File>
+      <File>MP34_COLOR_26.dds</File>
+      <File>MP34_COLOR_28.dds</File>
+      <File>MP34_COLOR_30.dds</File>
+      <File>MP34_COLOR_32.dds</File>
+      <File>MP34_COLOR_36.dds</File>
+      <File>MP34_COLOR_38.dds</File>
+      <File>MP34_COLOR_40.dds</File>
+      <File>MP34_COLOR_42.dds</File>
+      <File>MP34_COLOR_44.dds</File>
+      <File>MP34_COLOR_45.dds</File>
+      <File>MP34_COLOR_48.dds</File>
+      <File>MP34_COLOR_50.dds</File>
+      <File>MP34_COLOR_55.dds</File>
+      <File>MP34_COLOR_64.dds</File>
+      <File>MP34_COLOR_70.dds</File>
+      <File>MP34_COLOR_80.dds</File>
+      <File>MP34_COLOR_128.dds</File>
+      <File>MP34_COLOR_256.dds</File>
+      <File>Parade_ProductionPanel.lua</File>
+      <File>Parade_CivicIcons.lua</File>
+      <File>Parade_CivicsTree.lua</File>
+      <File>Parade_CivicsChooser.lua</File>
+      <File>Parade_Celebration.lua</File>
+      <File>Parade_UnitFlagManager.lua</File>
+      <File>Parade_Camera.lua</File>
+      <File>Parade_Audio.lua</File>
+      <File>Parade_EraMoment.dds</File>
+      <File>Parade_HistoricMoments.lua</File>
+      <File>Parade_TimelineMoment.dds</File>
+    </ImportFiles>
+    <AddUserInterfaces id="ParadeV38_UI">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>Parade_UI.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="ParadeV38_ProductionPanel">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>ProductionPanel</LuaContext>
+        <LuaReplace>Parade_ProductionPanel.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="ParadeV38_CivicsTree">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>CivicsTree</LuaContext>
+        <LuaReplace>Parade_CivicsTree.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="ParadeV38_CivicsChooser">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>CivicsChooser</LuaContext>
+        <LuaReplace>Parade_CivicsChooser.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <AddUserInterfaces id="ParadeV38_Celebration">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>Parade_Celebration.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="ParadeV38_UnitFlags">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>UnitFlagManager</LuaContext>
+        <LuaReplace>Parade_UnitFlagManager.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <UpdateAudio id="ParadeV39_Audio">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+      </Properties>
+      <File>Platforms/Windows/Audio/MilitaryParadeBanks.ini</File>
+      <File>Platforms/Windows/Audio/MilitaryParade_Internationale_V311_Bank.bnk</File>
+    </UpdateAudio>
+    <ReplaceUIScript id="ParadeV314_HistoricMoments">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>HistoricMoments</LuaContext>
+        <LuaReplace>Parade_HistoricMoments.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <UpdateArt id="MilitaryParade_Camera">
+      <Properties>
+        <LoadOrder>1100</LoadOrder>
+      </Properties>
+      <File>MilitaryParade.dep</File>
+    </UpdateArt>
+  </InGameActions>
+  <Files>
+    <File>Parade_Data.sql</File>
+    <File>Parade_Data_XP2.sql</File>
+    <File>Parade_Text.sql</File>
+    <File>Parade_Icons.sql</File>
+    <File>Parade_Script.lua</File>
+    <File>Parade_UI.lua</File>
+    <File>Parade_UI.xml</File>
+    <File>MP34_MONO_16.dds</File>
+    <File>MP34_MONO_20.dds</File>
+    <File>MP34_MONO_22.dds</File>
+    <File>MP34_MONO_24.dds</File>
+    <File>MP34_MONO_26.dds</File>
+    <File>MP34_MONO_28.dds</File>
+    <File>MP34_MONO_30.dds</File>
+    <File>MP34_MONO_32.dds</File>
+    <File>MP34_MONO_36.dds</File>
+    <File>MP34_MONO_38.dds</File>
+    <File>MP34_MONO_40.dds</File>
+    <File>MP34_MONO_42.dds</File>
+    <File>MP34_MONO_44.dds</File>
+    <File>MP34_MONO_45.dds</File>
+    <File>MP34_MONO_48.dds</File>
+    <File>MP34_MONO_50.dds</File>
+    <File>MP34_MONO_55.dds</File>
+    <File>MP34_MONO_64.dds</File>
+    <File>MP34_MONO_70.dds</File>
+    <File>MP34_MONO_80.dds</File>
+    <File>MP34_MONO_128.dds</File>
+    <File>MP34_MONO_256.dds</File>
+    <File>MP34_COLOR_16.dds</File>
+    <File>MP34_COLOR_20.dds</File>
+    <File>MP34_COLOR_22.dds</File>
+    <File>MP34_COLOR_24.dds</File>
+    <File>MP34_COLOR_26.dds</File>
+    <File>MP34_COLOR_28.dds</File>
+    <File>MP34_COLOR_30.dds</File>
+    <File>MP34_COLOR_32.dds</File>
+    <File>MP34_COLOR_36.dds</File>
+    <File>MP34_COLOR_38.dds</File>
+    <File>MP34_COLOR_40.dds</File>
+    <File>MP34_COLOR_42.dds</File>
+    <File>MP34_COLOR_44.dds</File>
+    <File>MP34_COLOR_45.dds</File>
+    <File>MP34_COLOR_48.dds</File>
+    <File>MP34_COLOR_50.dds</File>
+    <File>MP34_COLOR_55.dds</File>
+    <File>MP34_COLOR_64.dds</File>
+    <File>MP34_COLOR_70.dds</File>
+    <File>MP34_COLOR_80.dds</File>
+    <File>MP34_COLOR_128.dds</File>
+    <File>MP34_COLOR_256.dds</File>
+    <File>Parade_ProductionPanel.lua</File>
+    <File>Parade_CivicIcons.lua</File>
+    <File>Parade_CivicsTree.lua</File>
+    <File>Parade_CivicsChooser.lua</File>
+    <File>Parade_Quotes.sql</File>
+    <File>Parade_Celebration.lua</File>
+    <File>Parade_Celebration.xml</File>
+    <File>Parade_UnitFlagManager.lua</File>
+    <File>Parade_Camera.lua</File>
+    <File>Platforms/Windows/Audio/MilitaryParadeBanks.ini</File>
+    <File>Platforms/Windows/Audio/MilitaryParade_Internationale_V311_Bank.bnk</File>
+    <File>Parade_Audio.lua</File>
+    <File>Parade_EraMoment.dds</File>
+    <File>Parade_HistoricMoments.lua</File>
+    <File>Parade_TimelineMoment.dds</File>
+    <File>ArtDefs/Camera.artdef</File>
+    <File>MilitaryParade.dep</File>
+    <File>CREDITS.txt</File>
+  </Files>
+</Mod>
+
+===== MilitaryParade.sln =====
+Microsoft Visual Studio Solution File, Format Version 12.00
+# ModBuddy Solution File, Format Version 12.00
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{5DAE07AF-E217-45C1-8DE7-FF99D6011E8A}") = "MilitaryParade", "MilitaryParade.civ6proj", "{0AD0399B-EF3D-46AC-A28D-E4CED6FAA6DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Civ6 = Default|Civ6
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AD0399B-EF3D-46AC-A28D-E4CED6FAA6DC}.Default|Civ6.ActiveCfg = Default|Civ6
+		{0AD0399B-EF3D-46AC-A28D-E4CED6FAA6DC}.Default|Civ6.Build.0 = Default|Civ6
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+
+
+===== Mod.Art.xml =====
+<?xml version="1.0" encoding="UTF-8"?>
+<AssetObjects::GameArtSpecification>
+  <id><name text="MilitaryParadeCamera"/><id text="24c1d57a-9b8a-5a13-bbe9-a0b559828b96"/></id>
+  <artConsumers><Element>
+    <consumerName text="Camera"/>
+    <relativeArtDefPaths><Element text="Camera.artdef"/></relativeArtDefPaths>
+    <libraryDependencies><Element text="CameraAnimation"/></libraryDependencies>
+    <loadsLibraries>true</loadsLibraries>
+  </Element></artConsumers>
+  <gameLibraries><Element><libraryName text="CameraAnimation"/><relativePackagePaths/></Element></gameLibraries>
+  <requiredGameArtIDs><Element><name text="Civ6"/><id text="cb2f71b7-843e-4af3-9ca7-992acda9c195"/></Element></requiredGameArtIDs>
+</AssetObjects::GameArtSpecification>
+
+
+===== Parade_Audio.lua =====
+-- Parade on Master SFX; temporarily pause/resume only the Master Music bus.
+ParadeAudio={}
+local active=false
+local loaded=false
+local pending=nil
+local age=0
+local backgroundPaused=false
+local PLAY='Play_MilitaryParade_Internationale_V311'
+local STOP='Stop_MilitaryParade_Internationale_V311'
+local function EnsureLoaded()
+    if loaded then return end
+    if type(UI.LoadSoundBankGroup)=='function' then
+        local ok,err=pcall(UI.LoadSoundBankGroup,5)
+        loaded=ok
+        print('[ParadeV311][AUDIO] load FMV group callOK='..tostring(ok)..' detail='..tostring(err))
+    else
+        print('[ParadeV311][AUDIO] LoadSoundBankGroup unavailable; using InGame load')
+    end
+    -- Never unload a shared bank group when closing this popup.
+end
+local function ResumeBackground()
+    if not backgroundPaused then return end
+    local ok,err=pcall(UI.PlaySound,'Resume_MilitaryParade_Background_V311')
+    if ok then backgroundPaused=false end
+    print('[ParadeV311][AUDIO] resume background callOK='..tostring(ok)..' detail='..tostring(err))
+end
+function ParadeAudio.BeginPresentation()
+    EnsureLoaded()
+    if backgroundPaused then return end
+    local ok,err=pcall(UI.PlaySound,'Pause_MilitaryParade_Background_V311')
+    backgroundPaused=ok
+    print('[ParadeV311][AUDIO] pause background callOK='..tostring(ok)..' detail='..tostring(err))
+end
+local function Post()
+    local ok,err=pcall(UI.PlaySound,PLAY)
+    active=ok;age=0
+    if not ok then ResumeBackground() end
+    print('[ParadeV311][AUDIO] play '..PLAY..' callOK='..tostring(ok)..' detail='..tostring(err))
+    return ok
+end
+function ParadeAudio.Stop()
+    pending=nil
+    if not active then return end
+    local ok,err=pcall(UI.PlaySound,STOP)
+    print('[ParadeV311][AUDIO] stop callOK='..tostring(ok)..' detail='..tostring(err))
+    active=false
+end
+function ParadeAudio.EndPresentation()
+    ParadeAudio.Stop()
+    ResumeBackground()
+end
+function ParadeAudio.Play()
+    ParadeAudio.BeginPresentation()
+    if active or pending then
+        ParadeAudio.Stop()
+        pending=0.12
+        return true
+    end
+    return Post()
+end
+function ParadeAudio.Tick(dt)
+    if pending then
+        pending=pending-dt
+        if pending<=0 then pending=nil;Post() end
+    elseif active then
+        age=age+dt
+        if age>=23.1 then active=false end
+    end
+end
+ExposedMembers.ParadeV311Audio=ParadeAudio
+
+
+===== Parade_Camera.lua =====
+-- UI-only camera controller. Same APIs as installed WorldInput.lua:
+-- UI.LookAtPlot / UI.GetMapZoom / UI.SetMapZoom / UI.SpinMap.
+-- SpinMap takes normalized drag input, NOT degrees/radians. 1.0 is an initial
+-- full-width sweep; its physical angle requires calibration in the actual game.
+ParadeCamera={Duration=20,Zoom=0.0,SpinSweep=1.0}
+local saved=nil
+local hidden={}
+local target=nil
+local spinFailed=false
+local refocused=false
+local focusBeat=-1
+local selectionSettled=false
+local function Call(name,...)
+    if type(UI[name])~='function' then return false end
+    local ok,a,b=pcall(UI[name],...)
+    if not ok then print('[ParadeV38][CAMERA] '..name..' ERROR: '..tostring(a)) end
+    return ok,a,b
+end
+local function HideControl(path)
+    local control=ContextPtr:LookUpControl(path)
+    if control then
+        hidden[#hidden+1]={Control=control,WasHidden=control:IsHidden()}
+        control:SetHide(true)
+    end
+end
+-- Apply focus AFTER selection/zoom. Screen positioning keeps the model in the
+-- visible review area above the footer, including on wide and short displays.
+local function FocusTarget()
+    if not target or not target.X or not target.Y then return end
+    if type(UI.LookAtPlotScreenPosition)=='function' and
+        Call('LookAtPlotScreenPosition',target.X,target.Y,0.5,0.42) then return end
+    Call('LookAtPlot',target.X,target.Y)
+end
+local function SelectTarget()
+    if not target or not target.Unit then return end
+    Call('DeselectAllCities')
+    Call('DeselectAllUnits')
+    Call('SelectUnit',target.Unit)
+    -- Match WorldInput's direct-click path; stop automatic selection advancing
+    -- to some other ready unit after this project's production event.
+    Call('RebuildSelectionList',target.Unit)
+    Call('SetCycleAdvanceTimer',0)
+end
+function ParadeCamera.Begin(data)
+    local restarting=saved~=nil
+    if not restarting then
+    local host=ExposedMembers.ParadeV38UI
+    local resumed=nil
+    if host and host.FinishCameraRestoreNow then resumed=host.FinishCameraRestoreNow()
+    elseif host and host.CancelCameraRestore then host.CancelCameraRestore() end
+    saved=resumed or {}
+    if not resumed then
+    local selectedOK,selected=Call('GetHeadSelectedUnit')
+    if selectedOK and selected then saved.UnitOwner=selected:GetOwner();saved.UnitID=selected:GetID() end
+    local cityOK,selectedCity=Call('GetHeadSelectedCity')
+    if cityOK and selectedCity then saved.CityOwner=selectedCity:GetOwner();saved.CityID=selectedCity:GetID() end
+    local ok,zoom=Call('GetMapZoom')
+    if ok and type(zoom)=='number' then saved.Zoom=zoom end
+    local positioned,wx,wy=Call('GetMapLookAtWorldTarget')
+    if positioned and type(wx)=='number' and type(wy)=='number' then
+        local converted,x,y=Call('GetPlotCoordFromWorld',wx,wy)
+        if converted then saved.X=x;saved.Y=y end
+    end
+    end
+    end
+    Call('SpinMap',0,0)
+    -- These containers are distinct from AdditionalUserInterfaces, where this
+    -- popup lives. Save each state; do not blindly unhide previously closed UI.
+    -- Leave SelectedUnit's logic context active; hide only its visible neighbours.
+    -- Selecting a unit follows the same native display path as clicking its flag.
+    if not restarting then
+    for _,path in ipairs({'/InGame/HUD','/InGame/TopLevelHUD','/InGame/PartialScreens',
+        '/InGame/WorldViewControls/BannerAndFlags','/InGame/WorldViewControls/WorldViewIconsManager',
+        '/InGame/WorldViewControls/DistrictPlotIconManager','/InGame/WorldViewControls/PlotInfo',
+        '/InGame/WorldViewControls/MapPinManager','/InGame/WorldViewControls/TourismBannerManager'}) do HideControl(path) end
+    local host=ExposedMembers.ParadeV38UI
+    if host and host.SetPresentationHidden then host.SetPresentationHidden(true) end
+    end
+    -- A review always focuses the current capital's center, never an adjacent
+    -- unit. Historical replay may have no garrison: keep focus on the capital.
+    local candidates={}
+    local player=Players[data.Owner]
+    local capital=player and player:GetCities():GetCapitalCity()
+    local cx=capital and capital:GetX()
+    local cy=capital and capital:GetY()
+    if capital then
+        for _,unit in player:GetUnits():Members() do
+            local row=GameInfo.Units[unit:GetType()]
+            if row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
+                and unit:GetX()==cx and unit:GetY()==cy then
+                candidates[#candidates+1]={Unit=unit,ID=unit:GetID(),X=cx,Y=cy,
+                    InCity=true,Name=Locale.Lookup(row.Name)}
+            end
+        end
+    end
+    table.sort(candidates,function(a,b)return a.ID<b.ID end)
+    target=candidates[1] or {X=cx,Y=cy,InCity=true,
+        Name=Locale.Lookup(capital and 'LOC_PARADE_FOCUS_NO_GARRISON' or 'LOC_PARADE_NEED_CAPITAL')}
+    spinFailed=false;refocused=false;focusBeat=-1;selectionSettled=false
+    saved.LastSpin=0
+    SelectTarget()
+    Call('SpinMap',0,0)
+    if target.X and target.Y then
+        Call('SetMapZoom',math.max(0.3,saved.Zoom or 0.45),0,0)
+        FocusTarget()
+    end
+    print('[ParadeV314][CAMERA] START owner='..tostring(data.Owner)..' capital='..tostring(capital and capital:GetID())..' xy='..tostring(cx)..','..tostring(cy)..' unit='..tostring(target.ID)..' cityTile='..tostring(target.InCity)..' zoom='..ParadeCamera.Zoom..' sweep='..ParadeCamera.SpinSweep)
+    return target.Name,target.InCity
+end
+local function Smooth(v)v=math.max(0,math.min(1,v));return v*v*(3-2*v)end
+function ParadeCamera.Tick(elapsed)
+    if not saved or spinFailed or not target or not target.X or not target.Y then return end
+    -- Finish zoom/focus work before rotating so a focus command cannot rebase yaw.
+    if elapsed<=3 then
+        local wide=math.max(0.3,saved.Zoom or 0.45)
+        Call('SetMapZoom',wide+(ParadeCamera.Zoom-wide)*Smooth(elapsed/3),0,0)
+        Call('SpinMap',0,0)
+        -- The selection/production UI can enqueue a later camera move. Wait a
+        -- frame, select again once, then re-anchor during the approach only.
+        if elapsed>=0.25 and not selectionSettled then
+            selectionSettled=true;SelectTarget()
+        end
+        local beat=math.floor(elapsed*5)
+        if beat~=focusBeat then focusBeat=beat;FocusTarget() end
+        saved.LastSpin=0
+        return
+    end
+    if not refocused then
+        refocused=true
+        SelectTarget()
+        Call('SetMapZoom',ParadeCamera.Zoom,0,0)
+        FocusTarget()
+        Call('SpinMap',0,0)
+        saved.SpinStart=elapsed+0.6
+    end
+    -- Selection/focus transitions may overwrite the requested zoom later.
+    -- Read back the live value, then reassert close-up without issuing another
+    -- pan/focus command that could reset the camera transition.
+    local read,actual=Call('GetMapZoom')
+    if read and type(actual)=='number' then
+        local diagnostic=ExposedMembers.MilitaryParadeDiagnostic or {}
+        ExposedMembers.MilitaryParadeDiagnostic=diagnostic
+        diagnostic.ZoomActual=actual
+        if actual>ParadeCamera.Zoom+0.005 then Call('SetMapZoom',ParadeCamera.Zoom,0,0) end
+    end
+    local start=saved.SpinStart or 3.3
+    local amount=0
+    if elapsed>=start and elapsed<8 then
+        amount=ParadeCamera.SpinSweep*Smooth((elapsed-start)/(8-start))
+    elseif elapsed>=8 and elapsed<10.5 then
+        amount=ParadeCamera.SpinSweep*(1-Smooth((elapsed-8)/2.5))
+    end
+    saved.LastSpin=amount
+    if not Call('SpinMap',amount,0) then spinFailed=true end
+end
+function ParadeCamera.End()
+    if not saved then return end
+    -- Zero rotation on the review pivot BEFORE any selection/focus restoration.
+    -- The persistent UI then waits for that return before restoring the snapshot.
+    Call('SpinMap',0,0)
+    for i=#hidden,1,-1 do
+        local item=hidden[i]
+        pcall(function()item.Control:SetHide(item.WasHidden)end)
+    end
+    local snapshot=saved
+    hidden={};saved=nil;target=nil
+    local host=ExposedMembers.ParadeV38UI
+    if host and host.SetPresentationHidden then
+        local ok,err=pcall(host.SetPresentationHidden,false)
+        if not ok then print('[ParadeV311][CAMERA] HUD restore error: '..tostring(err)) end
+    end
+    -- SelectUnit/LookAtPlot can enqueue native camera work. Reset last, and
+    -- finish in the persistent UI after popup dequeue/input-context removal.
+    Call('SpinMap',0,0)
+    if host and host.ScheduleCameraRestore then host.ScheduleCameraRestore(snapshot) end
+    print('[ParadeV312][CAMERA] return on review pivot; selection/focus restore queued')
+end
+
+
+===== Parade_Celebration.lua =====
+-- A queued, wonder-style UI celebration; no GameCore movement commands and no
+-- cinematic mode/engine event lock. Works when raised by the UI polling bridge.
+include('InputSupport')
+include('Parade_Camera.lua')
+include('Parade_Audio.lua')
+local pending={}
+local pendingRetry=0
+local current=nil
+local queued=false
+local started=false
+local soundPlayed=false
+local elapsed=0
+local pushed=false
+local lastCount=0
+local sealPlayed=false
+local function Close()
+    if not current and not queued and not pushed then return end
+    -- Closing is never gated by a timer, a UI bridge or camera state.
+    local finished=current
+    local wasShown=queued or pushed
+    current=nil;started=false
+    local function cleanup(label,action)
+        local ok,err=pcall(action)
+        if not ok then print('[ParadeV313][CLOSE] '..label..': '..tostring(err)) end
+    end
+    cleanup('update',function()ContextPtr:SetUpdate(nil)end)
+    cleanup('audio',function()ParadeAudio.EndPresentation()end)
+    cleanup('camera',function()ParadeCamera.End()end)
+    if pushed then
+        pushed=false;cleanup('input',function()Input.PopContext()end)
+    end
+    if queued then
+        queued=false;cleanup('dequeue',function()UIManager:DequeuePopup(ContextPtr)end)
+    end
+    cleanup('hide',function()ContextPtr:SetHide(true)end)
+    -- Native timeline follows the review, never obscures it. Only an actual
+    -- awarded completion queues a card; replay/zero-score/duplicate close do not.
+    local host=ExposedMembers.ParadeV38UI
+    if host and host.QueueAwardTimeline and finished and wasShown then
+        cleanup('timeline',function()host.QueueAwardTimeline(finished)end)
+    end
+end
+local function PlayCompletionSound()ParadeAudio.Play()end
+local function Phase()
+    local host=ExposedMembers.ParadeV38UI
+    Controls.BuildStatus:SetText(host and host.DiagnosticText and host.DiagnosticText() or '3.20 B1 | 主界面扩展未加载')
+    local award=elapsed>=16
+    Controls.CeremonyPanel:SetHide(elapsed<11)
+    Controls.QuoteText:SetHide(award);Controls.QuoteSource:SetHide(award)
+    Controls.SealPanel:SetHide(not award)
+    Controls.AwardText:SetHide(not award);Controls.GeneralAward:SetHide(not award)
+    Controls.SkipCeremony:SetHide(award)
+    Controls.EraAward:SetHide(not award)
+    local scroll=award and current and (current.EraScore or 0)>0
+    Controls.EraMomentPanel:SetHide(not scroll)
+    local stage=elapsed<3 and 'OPEN' or elapsed<11 and 'REVIEW' or elapsed<16 and 'QUOTE' or 'AWARD'
+    Controls.StageLabel:SetText(Locale.Lookup('LOC_PARADE_STAGE_'..stage))
+    if elapsed>=11 then
+        local alpha=math.min(1,(elapsed-(award and 16 or 11))/0.8)
+        Controls.QuoteText:SetAlpha(alpha);Controls.QuoteSource:SetAlpha(alpha)
+        Controls.SealPanel:SetAlpha(alpha)
+        Controls.AwardText:SetAlpha(math.min(1,math.max(0,(elapsed-16.5)/1.0)))
+        Controls.GeneralAward:SetAlpha(math.min(1,math.max(0,(elapsed-17.3)/1.0)))
+        Controls.SealIcon:SetOffsetVal(15-(1-alpha)*14,0)
+    end
+    if award and not sealPlayed then
+        sealPlayed=true
+        if current and not current.Replay then pcall(UI.PlaySound,'ALERT_POSITIVE') end
+    end
+end
+local function StartScene()
+    if not current or started then return end
+    started=true
+    ParadeAudio.BeginPresentation()
+    local ok,name=pcall(ParadeCamera.Begin,current)
+    if ok then Controls.FocusName:SetText(name or '')
+    else print('[ParadeV38][CAMERA] BEGIN ERROR: '..tostring(name)) end
+    if not current.Replay and not soundPlayed then PlayCompletionSound();soundPlayed=true end
+end
+local function Animate(dt)
+    if not current or ContextPtr:IsHidden() then return end
+    StartScene()
+    if not started then return end
+    elapsed=elapsed+dt
+    ParadeCamera.Tick(elapsed)
+    Phase()
+    if elapsed>=ParadeCamera.Duration then
+        ContextPtr:SetUpdate(nil)
+        -- Awarded reviews flow straight into the native timeline. Zero-score
+        -- diagnostics and explicit record replays retain the manual exit.
+        if current and not current.Replay and (current.EraScore or 0)>0 then Close() end
+    end
+end
+local function Show(data)
+    if type(data)~='table' or data.Owner~=Game.GetLocalPlayer() then return false end
+    if not data.Replay and data.Count<=lastCount then return true end
+    if current then
+        for _,item in ipairs(pending) do
+            if not data.Replay and item.Owner==data.Owner and item.Count==data.Count then return true end
+        end
+        pending[#pending+1]=data
+        return true
+    end
+    current=data;started=false;soundPlayed=false;elapsed=0;sealPlayed=false
+    local quote=nil
+    -- Custom GameInfo numeric indexing is not assumed to equal QuoteID.
+    for row in GameInfo.ParadeQuotes() do
+        if row.QuoteID==data.QuoteID then quote=row;break end
+    end
+    Controls.CelebrationTitle:SetText(Locale.Lookup('LOC_PARADE_CEREMONY_TITLE',data.CityName or '',data.Count))
+    local signature=Locale.Lookup('LOC_PARADE_REVIEW_ARMY')
+    if data.GeneralReviewed then
+        local name=data.GeneralName and data.GeneralName~='' and Locale.Lookup(data.GeneralName) or Locale.Lookup('LOC_UNIT_GREAT_GENERAL_NAME')
+        signature=Locale.Lookup('LOC_PARADE_REVIEW_SIGNATURE',name)
+    end
+    local era=data.EraName and data.EraName~='' and Locale.Lookup(data.EraName) or ''
+    Controls.ReviewSignature:SetText(era..(era~='' and ' · ' or '')..signature)
+    Controls.SealTitle:SetText(Locale.Lookup('LOC_PARADE_RANK_'..math.max(1,math.min(5,data.Tier or 1))))
+    Phase()
+    Controls.QuoteText:SetText(quote and quote.QuoteText or '')
+    Controls.QuoteSource:SetText(quote and ('—— '..quote.Attribution) or '')
+    local remaining=math.max(0,data.Ending-Game.GetCurrentGameTurn())
+    Controls.AwardText:SetText(Locale.Lookup('LOC_PARADE_CELEBRATION_REWARD',data.Score,data.Combat,data.Loyalty,data.Amenities,remaining))
+    local details=Locale.Lookup('LOC_PARADE_GENERAL_AWARD',data.GeneralPoints or 0)
+    if data.GeneralReviewed then
+        details=details..' · '..Locale.Lookup('LOC_PARADE_GENERAL_TIER',data.BaseTier or data.Tier or 1,data.Tier or 1)
+    end
+    Controls.GeneralAward:SetText(details)
+    local eraTitle=(data.EraScore or 0)==2 and 'LOC_PARADE_ERA_FIRST_TITLE' or 'LOC_PARADE_ERA_REPEAT_TITLE'
+    local eraBody=(data.EraScore or 0)==2 and 'LOC_PARADE_ERA_FIRST_BODY' or 'LOC_PARADE_ERA_REPEAT_BODY'
+    if data.GeneralReviewed then eraBody='LOC_PARADE_ERA_GENERAL_BODY' end
+    Controls.EraMomentTitle:SetText(Locale.Lookup(eraTitle))
+    Controls.EraMomentBody:SetText(Locale.Lookup(eraBody))
+    Controls.EraMomentSignature:SetText(signature)
+    Controls.EraMomentScore:SetText(Locale.Lookup('LOC_PARADE_ERA_GAIN',data.EraScore or 0))
+    local eraLine=(data.EraScore or 0)>0 and Locale.Lookup('LOC_PARADE_ERA_GAIN',data.EraScore)
+        or Locale.Lookup((data.EraStatus or 3)>=3 and 'LOC_PARADE_ERA_UNAVAILABLE' or 'LOC_PARADE_ERA_ALREADY')
+    Controls.EraAward:SetText(eraLine)
+    Controls.CompletionTurn:SetText(Locale.Lookup('LOC_PARADE_CELEBRATION_TURN',data.Turn))
+    UIManager:QueuePopup(ContextPtr,PopupPriority.High)
+    queued=true
+    if not data.Replay then lastCount=data.Count end
+    print('[ParadeV38][CELEBRATION] QUEUED count='..tostring(data.Count))
+    ContextPtr:SetUpdate(Animate)
+    if not ContextPtr:IsHidden() then StartScene() end
+    return true
+end
+Controls.CloseCelebration:RegisterCallback(Mouse.eLClick,Close)
+Controls.CloseX:RegisterCallback(Mouse.eLClick,Close)
+Controls.SoundTest:RegisterCallback(Mouse.eLClick,function()
+    if not current then return end
+    PlayCompletionSound()
+end)
+Controls.ReplayCamera:RegisterCallback(Mouse.eLClick,function()
+    if not current then return end
+    elapsed=0;started=true
+    Phase()
+    local ok,err=pcall(ParadeCamera.Begin,current)
+    if not ok then print('[ParadeV38][CAMERA] REPLAY ERROR: '..tostring(err)) end
+    ContextPtr:SetUpdate(Animate)
+end)
+Controls.SkipCeremony:RegisterCallback(Mouse.eLClick,function()
+    if not current then return end
+    -- Leave four seconds to read the award, then use the same automatic
+    -- handoff as normal playback. Stopping updates here stranded the timeline.
+    elapsed=16;ParadeCamera.Tick(20);Phase();ContextPtr:SetUpdate(Animate)
+end)
+ContextPtr:SetInputHandler(function(input)
+    if input:GetMessageType()==KeyEvents.KeyUp and input:GetKey()==Keys.VK_ESCAPE then Close();return true end
+    -- Consume gameplay hotkeys while the celebration is in the popup queue.
+    local kind=input:GetMessageType()
+    return kind==KeyEvents.KeyUp or kind==KeyEvents.KeyDown
+end,true)
+ContextPtr:SetShowHideHandler(function(hidden)
+    if not hidden and current then
+        if not pushed then Input.PushActiveContext(InputContext.Reveal);pushed=true end
+        StartScene()
+        ContextPtr:SetUpdate(Animate)
+    end
+    if hidden and current then ParadeAudio.EndPresentation();ParadeCamera.End();started=false end
+    if hidden and pushed then Input.PopContext();pushed=false end
+end)
+ContextPtr:SetShutdown(function()
+    ParadeAudio.EndPresentation()
+    ParadeCamera.End()
+    if pushed then Input.PopContext();pushed=false end
+    ExposedMembers.ParadeV311Audio=nil
+    ExposedMembers.ParadeV38Presentation=nil
+end)
+local function Dispatch(data)
+    local ok,result=pcall(Show,data)
+    if not ok then
+        print('[ParadeV38][CELEBRATION] SHOW ERROR: '..tostring(result))
+        local cleaned,err=pcall(Close)
+        if not cleaned then print('[ParadeV38][CELEBRATION] CLEANUP ERROR: '..tostring(err)) end
+        return false
+    end
+    return result==true
+end
+LuaEvents.ParadeV38_ShowCelebration.Add(Dispatch)
+ExposedMembers.ParadeV38Presentation={Ready=true,Show=Dispatch,IsActive=function()return current~=nil or queued or #pending>0 end,Pump=function(dt)
+    pendingRetry=math.max(0,pendingRetry-(dt or 0))
+    if current or #pending==0 or pendingRetry>0 then return end
+    if Dispatch(pending[1]) then table.remove(pending,1) else pendingRetry=1.5 end
+end}
+ContextPtr:SetHide(true)
+print('[ParadeV38][CELEBRATION] READY: unit-focused camera review, 40 quotes, native Internationale instrumental bank; no voice')
+
+
+===== Parade_Celebration.xml =====
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="Parade_Celebration" Size="parent,parent" Hidden="1" ColorSet="Beige_Black" FontStyle="Shadow">
+  <Container Size="parent,parent" ConsumeMouse="1" ConsumeMouseButton="1">
+    <Box Size="parent,parent" Color="0,0,0,0" />
+    <Grid Texture="Controls_LensHeaderSmall" SliceTextureSize="71,49" SliceCorner="20,24" Size="parent,64" Anchor="C,T" Offset="0,0">
+      <Label ID="CelebrationTitle" Style="FontFlair24" Color="244,216,154,255" Anchor="C,C" String="LOC_PARADE_CELEBRATION_FIRST" />
+      <Button ID="CloseX" Texture="Controls_CloseButtonAlt" Size="32,32" Anchor="R,C" Offset="20,0" />
+    </Grid>
+    <Label ID="BuildStatus" Anchor="L,T" Offset="20,76" WrapWidth="480" Style="FontNormal12" Color="235,211,153,255" String="3.20 B1" />
+    <Label ID="FocusName" Anchor="C,T" Offset="0,74" Style="FontNormal16" Color="244,216,154,255" String="" />
+    <Label ID="ReviewSignature" Anchor="C,T" Offset="0,104" Style="FontNormal14" Color="244,216,154,255" String="" />
+    <Label ID="StageLabel" Anchor="C,T" Offset="0,130" Style="FontFlair18" Color="244,216,154,255" String="" />
+    <Box ID="CeremonyPanel" Size="parent,250" Anchor="C,B" Color="12,23,34,245">
+      <Box Size="parent,2" Anchor="C,T" Color="187,148,71,255" />
+      <Grid ID="SealPanel" Texture="Controls_LensHeaderSmall" SliceTextureSize="71,49" SliceCorner="20,24" Size="360,76" Anchor="C,T" Offset="0,20">
+        <Image ID="SealIcon" Texture="MP34_COLOR_128.dds" Anchor="L,C" Offset="15,0" Size="48,48" />
+        <Label ID="SealTitle" Anchor="C,C" Offset="24,0" Style="FontFlair24" Color="244,216,154,255" String="" />
+      </Grid>
+      <Label ID="QuoteText" Anchor="C,T" Offset="0,20" WrapWidth="900" Align="Center" Style="FontFlair24" Color="244,216,154,255" String="" />
+      <Label ID="QuoteSource" Anchor="C,T" Offset="0,82" WrapWidth="900" Align="Center" Style="FontNormal14" Color="201,192,171,255" String="" />
+      <Label ID="AwardText" Anchor="C,T" Offset="0,113" WrapWidth="1000" Align="Center" Style="FontNormal16" Color="238,235,226,255" String="" />
+      <Label ID="GeneralAward" Anchor="C,T" Offset="0,163" Style="FontNormal14" Color="244,216,154,255" String="" />
+      <Label ID="EraAward" Anchor="C,T" Offset="0,189" Style="FontNormal14" Color="244,216,154,255" String="" />
+      <Label ID="CompletionTurn" Anchor="L,B" Offset="25,60" Style="FontNormal14" Color="160,170,180,255" String="" />
+      <GridButton ID="CloseCelebration" Anchor="C,B" Offset="0,16" Size="180,36" Style="ButtonMainSmall" String="LOC_PARADE_CELEBRATION_CLOSE" />
+    </Box>
+    <Box ID="EraMomentPanel" Size="800,640" Anchor="C,C" Offset="0,-35" Color="239,225,193,255" Hidden="1">
+      <Box Size="parent,2" Anchor="C,T" Color="139,102,42,255" />
+      <Box Size="parent,2" Anchor="C,B" Color="139,102,42,255" />
+      <Label ID="EraMomentTitle" Anchor="C,T" Offset="0,18" Style="FontFlair24" Color="63,43,24,255" String="" />
+      <Label ID="EraMomentSignature" Anchor="C,T" Offset="0,57" Style="FontNormal14" Color="90,65,37,255" String="" />
+      <Image ID="EraMomentArt" Texture="Parade_EraMoment.dds" Size="720,360" Anchor="C,T" Offset="0,84" />
+      <Label ID="EraMomentBody" Anchor="C,T" Offset="0,459" WrapWidth="720" Align="Center" Style="FontFlair18" Color="63,43,24,255" String="" />
+      <Label ID="EraMomentScore" Anchor="C,B" Offset="0,22" Style="FontFlair20" Color="112,74,19,255" String="" />
+    </Box>
+      <GridButton ID="SkipCeremony" Anchor="L,B" Offset="25,16" Size="132,30" Style="ButtonMainSmall" String="LOC_PARADE_SKIP_TO_AWARD" />
+      <GridButton ID="SoundTest" Anchor="R,B" Offset="25,16" Size="110,30" Style="ButtonMainSmall" String="LOC_PARADE_SOUND_TEST" />
+      <GridButton ID="ReplayCamera" Anchor="R,B" Offset="145,16" Size="110,30" Style="ButtonMainSmall" String="LOC_PARADE_REPLAY_CAMERA" />
+  </Container>
+</Context>
+
+
+===== Parade_CivicIcons.lua =====
+-- Called AFTER the original civic screen includes TechAndCivicSupport.
+-- Only the parade's foreground icon changes; all other unlocks keep stock data.
+local basePopulate=PopulateUnlockablesForCivic
+if not basePopulate then
+    print('[ParadeV38][CIVIC] ERROR: PopulateUnlockablesForCivic unavailable')
+    return
+end
+local function ColorIcon(real)
+    return setmetatable({}, {__index=function(_,key)
+        if key=='SetIcon' then
+            return function(_,name,...)
+                if name=='ICON_PROJECT_MILITARY_PARADE' then
+                    name='ICON_PROJECT_MILITARY_PARADE_COLOR'
+                end
+                return real:SetIcon(name,...)
+            end
+        end
+        local value=real[key]
+        if type(value)=='function' then
+            return function(_,...) return value(real,...) end
+        end
+        return value
+    end})
+end
+function PopulateUnlockablesForCivic(playerID,civicID,itemIM,governmentIM,...)
+    if not itemIM then return basePopulate(playerID,civicID,itemIM,governmentIM,...) end
+    local proxy=setmetatable({GetInstance=function()
+        local instance=itemIM:GetInstance()
+        return setmetatable({Icon=ColorIcon(instance.Icon)}, {__index=instance})
+    end}, {__index=itemIM})
+    return basePopulate(playerID,civicID,proxy,governmentIM,...)
+end
+print('[ParadeV38][CIVIC] READY: explicit colour parade icon')
+
+
+===== Parade_CivicsChooser.lua =====
+include('CivicsChooser.lua')
+include('Parade_CivicIcons.lua')
+
+
+===== Parade_CivicsTree.lua =====
+include('CivicsTree.lua')
+include('Parade_CivicIcons.lua')
+
+
+===== Parade_Data.sql =====
+-- UTF-8. Requires Rise & Fall or Gathering Storm loyalty rules.
+-- Install as a replacement of the old mod; use a NEW game.
+CREATE TABLE ParadeTiers (
+ Tier INTEGER PRIMARY KEY, MinimumStrength INTEGER NOT NULL,
+ Loyalty INTEGER NOT NULL, Combat INTEGER NOT NULL, Amenities INTEGER NOT NULL
+);
+INSERT INTO ParadeTiers VALUES
+ (1,0,4,1,1),(2,200,6,2,1),(3,500,8,3,1),
+ (4,1000,10,4,2),(5,2000,12,5,2);
+
+-- No civilization receives this trait: these helper buildings cannot be built normally.
+INSERT INTO Types (Type,Kind) VALUES ('TRAIT_PARADE_INTERNAL','KIND_TRAIT');
+INSERT INTO Traits (TraitType,Name,Description) VALUES
+ ('TRAIT_PARADE_INTERNAL','LOC_PARADE_INTERNAL_NAME','LOC_PARADE_INTERNAL_NAME');
+-- The script places this non-buildable permit ONLY in the eligible current capital.
+INSERT INTO Types (Type,Kind) VALUES ('BUILDING_PARADE_ELIGIBLE','KIND_BUILDING');
+INSERT INTO Buildings
+ (BuildingType,Name,Description,Cost,PrereqDistrict,TraitType,InternalOnly)
+VALUES ('BUILDING_PARADE_ELIGIBLE','LOC_PARADE_PERMIT_NAME','LOC_PARADE_PERMIT_DESCRIPTION',
+ 1,'DISTRICT_CITY_CENTER','TRAIT_PARADE_INTERNAL',0);
+INSERT INTO CivilopediaPageExcludes (SectionId,PageId)
+VALUES ('BUILDINGS','BUILDING_PARADE_ELIGIBLE');
+
+INSERT INTO Types (Type,Kind) VALUES ('PROJECT_MILITARY_PARADE','KIND_PROJECT');
+INSERT INTO Projects
+ (ProjectType,Name,ShortName,Description,Cost,CostProgressionModel,
+ CostProgressionParam1,PrereqDistrict,RequiredBuilding,AdvisorType,PrereqCivic,UnlocksFromEffect)
+VALUES ('PROJECT_MILITARY_PARADE','LOC_PROJECT_MILITARY_PARADE_NAME',
+ 'LOC_PROJECT_MILITARY_PARADE_NAME','LOC_PROJECT_MILITARY_PARADE_DESCRIPTION',
+ 60,'COST_PROGRESSION_GAME_PROGRESS',300,'DISTRICT_CITY_CENTER',
+ 'BUILDING_PARADE_ELIGIBLE','ADVISOR_CONQUEST','CIVIC_EARLY_EMPIRE',0);
+
+-- City-local modifiers: no nationwide modifier stacking through multiple cities.
+INSERT INTO Types (Type,Kind) VALUES
+ ('MODIFIER_PARADE_CITY_LOYALTY','KIND_MODIFIER');
+INSERT INTO DynamicModifiers (ModifierType,CollectionType,EffectType) VALUES
+ ('MODIFIER_PARADE_CITY_LOYALTY','COLLECTION_OWNER','EFFECT_ADJUST_CITY_IDENTITY_PER_TURN');
+
+INSERT INTO Types (Type,Kind)
+ SELECT 'BUILDING_PARADE_BUFF_'||Tier,'KIND_BUILDING' FROM ParadeTiers;
+INSERT INTO Buildings
+ (BuildingType,Name,Description,Cost,PrereqDistrict,TraitType,InternalOnly,Entertainment)
+ SELECT 'BUILDING_PARADE_BUFF_'||Tier,'LOC_PARADE_BUFF_NAME',
+ 'LOC_PARADE_BUFF_DESCRIPTION',1,'DISTRICT_CITY_CENTER','TRAIT_PARADE_INTERNAL',0,Amenities
+ FROM ParadeTiers;
+INSERT INTO CivilopediaPageExcludes (SectionId,PageId)
+ SELECT 'BUILDINGS','BUILDING_PARADE_BUFF_'||Tier FROM ParadeTiers;
+INSERT INTO Modifiers (ModifierId,ModifierType)
+ SELECT 'PARADE_LOYALTY_'||Tier,'MODIFIER_PARADE_CITY_LOYALTY' FROM ParadeTiers;
+INSERT INTO ModifierArguments (ModifierId,Name,Value)
+ SELECT 'PARADE_LOYALTY_'||Tier,'Amount',Loyalty FROM ParadeTiers;
+INSERT INTO BuildingModifiers (BuildingType,ModifierId)
+ SELECT 'BUILDING_PARADE_BUFF_'||Tier,'PARADE_LOYALTY_'||Tier FROM ParadeTiers;
+
+-- Explicit native unit-type percentage modifiers. Local to this city; only
+-- combat unit production receives +10%. No extra production granted by Lua.
+INSERT INTO Types (Type,Kind) VALUES ('MODIFIER_PARADE_CITY_UNIT_PRODUCTION','KIND_MODIFIER');
+INSERT INTO DynamicModifiers (ModifierType,CollectionType,EffectType)
+ VALUES ('MODIFIER_PARADE_CITY_UNIT_PRODUCTION','COLLECTION_OWNER','EFFECT_ADJUST_UNIT_PRODUCTION');
+INSERT INTO Modifiers (ModifierId,ModifierType)
+ SELECT 'PARADE_TRAIN_'||UnitType,'MODIFIER_PARADE_CITY_UNIT_PRODUCTION'
+ FROM Units WHERE Combat>0 OR RangedCombat>0;
+INSERT INTO ModifierArguments (ModifierId,Name,Value)
+ SELECT 'PARADE_TRAIN_'||UnitType,'UnitType',UnitType
+ FROM Units WHERE Combat>0 OR RangedCombat>0;
+INSERT INTO ModifierArguments (ModifierId,Name,Value)
+ SELECT 'PARADE_TRAIN_'||UnitType,'Amount',10
+ FROM Units WHERE Combat>0 OR RangedCombat>0;
+INSERT INTO BuildingModifiers (BuildingType,ModifierId)
+ SELECT 'BUILDING_PARADE_BUFF_'||t.Tier,'PARADE_TRAIN_'||u.UnitType
+ FROM ParadeTiers t CROSS JOIN Units u WHERE u.Combat>0 OR u.RangedCombat>0;
+
+-- Explicitly enabled per unit by gameplay Lua; disabled by default.
+INSERT INTO Types (Type,Kind)
+ SELECT 'ABILITY_PARADE_'||Tier,'KIND_ABILITY' FROM ParadeTiers;
+INSERT INTO UnitAbilities (UnitAbilityType,Name,Description,Inactive)
+ SELECT 'ABILITY_PARADE_'||Tier,'LOC_PARADE_BUFF_NAME','LOC_PARADE_BUFF_DESCRIPTION',1
+ FROM ParadeTiers;
+INSERT INTO Modifiers (ModifierId,ModifierType)
+ SELECT 'PARADE_COMBAT_'||Tier,'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH' FROM ParadeTiers;
+INSERT INTO ModifierArguments (ModifierId,Name,Value)
+ SELECT 'PARADE_COMBAT_'||Tier,'Amount',Combat FROM ParadeTiers;
+INSERT INTO UnitAbilityModifiers (UnitAbilityType,ModifierId)
+ SELECT 'ABILITY_PARADE_'||Tier,'PARADE_COMBAT_'||Tier FROM ParadeTiers;
+INSERT INTO ModifierStrings (ModifierId,Context,Text)
+ SELECT 'PARADE_COMBAT_'||Tier,'Preview','LOC_PARADE_COMBAT_PREVIEW' FROM ParadeTiers;
+
+-- Associate inactive abilities with combat units; enable them explicitly in Lua.
+INSERT INTO TypeTags (Type,Tag)
+ SELECT 'ABILITY_PARADE_'||Tier,'CLASS_ALL_COMBAT_UNITS' FROM ParadeTiers;
+
+-- General supervision is a city-local, project-specific native modifier.
+-- No total-city production injection, and no bonus to settlers/wonders.
+INSERT INTO Types (Type,Kind) VALUES
+ ('BUILDING_PARADE_GENERAL','KIND_BUILDING'),
+ ('MODIFIER_PARADE_CITY_PROJECT_PRODUCTION','KIND_MODIFIER');
+INSERT INTO Buildings (BuildingType,Name,Description,Cost,PrereqDistrict,TraitType,InternalOnly)
+ VALUES ('BUILDING_PARADE_GENERAL','LOC_PARADE_GENERAL_NAME','LOC_PARADE_GENERAL_DESCRIPTION',
+ 1,'DISTRICT_CITY_CENTER','TRAIT_PARADE_INTERNAL',0);
+INSERT INTO CivilopediaPageExcludes (SectionId,PageId) VALUES ('BUILDINGS','BUILDING_PARADE_GENERAL');
+INSERT INTO DynamicModifiers (ModifierType,CollectionType,EffectType)
+ VALUES ('MODIFIER_PARADE_CITY_PROJECT_PRODUCTION','COLLECTION_OWNER','EFFECT_ADJUST_PROJECT_PRODUCTION');
+INSERT INTO Modifiers (ModifierId,ModifierType)
+ VALUES ('PARADE_GENERAL_PRODUCTION','MODIFIER_PARADE_CITY_PROJECT_PRODUCTION');
+INSERT INTO ModifierArguments (ModifierId,Name,Value) VALUES
+ ('PARADE_GENERAL_PRODUCTION','ProjectType','PROJECT_MILITARY_PARADE'),
+ ('PARADE_GENERAL_PRODUCTION','Amount',50);
+INSERT INTO BuildingModifiers (BuildingType,ModifierId)
+ VALUES ('BUILDING_PARADE_GENERAL','PARADE_GENERAL_PRODUCTION');
+
+-- Visible build identity; never used to grant or alter gameplay rewards.
+CREATE TABLE ParadeBuildInfo(ID INTEGER PRIMARY KEY, Version TEXT NOT NULL);
+INSERT INTO ParadeBuildInfo VALUES(1,'3.20 B1');
+
+
+===== Parade_Data_XP2.sql =====
+-- Loaded ONLY when Expansion2 is the active GameCore.
+INSERT OR IGNORE INTO Projects_XP2
+ (ProjectType,RequiredPowerWhileActive,ReligiousPressureModifier,UnlocksFromEffect,
+ RequiredBuilding,CreateBuilding,FullyPoweredWhileActive,MaxSimultaneousInstances)
+VALUES ('PROJECT_MILITARY_PARADE',0,0,0,'BUILDING_PARADE_ELIGIBLE',NULL,0,1);
+UPDATE Projects_XP2 SET RequiredBuilding='BUILDING_PARADE_ELIGIBLE',UnlocksFromEffect=0
+ WHERE ProjectType='PROJECT_MILITARY_PARADE';
+
+
+===== Parade_HistoricMoments.lua =====
+-- Extend the installed XP1/XP2 timeline; keep its XML, notifications and input.
+-- Records below are UI cards backed by saved player properties, not fabricated
+-- GameCore moment IDs. Gameplay awards the actual score separately, once.
+include('HistoricMoments.lua')
+local BaseDisplay=DisplayTimeline
+local BaseAdd=AddMoment
+local BaseIllustration=AddIllustration
+local BaseReset=ResetTimeline
+local BasePopupParameters=GetPopupParameters
+local automaticOpen=false
+local autoQueue={}
+local diagnostic=ExposedMembers.MilitaryParadeDiagnostic or {}
+ExposedMembers.MilitaryParadeDiagnostic=diagnostic
+diagnostic.TimelineBuild='3.20 B1'
+function GetPopupParameters()
+    local original=BasePopupParameters()
+    if not automaticOpen and #autoQueue==0 then return original end
+    local parameters={}
+    for key,value in pairs(original) do parameters[key]=value end
+    -- Custom automatic opening must not depend on stock notification timing.
+    -- Queue it with ordinary visibility and confirm the resulting screen state.
+    parameters.DelayShow=false
+    return parameters
+end
+local artIM=InstanceManager:new('LargeIllustration','Root')
+local rendering=nil
+local captured=nil
+local template=nil
+local function FindTemplate()
+    if template then return template end
+    for row in GameInfo.Moments() do
+        if (row.InterestLevel or 0)>1 and row.BackgroundTexture and not row.MomentIllustrationType then
+            template=row.Index;return template
+        end
+    end
+end
+local function ReadRecords(playerID)
+    local result={}
+    local player=Players[playerID]
+    local kind=FindTemplate()
+    if not player or kind==nil then return result end
+    for era in GameInfo.Eras() do
+        local prefix='PARADE_V314_MOMENT_'..era.Index..'_'
+        local function value(key)local v=player:GetProperty(prefix..key);return v end
+        if value('READY')==1 then
+            result[#result+1]={ID=-1000000-era.Index,Type=kind,GameEra=era.Index,
+                Turn=tonumber(value('TURN')) or 0,EraScore=tonumber(value('SCORE')) or 0,
+                Parade=true,City=value('CITY') or '',General=value('GENERAL')==1,
+                GeneralName=value('NAME') or '',ExtraData={},HasEverBeenCommemorated=false}
+        end
+    end
+    local completed=tonumber((player:GetProperty('PARADE_V35_COUNT'))) or 0
+    for number=1,completed do
+        local prefix='PARADE_V315_MOMENT_'..number..'_'
+        local function value(key)local v=player:GetProperty(prefix..key);return v end
+        if value('READY')==1 then
+            result[#result+1]={ID=-2000000-number,Type=kind,GameEra=tonumber(value('ERA')) or 0,
+                Turn=tonumber(value('TURN')) or 0,EraScore=tonumber(value('SCORE')) or 0,
+                Parade=true,City=value('CITY') or '',General=value('GENERAL')==1,
+                GeneralName=value('NAME') or '',ExtraData={},HasEverBeenCommemorated=false}
+        end
+    end
+    -- Upgrade migration: v3.13 saved only the latest award snapshot. Preserve
+    -- that completion, even a repeat with +0; do not invent older award dates.
+    local latestEra=tonumber((player:GetProperty('PARADE_V313_WORLD_ERA')))
+    local latestScore=tonumber((player:GetProperty('PARADE_V313_ERA_SCORE'))) or 0
+    if player:GetProperty('PARADE_V315_ARCHIVE_STARTED')~=1 and latestEra and latestEra>=0 and
+        (latestScore>0 or player:GetProperty('PARADE_V313_ERA_DONE_'..latestEra)==1) and
+        player:GetProperty('PARADE_V314_MOMENT_'..latestEra..'_READY')~=1 then
+        result[#result+1]={ID=-1000000-latestEra,Type=kind,GameEra=latestEra,
+            Turn=tonumber((player:GetProperty('PARADE_V35_TURN'))) or 0,EraScore=latestScore,
+            Parade=true,City=player:GetProperty('PARADE_V312_CITY_NAME') or '',
+            General=player:GetProperty('PARADE_V38_GENERAL')==1,
+            GeneralName=player:GetProperty('PARADE_V312_GENERAL_NAME') or '',ExtraData={}}
+    end
+    return result
+end
+function ResetTimeline()
+    artIM:ResetInstances()
+    return BaseReset()
+end
+function AddIllustration(instance,texture,dataType,momentType)
+    if not rendering then return BaseIllustration(instance,texture,dataType,momentType) end
+    captured=instance
+    local art=artIM:GetInstance(instance.Illustrations).Root
+    art:SetTexture('Parade_TimelineMoment.dds')
+    art:SetSizeVal(456,228)
+    art:SetOffsetVal(0,0)
+end
+function AddMoment(data,isNew)
+    if not data.Parade then return BaseAdd(data,isNew) end
+    local first=data.EraScore==2
+    local title=Locale.Lookup(first and 'LOC_PARADE_ERA_FIRST_TITLE' or 'LOC_PARADE_ERA_REPEAT_TITLE')
+    local body=Locale.Lookup(data.General and 'LOC_PARADE_ERA_GENERAL_BODY' or
+        (first and 'LOC_PARADE_ERA_FIRST_BODY' or 'LOC_PARADE_ERA_REPEAT_BODY'))
+    local signature=Locale.Lookup(data.City)
+    if data.GeneralName~='' then signature=signature..' · '..Locale.Lookup(data.GeneralName) end
+    local card={}
+    for k,v in pairs(data) do card[k]=v end
+    card.InstanceDescription=title
+    rendering=card;captured=nil
+    -- Use a native large-card template to preserve the original renderer's
+    -- small-moment stack boundaries and era ordering. Only its UI template is
+    -- borrowed; none of its event data, illustrations or score is recorded.
+    local ok,err=pcall(BaseAdd,card,isNew)
+    rendering=nil
+    if ok and captured then
+        captured.Description:SetOffsetY(65)
+        captured.Root:SetToolTipString(title..'[NEWLINE]'..signature..'[NEWLINE]'..body)
+    end
+    captured=nil
+    if not ok then error(err) end
+end
+function DisplayTimeline(showAnim)
+    local playerID=Game.GetLocalPlayer()
+    local records=ReadRecords(playerID)
+    if #records==0 then return BaseDisplay(showAnim) end
+    local originalGetter=Game.GetHistoryManager
+    -- Synchronous, context-local adapter. The original getter is restored even
+    -- if rendering throws. Native GameCore history is never modified.
+    Game.GetHistoryManager=function(...)
+        local manager=originalGetter(...)
+        return setmetatable({GetAllMomentsData=function(_,owner,interest)
+            local original=manager:GetAllMomentsData(owner,interest)
+            local merged={}
+            for _,entry in ipairs(original) do merged[#merged+1]=entry end
+            if owner==playerID then
+                for _,entry in ipairs(records) do merged[#merged+1]=entry end
+            end
+            table.sort(merged,function(a,b)
+                if a.Turn~=b.Turn then return a.Turn<b.Turn end
+                if a.GameEra~=b.GameEra then return a.GameEra<b.GameEra end
+                if (a.Parade==true)~=(b.Parade==true) then return b.Parade==true end
+                return (a.ID or 0)<(b.ID or 0)
+            end)
+            return merged
+        end},{__index=function(_,key)
+            local member=manager[key]
+            if type(member)=='function' then return function(_,...)return member(manager,...)end end
+            return member
+        end})
+    end
+    local ok,err=pcall(BaseDisplay,showAnim)
+    Game.GetHistoryManager=originalGetter
+    if not ok then
+        rendering=nil;captured=nil
+        print('[ParadeV314][TIMELINE] ERROR: '..tostring(err))
+        -- Keep stock history usable when an incompatible timeline mod is active.
+        return BaseDisplay(showAnim)
+    end
+    print('[ParadeV314][TIMELINE] merged parade cards='..#records)
+end
+
+-- Automatic display follows stock priority/suppression settings. Synthetic IDs
+-- are consumed by the UI renderer only, never sent to GameCore notifications.
+local autoSeen={}
+local function RequestAuto(owner,count)
+    if owner~=Game.GetLocalPlayer() or type(count)~='number' or count<=0 then return true end
+    local key=tostring(owner)..':'..tostring(count)
+    if autoSeen[key] then return true end
+    if Options.GetAppOption('Debug','SuppressInfoPopups')==1 then return true end
+    autoSeen[key]=true
+    autoQueue[#autoQueue+1]={Owner=owner,Count=count}
+    return true
+end
+local function PumpAuto(dt)
+    if #autoQueue==0 then return end
+    local presentation=ExposedMembers.ParadeV38Presentation
+    if presentation and presentation.IsActive and presentation.IsActive() then return end
+    local item=autoQueue[1]
+    local player=Players[item.Owner]
+    local prefix='PARADE_V315_MOMENT_'..item.Count..'_'
+    if not player or player:GetProperty(prefix..'READY')~=1 then return end
+    local score=tonumber((player:GetProperty(prefix..'SCORE'))) or 0
+    if score<=0 then table.remove(autoQueue,1);return end
+    if not item.Submitted then
+        automaticOpen=true
+        local ok,err=true,nil
+        if ContextPtr:IsHidden() and not UIManager:IsInPopupQueue(ContextPtr) then
+            ok,err=pcall(DisplayTimeline,false)
+        end
+        automaticOpen=false
+        if not ok then
+            print('[MilitaryParade][Timeline] queue failed: '..tostring(err));return
+        end
+        item.Submitted=true;item.Wait=0
+        print('[MilitaryParade][Timeline] queued count='..item.Count..' delayed-show=false')
+    end
+    if ContextPtr:IsHidden() then
+        item.Wait=(item.Wait or 0)+(type(dt)=='number' and dt or 0)
+        -- Keep the request until it is visible. The native queue controls popup
+        -- priority; a false CanShowPopup response cannot strand our own queue.
+        if item.Wait>=2 and not UIManager:IsInPopupQueue(ContextPtr) then
+            item.Submitted=false;item.Wait=0
+            print('[MilitaryParade][Timeline] lost queue registration; retry count='..item.Count)
+        end
+        return
+    end
+    -- Start the brush animation and the award cue only after the queue has
+    -- actually presented the screen. Hidden waiting time cannot consume them.
+    automaticOpen=true
+    local painted,err=pcall(ShowNewTimelineMoment,{momentID=-2000000-item.Count,showAnim=true})
+    automaticOpen=false
+    if not painted then
+        print('[MilitaryParade][Timeline] visible paint retry: '..tostring(err));return
+    end
+    UI.PlaySound('Pride_Moment')
+    diagnostic.Stage='原版年表已显示 # '..item.Count
+    table.remove(autoQueue,1)
+    print('[MilitaryParade][Timeline] visible count='..item.Count)
+end
+ExposedMembers.ParadeV316Timeline={Ready=true,RequestAuto=RequestAuto,Pump=PumpAuto}
+if Events.UIIdle then Events.UIIdle.Add(PumpAuto) end
+
+
+===== Parade_Icons.sql =====
+-- UpdateIcons. Root-level filenames exactly match ImportFiles.
+-- Legacy DXT5/BC3, transparent padding to power-of-two textures, cell at (0,0).
+INSERT INTO IconTextureAtlases (Name,IconSize,IconsPerRow,IconsPerColumn,Filename) VALUES
+('ICON_ATLAS_PARADE34_MONO',16,1,1,'MP34_MONO_16.dds'),
+('ICON_ATLAS_PARADE34_MONO',20,1,1,'MP34_MONO_20.dds'),
+('ICON_ATLAS_PARADE34_MONO',22,1,1,'MP34_MONO_22.dds'),
+('ICON_ATLAS_PARADE34_MONO',24,1,1,'MP34_MONO_24.dds'),
+('ICON_ATLAS_PARADE34_MONO',26,1,1,'MP34_MONO_26.dds'),
+('ICON_ATLAS_PARADE34_MONO',28,1,1,'MP34_MONO_28.dds'),
+('ICON_ATLAS_PARADE34_MONO',30,1,1,'MP34_MONO_30.dds'),
+('ICON_ATLAS_PARADE34_MONO',32,1,1,'MP34_MONO_32.dds'),
+('ICON_ATLAS_PARADE34_MONO',36,1,1,'MP34_MONO_36.dds'),
+('ICON_ATLAS_PARADE34_MONO',38,1,1,'MP34_MONO_38.dds'),
+('ICON_ATLAS_PARADE34_MONO',40,1,1,'MP34_MONO_40.dds'),
+('ICON_ATLAS_PARADE34_MONO',42,1,1,'MP34_MONO_42.dds'),
+('ICON_ATLAS_PARADE34_MONO',44,1,1,'MP34_MONO_44.dds'),
+('ICON_ATLAS_PARADE34_MONO',45,1,1,'MP34_MONO_45.dds'),
+('ICON_ATLAS_PARADE34_MONO',48,1,1,'MP34_MONO_48.dds'),
+('ICON_ATLAS_PARADE34_MONO',50,1,1,'MP34_MONO_50.dds'),
+('ICON_ATLAS_PARADE34_MONO',55,1,1,'MP34_MONO_55.dds'),
+('ICON_ATLAS_PARADE34_MONO',64,1,1,'MP34_MONO_64.dds'),
+('ICON_ATLAS_PARADE34_MONO',70,1,1,'MP34_MONO_70.dds'),
+('ICON_ATLAS_PARADE34_MONO',80,1,1,'MP34_MONO_80.dds'),
+('ICON_ATLAS_PARADE34_MONO',128,1,1,'MP34_MONO_128.dds'),
+('ICON_ATLAS_PARADE34_MONO',256,1,1,'MP34_MONO_256.dds'),
+('ICON_ATLAS_PARADE34_COLOR',16,1,1,'MP34_COLOR_16.dds'),
+('ICON_ATLAS_PARADE34_COLOR',20,1,1,'MP34_COLOR_20.dds'),
+('ICON_ATLAS_PARADE34_COLOR',22,1,1,'MP34_COLOR_22.dds'),
+('ICON_ATLAS_PARADE34_COLOR',24,1,1,'MP34_COLOR_24.dds'),
+('ICON_ATLAS_PARADE34_COLOR',26,1,1,'MP34_COLOR_26.dds'),
+('ICON_ATLAS_PARADE34_COLOR',28,1,1,'MP34_COLOR_28.dds'),
+('ICON_ATLAS_PARADE34_COLOR',30,1,1,'MP34_COLOR_30.dds'),
+('ICON_ATLAS_PARADE34_COLOR',32,1,1,'MP34_COLOR_32.dds'),
+('ICON_ATLAS_PARADE34_COLOR',36,1,1,'MP34_COLOR_36.dds'),
+('ICON_ATLAS_PARADE34_COLOR',38,1,1,'MP34_COLOR_38.dds'),
+('ICON_ATLAS_PARADE34_COLOR',40,1,1,'MP34_COLOR_40.dds'),
+('ICON_ATLAS_PARADE34_COLOR',42,1,1,'MP34_COLOR_42.dds'),
+('ICON_ATLAS_PARADE34_COLOR',44,1,1,'MP34_COLOR_44.dds'),
+('ICON_ATLAS_PARADE34_COLOR',45,1,1,'MP34_COLOR_45.dds'),
+('ICON_ATLAS_PARADE34_COLOR',48,1,1,'MP34_COLOR_48.dds'),
+('ICON_ATLAS_PARADE34_COLOR',50,1,1,'MP34_COLOR_50.dds'),
+('ICON_ATLAS_PARADE34_COLOR',55,1,1,'MP34_COLOR_55.dds'),
+('ICON_ATLAS_PARADE34_COLOR',64,1,1,'MP34_COLOR_64.dds'),
+('ICON_ATLAS_PARADE34_COLOR',70,1,1,'MP34_COLOR_70.dds'),
+('ICON_ATLAS_PARADE34_COLOR',80,1,1,'MP34_COLOR_80.dds'),
+('ICON_ATLAS_PARADE34_COLOR',128,1,1,'MP34_COLOR_128.dds'),
+('ICON_ATLAS_PARADE34_COLOR',256,1,1,'MP34_COLOR_256.dds');
+INSERT INTO IconDefinitions (Name,Atlas,"Index") VALUES
+('ICON_PROJECT_MILITARY_PARADE','ICON_ATLAS_PARADE34_MONO',0),
+('ICON_PROJECT_MILITARY_PARADE_COLOR','ICON_ATLAS_PARADE34_COLOR',0),
+('ICON_BUILDING_PARADE_ELIGIBLE','ICON_ATLAS_PARADE34_MONO',0),
+('ICON_BUILDING_PARADE_BUFF_1','ICON_ATLAS_PARADE34_MONO',0),
+('ICON_BUILDING_PARADE_BUFF_2','ICON_ATLAS_PARADE34_MONO',0),
+('ICON_BUILDING_PARADE_BUFF_3','ICON_ATLAS_PARADE34_MONO',0),
+('ICON_BUILDING_PARADE_BUFF_4','ICON_ATLAS_PARADE34_MONO',0),
+('ICON_BUILDING_PARADE_BUFF_5','ICON_ATLAS_PARADE34_MONO',0);
+
+INSERT INTO IconDefinitions (Name,Atlas,"Index") VALUES ('ICON_BUILDING_PARADE_GENERAL','ICON_ATLAS_PARADE34_MONO',0);
+
+
+===== Parade_ProductionPanel.lua =====
+-- Extend the installed Firaxis production panel instead of copying its source.
+-- Preserve the Heroes-mode extension when its replacement exists.
+include('ProductionPanel_Babylon_Heroes.lua')
+if not GetData then include('ProductionPanel.lua') end
+if not GetData or not AdvanceProject then
+    print('[ParadeV38][PANEL] ERROR: base production panel unavailable')
+    return
+end
+local baseGetData=GetData
+local baseAdvanceProject=AdvanceProject
+local paradeType='PROJECT_MILITARY_PARADE'
+local function IsCurrentCapital(city)
+    if not city then return false end
+    local player=Players[city:GetOwner()]
+    local capital=player and player:GetCities():GetCapitalCity()
+    return capital~=nil and city:GetID()==capital:GetID()
+end
+local function CanStartParade(city)
+    if not IsCurrentCapital(city) then return false end
+    local player=Players[city:GetOwner()]
+    local civic=GameInfo.Civics['CIVIC_EARLY_EMPIRE']
+    if not civic or not player:GetCulture():HasCivic(civic.Index) then return false end
+    for _,unit in player:GetUnits():Members() do
+        local row=GameInfo.Units[unit:GetType()]
+        if row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
+            and unit:GetX()==city:GetX() and unit:GetY()==city:GetY() then
+            return true
+        end
+    end
+    return false
+end
+function GetData(...)
+    local data=baseGetData(...)
+    if not data or not data.ProjectItems then return data end
+    local city=data.City or UI.GetHeadSelectedCity()
+    local capital=IsCurrentCapital(city)
+    local canStart=capital and CanStartParade(city)
+    for i=#data.ProjectItems,1,-1 do
+        local item=data.ProjectItems[i]
+        if item.Type==paradeType then
+            if not capital then
+                -- HIDE, not merely disable, even with "show disabled items" on.
+                table.remove(data.ProjectItems,i)
+            elseif not canStart then
+                item.Disabled=true
+                item.ToolTip=(item.ToolTip or '')..'[NEWLINE]'..Locale.Lookup('LOC_PARADE_NEED_GARRISON')
+            end
+        end
+    end
+    return data
+end
+function AdvanceProject(city,entry,...)
+    if entry and entry.ProjectType==paradeType and not CanStartParade(city) then
+        print('[ParadeV38][PANEL] BLOCK stale parade click')
+        Refresh()
+        return
+    end
+    return baseAdvanceProject(city,entry,...)
+end
+-- The stock refresh function resolves GetData dynamically. Refresh the visible
+-- list when garrison or current capital changes, including after city capture.
+local function OnEligibilityChanged()
+    if not ContextPtr:IsHidden() then Refresh() end
+end
+for _,name in ipairs({'UnitMoved','UnitMoveComplete','UnitAddedToMap','UnitRemovedFromMap',
+    'CityUnitsChanged','CapitalCityChanged','CityTransfered','CivicCompleted'}) do
+    if Events[name] then Events[name].Add(OnEligibilityChanged) end
+end
+print('[ParadeV38][PANEL] READY: current-capital visibility filter')
+
+
+===== Parade_Quotes.sql =====
+-- Classical texts are public domain. Row 2 is the user-selected modern excerpt.
+CREATE TABLE ParadeQuotes (QuoteID INTEGER PRIMARY KEY,QuoteText TEXT NOT NULL,Attribution TEXT NOT NULL);
+INSERT INTO ParadeQuotes VALUES
+(1,'溥天之下，莫非王土；率土之滨，莫非王臣。','《诗经·小雅·北山》'),
+(2,'赳赳老秦，复我河山；血不流干，死不休战。','《大秦帝国》相关战歌 · 现代文学题辞'),
+(3,'国虽大，好战必亡；天下虽安，忘战必危。','《司马法·仁本》'),
+(4,'上下同欲者胜。','《孙子兵法·谋攻》'),
+(5,'不战而屈人之兵，善之善者也。','《孙子兵法·谋攻》'),
+(6,'知彼知己，百战不殆。','《孙子兵法·谋攻》'),
+(7,'其疾如风，其徐如林，侵掠如火，不动如山。','《孙子兵法·军争》'),
+(8,'兵者，国之大事，死生之地，存亡之道，不可不察也。','《孙子兵法·始计》'),
+(9,'攻其无备，出其不意。','《孙子兵法·始计》'),
+(10,'凡战者，以正合，以奇胜。','《孙子兵法·兵势》'),
+(11,'善战者，求之于势，不责于人。','《孙子兵法·兵势》'),
+(12,'先为不可胜，以待敌之可胜。','《孙子兵法·军形》'),
+(13,'胜兵先胜而后求战，败兵先战而后求胜。','《孙子兵法·军形》'),
+(14,'善战者，致人而不致于人。','《孙子兵法·虚实》'),
+(15,'无恃其不来，恃吾有以待之；无恃其不攻，恃吾有所不可攻也。','《孙子兵法·九变》'),
+(16,'将者，智、信、仁、勇、严也。','《孙子兵法·始计》'),
+(17,'兵无常势，水无常形。','《孙子兵法·虚实》'),
+(18,'投之亡地然后存，陷之死地然后生。','《孙子兵法·九地》'),
+(19,'令之以文，齐之以武。','《孙子兵法·行军》'),
+(20,'视卒如婴儿，故可以与之赴深溪；视卒如爱子，故可与之俱死。','《孙子兵法·地形》'),
+(21,'岂曰无衣？与子同袍。','《诗经·秦风·无衣》'),
+(22,'王于兴师，修我戈矛，与子同仇。','《诗经·秦风·无衣》'),
+(23,'王于兴师，修我甲兵，与子偕行。','《诗经·秦风·无衣》'),
+(24,'大风起兮云飞扬，威加海内兮归故乡。','刘邦《大风歌》'),
+(25,'安得猛士兮守四方！','刘邦《大风歌》'),
+(26,'秦时明月汉时关，万里长征人未还。','王昌龄《出塞》'),
+(27,'但使龙城飞将在，不教胡马度阴山。','王昌龄《出塞》'),
+(28,'黄沙百战穿金甲，不破楼兰终不还。','王昌龄《从军行》'),
+(29,'晓战随金鼓，宵眠抱玉鞍。','李白《塞下曲》'),
+(30,'愿将腰下剑，直为斩楼兰。','李白《塞下曲》'),
+(31,'醉卧沙场君莫笑，古来征战几人回？','王翰《凉州词》'),
+(32,'报君黄金台上意，提携玉龙为君死。','李贺《雁门太守行》'),
+(33,'角声满天秋色里，塞上燕脂凝夜紫。','李贺《雁门太守行》'),
+(34,'醉里挑灯看剑，梦回吹角连营。','辛弃疾《破阵子·为陈同甫赋壮词以寄之》'),
+(35,'八百里分麾下炙，五十弦翻塞外声。沙场秋点兵。','辛弃疾《破阵子·为陈同甫赋壮词以寄之》'),
+(36,'马作的卢飞快，弓如霹雳弦惊。','辛弃疾《破阵子·为陈同甫赋壮词以寄之》'),
+(37,'了却君王天下事，赢得生前身后名。','辛弃疾《破阵子·为陈同甫赋壮词以寄之》'),
+(38,'千古江山，英雄无觅孙仲谋处。','辛弃疾《永遇乐·京口北固亭怀古》'),
+(39,'想当年，金戈铁马，气吞万里如虎。','辛弃疾《永遇乐·京口北固亭怀古》'),
+(40,'会挽雕弓如满月，西北望，射天狼。','苏轼《江城子·密州出猎》');
+
+
+===== Parade_Script.lua =====
+-- Gameplay only. Military-score queries belong to Parade_UI.lua, not this file.
+print('[ParadeV38][Gameplay] BOOT')
+local VERSION = '3.20.0-b1'
+local DURATION = 10
+local GENERAL_POINTS_BY_ERA={
+    ERA_ANCIENT=5,ERA_CLASSICAL=10,ERA_MEDIEVAL=20,ERA_RENAISSANCE=35,
+    ERA_INDUSTRIAL=50,ERA_MODERN=70,ERA_ATOMIC=90,ERA_INFORMATION=120,ERA_FUTURE=150
+}
+local GENERAL_POINTS_BY_ORDER={5,10,20,35,50,70,90,120,150}
+local KEY_END = 'PARADE_V3_END'
+local KEY_TIER = 'PARADE_V3_TIER'
+local KEY_SCORE = 'PARADE_V3_SCORE'
+local KEY_LAST = 'PARADE_V3_LAST_COMPLETION'
+local KEY_PENDING = 'PARADE_V3_PENDING_CITY'
+local KEY_PENDING_TURN = 'PARADE_V3_PENDING_TURN'
+local project = GameInfo.Projects['PROJECT_MILITARY_PARADE']
+local civic = GameInfo.Civics['CIVIC_EARLY_EMPIRE']
+local permit = GameInfo.Buildings['BUILDING_PARADE_ELIGIBLE']
+local generalPermit=GameInfo.Buildings['BUILDING_PARADE_GENERAL']
+local generalClass=GameInfo.GreatPersonClasses and GameInfo.GreatPersonClasses['GREAT_PERSON_CLASS_GENERAL']
+if not project or not civic or not permit or not generalPermit or not generalClass or not GameInfo.ParadeTiers then
+    print('[ParadeV38][FATAL] Database missing: project, civic, permit or tier table')
+    return
+end
+local quoteIDs={}
+if GameInfo.ParadeQuotes then
+    for row in GameInfo.ParadeQuotes() do quoteIDs[#quoteIDs+1]=row.QuoteID end
+end
+table.sort(quoteIDs)
+local tiers = {}
+for row in GameInfo.ParadeTiers() do
+    -- Copy database fields. Do not write derived values into GameInfo rows.
+    local building = GameInfo.Buildings['BUILDING_PARADE_BUFF_' .. row.Tier]
+    local ability = GameInfo.UnitAbilities['ABILITY_PARADE_' .. row.Tier]
+    if not building or not ability then
+        print('[ParadeV38][FATAL] Missing buff building/ability for tier ' .. row.Tier)
+        return
+    end
+    tiers[#tiers+1] = {
+        Tier=row.Tier, MinimumStrength=row.MinimumStrength,
+        Loyalty=row.Loyalty, Combat=row.Combat, Amenities=row.Amenities,
+        BuildingIndex=building.Index, AbilityType=ability.UnitAbilityType
+    }
+end
+table.sort(tiers,function(a,b) return a.Tier<b.Tier end)
+if #tiers ~= 5 then print('[ParadeV38][FATAL] Expected 5 tiers'); return end
+local function Log(s) print('[ParadeV38][Gameplay] ' .. s) end
+local function Turn() return Game.GetCurrentGameTurn() end
+-- An unset engine property can return ZERO Lua values, not one nil value.
+-- Assignment normalizes this to one nil before tonumber receives it.
+local function NumberProperty(player,key,default)
+    local value=player:GetProperty(key)
+    return tonumber(value) or default
+end
+local knownPlayers={}
+local ready=false
+local function RememberPlayer(playerID)
+    if type(playerID)~='number' or playerID<0 then return nil end
+    local player=Players[playerID]
+    if player then knownPlayers[playerID]=true end
+    return player
+end
+local function IsMilitary(unit)
+    local row=GameInfo.Units[unit:GetType()]
+    return row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
+end
+local function HasGarrison(player,city)
+    for _,unit in player:GetUnits():Members() do
+        if IsMilitary(unit) and unit:GetX()==city:GetX() and unit:GetY()==city:GetY() then
+            return true
+        end
+    end
+    return false
+end
+local function GeneralPointsReward(player)
+    -- Query only on a legal completion, after world-ready. No load-time player access.
+    local ok,eraID=pcall(function()return player:GetEra()end)
+    if not ok or type(eraID)~='number' or eraID<0 then return 5 end
+    local row=GameInfo.Eras and GameInfo.Eras[eraID]
+    if row and GENERAL_POINTS_BY_ERA[row.EraType] then return GENERAL_POINTS_BY_ERA[row.EraType] end
+    local order=row and tonumber(row.ChronologyIndex)
+    if order then
+        return GENERAL_POINTS_BY_ORDER[math.max(1,math.min(#GENERAL_POINTS_BY_ORDER,math.floor(order)+1))]
+    end
+    return 5
+end
+local function ReviewGeneral(player,city)
+    local found=nil
+    for _,unit in player:GetUnits():Members() do
+        local row=GameInfo.Units[unit:GetType()]
+        if row and row.UnitType==generalClass.UnitType
+            and unit:GetX()==city:GetX() and unit:GetY()==city:GetY() then
+            if not found or (unit.GetID and found.GetID and unit:GetID()<found:GetID()) then found=unit end
+        end
+    end
+    return found
+end
+local function HasGeneral(player,city)return ReviewGeneral(player,city)~=nil end
+local function ReviewGeneralName(player,city)
+    local unit=city and ReviewGeneral(player,city)
+    if not unit then return '' end
+    local ok,name=pcall(function()
+        local individual=unit:GetGreatPerson():GetIndividual()
+        local row=GameInfo.GreatPersonIndividuals and GameInfo.GreatPersonIndividuals[individual]
+        return row and row.Name
+    end)
+    return ok and type(name)=='string' and name or 'LOC_UNIT_GREAT_GENERAL_NAME'
+end
+local function EraName(player)
+    local ok,name=pcall(function()
+        local row=GameInfo.Eras[player:GetEra()]
+        return row and (row.Name or row.EraType)
+    end)
+    return ok and type(name)=='string' and name or ''
+end
+-- Native era score: first +2, then +1 for each unique legal completion.
+local function AwardEraScore(player,playerID)
+    if type(Game.GetEras)~='function' then return 0,3,-1 end
+    local ok,eras,eraID=pcall(function()
+        local manager=Game.GetEras()
+        return manager,manager:GetCurrentEra()
+    end)
+    if not ok or not eras or type(eraID)~='number' or eraID<0
+        or type(eras.ChangePlayerEraScore)~='function' then return 0,3,-1 end
+    eraID=math.floor(eraID)
+    local key='PARADE_V313_ERA_DONE_'..eraID
+    local first=NumberProperty(player,'PARADE_V313_ERA_HAS_AWARD',0)==0
+    local amount=first and 2 or 1
+    local awarded,err=pcall(function()eras:ChangePlayerEraScore(playerID,amount)end)
+    if not awarded then
+        Log('ERA SCORE ERROR: '..tostring(err));return 0,4,eraID
+    end
+    player:SetProperty(key,1)
+    player:SetProperty('PARADE_V313_ERA_HAS_AWARD',1)
+    Log('ERA SCORE player='..playerID..' worldEra='..eraID..' amount='..amount)
+    return amount,first and 1 or 2,eraID
+end
+local function IsEligible(player,cityID)
+    if not player:GetCulture():HasCivic(civic.Index) then return false,'Early Empire incomplete' end
+    local capital=player:GetCities():GetCapitalCity()
+    if not capital or capital:GetID()~=cityID then return false,'not current capital' end
+    if not HasGarrison(player,capital) then return false,'no own combat garrison' end
+    return true
+end
+local function SetBuilding(city,index,wanted)
+    local buildings=city:GetBuildings()
+    if wanted and not buildings:HasBuilding(index) then
+        city:GetBuildQueue():CreateBuilding(index)
+        if not buildings:HasBuilding(index) then error('CreateBuilding failed, city='..city:GetID()..' index='..index) end
+    elseif not wanted and buildings:HasBuilding(index) then
+        buildings:RemoveBuilding(index)
+        if buildings:HasBuilding(index) then error('RemoveBuilding failed, city='..city:GetID()..' index='..index) end
+    end
+end
+local function ActiveTier(player)
+    if Turn() >= NumberProperty(player,KEY_END,-1) then return 0 end
+    return NumberProperty(player,KEY_TIER,0)
+end
+local function MigrateTimeline(player)
+    if player:GetProperty('PARADE_V315_ARCHIVE_STARTED')==1 then return end
+    local era=NumberProperty(player,'PARADE_V313_WORLD_ERA',-1)
+    local score=NumberProperty(player,'PARADE_V313_ERA_SCORE',0)
+    if era<0 then return end
+    if score<=0 and player:GetProperty('PARADE_V313_ERA_DONE_'..era)~=1 then return end
+    local prefix='PARADE_V314_MOMENT_'..era..'_'
+    if player:GetProperty(prefix..'READY')==1 then return end
+    player:SetProperty(prefix..'TURN',NumberProperty(player,'PARADE_V35_TURN',Turn()))
+    player:SetProperty(prefix..'SCORE',score)
+    player:SetProperty(prefix..'CITY',player:GetProperty('PARADE_V312_CITY_NAME') or '')
+    player:SetProperty(prefix..'GENERAL',NumberProperty(player,'PARADE_V38_GENERAL',0))
+    player:SetProperty(prefix..'NAME',player:GetProperty('PARADE_V312_GENERAL_NAME') or '')
+    player:SetProperty(prefix..'READY',1)
+end
+local function SyncPlayer(player)
+    MigrateTimeline(player)
+    local active=ActiveTier(player)
+    local refreshModifiers=player:GetProperty('PARADE_V316_MODIFIERS_VERSION')~=316
+    local capital=player:GetCities():GetCapitalCity()
+    local capitalID=capital and capital:GetID() or -1
+    local unlocked=player:GetCulture():HasCivic(civic.Index)
+    for _,city in player:GetCities():Members() do
+        local allowed=unlocked and city:GetID()==capitalID and HasGarrison(player,city)
+        local hadPermit=city:GetBuildings():HasBuilding(permit.Index)
+        SetBuilding(city,permit.Index,allowed)
+        local supervised=allowed and HasGeneral(player,city)
+        local hadGeneral=city:GetBuildings():HasBuilding(generalPermit.Index)
+        SetBuilding(city,generalPermit.Index,supervised)
+        if hadGeneral~=supervised then Log('GENERAL city='..city:GetID()..' active='..tostring(supervised)) end
+        if hadPermit~=allowed then
+            Log('PERMIT city='..tostring(city:GetID())..' allowed='..tostring(allowed))
+        end
+        -- Removing a prerequisite does not itself revalidate an existing queue.
+        -- Gameplay-only API, only on a live city, protected by SyncAll's guard.
+        if hadPermit and not allowed then
+            city:GetBuildQueue():CheckActiveProduction()
+        end
+        -- Rebuild saved helper buildings once after this modifier migration,
+        -- so an already-active old save attaches the new unit-specific rows.
+        if refreshModifiers then
+            for _,row in ipairs(tiers) do SetBuilding(city,row.BuildingIndex,false) end
+        end
+        -- Remove old tier BEFORE adding new tier. Repetition cannot stack them.
+        for _,row in ipairs(tiers) do
+            if row.Tier~=active then SetBuilding(city,row.BuildingIndex,false) end
+        end
+        for _,row in ipairs(tiers) do
+            if row.Tier==active then SetBuilding(city,row.BuildingIndex,true) end
+        end
+    end
+    if refreshModifiers then player:SetProperty('PARADE_V316_MODIFIERS_VERSION',316) end
+    for _,unit in player:GetUnits():Members() do
+        local ability=unit:GetAbility()
+        local military=IsMilitary(unit)
+        for _,row in ipairs(tiers) do
+            local wanted=(military and active==row.Tier) and 1 or 0
+            local current=ability:GetAbilityCount(row.AbilityType) or 0
+            if current~=wanted then ability:ChangeAbilityCount(row.AbilityType,wanted-current) end
+        end
+    end
+end
+local syncing=false
+local function SyncAll()
+    if not ready or syncing then return end
+    syncing=true
+    -- Only handles seen in valid player-turn callbacks; never all player slots.
+    for id in pairs(knownPlayers) do
+        local player=Players[id]
+        if player then
+            local ok,err=pcall(SyncPlayer,player)
+            if not ok then Log('SYNC ERROR player='..tostring(id)..': '..tostring(err)) end
+        end
+    end
+    syncing=false
+end
+local function IsParade(id)
+    return id==project.Index or id==project.Hash or id==project.ProjectType
+end
+local function ReadUIScore(playerID)
+    local ui=ExposedMembers.ParadeV3UI
+    if ui and ui.GetMilitaryScore then
+        local ok,value=pcall(ui.GetMilitaryScore,playerID)
+        if ok and type(value)=='number' and value==value and value>=0 and value<math.huge then
+            return math.floor(value)
+        end
+        Log('UI score unavailable: '..tostring(value))
+    end
+    return nil
+end
+local function Complete(playerID,cityID,projectID,cancelled)
+    if not ready or not IsParade(projectID) or cancelled==true or cancelled==1 then return end
+    local player=RememberPlayer(playerID)
+    if not player then return end
+    local ok,reason=IsEligible(player,cityID)
+    if not ok then Log('REJECTED player='..playerID..' city='..cityID..': '..reason);return end
+    -- Native and UI reporting can describe the same completion. Process it once.
+    local stamp=tostring(Turn())..':'..tostring(cityID)
+    if player:GetProperty(KEY_LAST)==stamp then return end
+    local score=ReadUIScore(playerID)
+    if score==nil then
+        player:SetProperty(KEY_PENDING,cityID)
+        player:SetProperty(KEY_PENDING_TURN,Turn())
+        Log('PENDING completion: waiting for UI bridge, player='..playerID)
+        return
+    end
+    local selected=tiers[1]
+    for _,row in ipairs(tiers) do if score>=row.MinimumStrength then selected=row end end
+    local baseTier=selected.Tier
+    local capital=player:GetCities():GetCapitalCity()
+    local reviewed=capital and HasGeneral(player,capital) or false
+    if reviewed then selected=tiers[math.min(#tiers,baseTier+1)] end
+    local previousQuote=NumberProperty(player,'PARADE_V35_QUOTE',-1)
+    local choices={}
+    for _,id in ipairs(quoteIDs) do if id~=previousQuote then choices[#choices+1]=id end end
+    if #choices==0 then choices=quoteIDs end
+    local quoteID=choices[1] or 1
+    if #choices>1 then quoteID=choices[Game.GetRandNum(#choices,'Parade quotation')+1] end
+    local count=NumberProperty(player,'PARADE_V35_COUNT',0)+1
+    local ending=Turn()+DURATION
+    player:SetProperty(KEY_SCORE,score)
+    player:SetProperty(KEY_TIER,selected.Tier)
+    player:SetProperty(KEY_END,ending)
+    player:SetProperty(KEY_LAST,stamp)
+    player:SetProperty(KEY_PENDING,-1)
+    SyncPlayer(player)
+    local points=0
+    local rewardPoints=GeneralPointsReward(player)
+    local gave,err=pcall(function()player:GetGreatPeoplePoints():ChangePointsTotal(generalClass.Index,rewardPoints)end)
+    if gave then points=rewardPoints else Log('GENERAL POINTS ERROR: '..tostring(err)) end
+    player:SetProperty('PARADE_V38_BASE_TIER',baseTier)
+    player:SetProperty('PARADE_V38_GENERAL',reviewed and 1 or 0)
+    player:SetProperty('PARADE_V38_GENERAL_POINTS',points)
+    Log('GENERAL REWARD baseTier='..baseTier..' finalTier='..selected.Tier..' reviewed='..tostring(reviewed)..' points='..points)
+    -- Persist the complete presentation record. COUNT is committed last so UI
+    -- never observes a new completion with half-written details.
+    player:SetProperty('PARADE_V35_QUOTE',quoteID)
+    player:SetProperty('PARADE_V35_CITY',cityID)
+    player:SetProperty('PARADE_V35_TURN',Turn())
+    local cityName=capital and capital:GetName() or ''
+    local generalName=ReviewGeneralName(player,capital)
+    local eraName=EraName(player)
+    player:SetProperty('PARADE_V312_CITY_NAME',cityName)
+    player:SetProperty('PARADE_V312_GENERAL_NAME',generalName)
+    player:SetProperty('PARADE_V312_ERA_NAME',eraName)
+    local eraScore,eraStatus,worldEra=AwardEraScore(player,playerID)
+    player:SetProperty('PARADE_V313_ERA_SCORE',eraScore)
+    player:SetProperty('PARADE_V313_ERA_STATUS',eraStatus)
+    player:SetProperty('PARADE_V313_WORLD_ERA',worldEra)
+    -- One immutable card per completed project, committed before COUNT. UI is
+    -- read-only and cannot grant a second payout when cards are opened/replayed.
+    if worldEra>=0 then
+        local prefix='PARADE_V315_MOMENT_'..count..'_'
+        player:SetProperty(prefix..'TURN',Turn())
+        player:SetProperty(prefix..'ERA',worldEra)
+        player:SetProperty(prefix..'SCORE',eraScore)
+        player:SetProperty(prefix..'CITY',cityName)
+        player:SetProperty(prefix..'GENERAL',reviewed and 1 or 0)
+        player:SetProperty(prefix..'NAME',generalName)
+        player:SetProperty(prefix..'READY',1)
+        player:SetProperty('PARADE_V315_ARCHIVE_STARTED',1)
+    end
+    player:SetProperty('PARADE_V35_COUNT',count)
+    Log(string.format('AWARDED player=%d score=%d tier=%d loyalty=%d combat=%d amenities=%d expiry=%d',
+        playerID,score,selected.Tier,selected.Loyalty,selected.Combat,selected.Amenities,ending))
+end
+local function SafeComplete(...)
+    local ok,err=pcall(Complete,...)
+    if not ok then Log('COMPLETION ERROR: '..tostring(err)) end
+end
+local function OnNativeComplete(playerID,cityID,projectID,buildingIndex,x,y,cancelled)
+    if IsParade(projectID) then
+        Log('NATIVE COMPLETE player='..tostring(playerID)..' city='..tostring(cityID)..' ready='..tostring(ready)..' cancelled='..tostring(cancelled))
+    end
+    SafeComplete(playerID,cityID,projectID,cancelled)
+end
+local function Refresh()
+    if not ready then return end
+    for playerID in pairs(knownPlayers) do
+        local player=Players[playerID]
+        if player then
+            local pending=NumberProperty(player,KEY_PENDING,-1)
+            if pending>=0 then
+                if player:GetProperty(KEY_PENDING_TURN)==Turn() then
+                    SafeComplete(playerID,pending,project.Index,false)
+                else
+                    player:SetProperty(KEY_PENDING,-1)
+                    Log('Pending completion expired without UI score, player='..playerID)
+                end
+            end
+        end
+    end
+    SyncAll()
+end
+-- UI may read this status, but receives no game-state mutation callbacks.
+ExposedMembers.ParadeV3Gameplay={Version=VERSION,Ready=false}
+local function OnPlayerTurnActivated(playerID)
+    local player=RememberPlayer(playerID)
+    if not player then return end
+    if not ready then
+        ready=true
+        ExposedMembers.ParadeV3Gameplay.Ready=true
+        Log('WORLD READY: first activated player='..tostring(playerID))
+    end
+    Refresh()
+end
+Events.CityProjectCompleted.Add(OnNativeComplete)
+Events.PlayerTurnActivated.Add(OnPlayerTurnActivated)
+Events.TurnBegin.Add(Refresh)
+for _,name in ipairs({'UnitMoved','UnitMoveComplete','UnitTeleported','UnitAddedToMap','UnitRemovedFromMap',
+    'CityUnitsChanged','CapitalCityChanged','CityProductionCompleted','CityProductionChanged','CityProductionUpdated','PlayerTurnDeactivated',
+    'UnitUpgraded','CityAddedToMap','CityRemovedFromMap','CityTransfered','CivicCompleted','CitySelectionChanged'}) do
+    if Events[name] then Events[name].Add(Refresh) end
+end
+-- Registration only at load: no Players enumeration, properties, cities or queues.
+Log('REGISTERED version='..VERSION..'; waiting for PlayerTurnActivated')
+
+
+===== Parade_Text.sql =====
+-- UTF-8. Load with UpdateText, NOT UpdateDatabase.
+INSERT OR REPLACE INTO LocalizedText (Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PROJECT_MILITARY_PARADE_NAME','阅兵'),
+('zh_Hans_CN','LOC_PROJECT_MILITARY_PARADE_DESCRIPTION','完成“帝国初期”后，仅限首都市中心有本国战斗驻军时进行。[NEWLINE]完成后，按军事分提升全帝国忠诚度、战斗力与宜居度，军事单位生产力+10%，持续10回合；另获大将军点数及时代分。[NEWLINE]大将军驻首都市中心：本项目生产力+50%，鼓舞提升一档。重复完成刷新效果，不叠加。'),
+('zh_Hans_CN','LOC_PARADE_INTERNAL_NAME','阅兵资格（脚本管理）'),
+('zh_Hans_CN','LOC_PARADE_BUFF_NAME','阅兵鼓舞'),
+('zh_Hans_CN','LOC_PARADE_BUFF_DESCRIPTION','军威振奋：提升忠诚度、战斗力、宜居度与军事单位生产力。'),
+('zh_Hans_CN','LOC_PARADE_COMBAT_PREVIEW','+{1_Amount} 阅兵鼓舞'),
+('en_US','LOC_PROJECT_MILITARY_PARADE_NAME','Military Parade'),
+('en_US','LOC_PROJECT_MILITARY_PARADE_DESCRIPTION','Requires Early Empire and your combat garrison in the capital center.[NEWLINE]Grants 10 turns of empire-wide Loyalty, Combat Strength and Amenities based on military strength, plus +10% military unit Production. Also awards Great General points and Era Score.[NEWLINE]A Great General in the capital center gives +50% Production toward this project and raises inspiration by one tier. Repeating refreshes effects without stacking.'),
+('en_US','LOC_PARADE_INTERNAL_NAME','Parade eligibility (script managed)'),
+('en_US','LOC_PARADE_BUFF_NAME','Parade Inspiration'),
+('en_US','LOC_PARADE_BUFF_DESCRIPTION','Inspired forces improve Loyalty, Combat Strength, Amenities and military unit Production.'),
+('en_US','LOC_PARADE_COMBAT_PREVIEW','+{1_Amount} Parade Inspiration');
+INSERT OR REPLACE INTO LocalizedText (Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_ACTIVE_STATUS','阅兵鼓舞：剩余{1}回合 · 忠诚度+{2}/回合 · 战斗力+{3} · 宜居度+{4} · 军事生产力+10%'),
+('en_US','LOC_PARADE_ACTIVE_STATUS','Parade: {1} turns · Loyalty +{2}/turn · Combat +{3} · Amenities +{4} · Military Production +10%');
+
+-- Eligibility diagnostics are read-only UI text.
+INSERT OR REPLACE INTO LocalizedText (Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_PERMIT_NAME','阅兵许可（首都驻军）'),
+('en_US','LOC_PARADE_PERMIT_NAME','Parade Permit (Capital Garrison)'),
+('zh_Hans_CN','LOC_PARADE_PERMIT_DESCRIPTION','完成帝国初期且当前首都市中心驻有本国战斗单位时，由脚本授予；不满足条件时撤销。'),
+('en_US','LOC_PARADE_PERMIT_DESCRIPTION','Script-managed permit for the current capital with Early Empire and an own combat garrison.'),
+('zh_Hans_CN','LOC_PARADE_NEED_CAPITAL','阅兵：需要建立首都'),
+('en_US','LOC_PARADE_NEED_CAPITAL','Parade: found your capital'),
+('zh_Hans_CN','LOC_PARADE_NEED_CIVIC','阅兵：需要完成“帝国初期”'),
+('en_US','LOC_PARADE_NEED_CIVIC','Parade: research Early Empire'),
+('zh_Hans_CN','LOC_PARADE_NEED_GARRISON','阅兵：需要本国战斗单位进入首都市中心'),
+('en_US','LOC_PARADE_NEED_GARRISON','Parade: move your combat unit into the capital center'),
+('zh_Hans_CN','LOC_PARADE_WAIT_PERMIT','阅兵：驻军条件已满足，等待许可同步；可尝试进入下一回合'),
+('en_US','LOC_PARADE_WAIT_PERMIT','Parade: waiting for permit sync; advance to your next turn if needed'),
+('zh_Hans_CN','LOC_PARADE_ENGINE_BLOCKED','阅兵：许可已生效；若项目未在生产却仍无法选择，请提供日志'),
+('en_US','LOC_PARADE_ENGINE_BLOCKED','Parade: permit active; if not already in production and still unavailable, inspect logs'),
+('zh_Hans_CN','LOC_PARADE_AVAILABLE','阅兵：首都已具备条件，可在城市生产的“项目”中选择'),
+('en_US','LOC_PARADE_AVAILABLE','Parade available: select it under Projects in your capital');
+
+INSERT OR REPLACE INTO LocalizedText (Language,Tag,Text) VALUES ('zh_Hans_CN','LOC_PARADE_DATA_MISSING','阅兵：项目数据库未加载，请检查日志'),('en_US','LOC_PARADE_DATA_MISSING','Parade project data missing: inspect logs');
+
+-- v3.8 presentation strings
+INSERT OR REPLACE INTO LocalizedText (Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_CLOCK_TOOLTIP','阅兵鼓舞[NEWLINE]战斗力 +{1}[NEWLINE]剩余 {2} 回合（与帝国鼓舞同时到期）'),
+('en_US','LOC_PARADE_CLOCK_TOOLTIP','Parade Inspiration[NEWLINE]Combat Strength +{1}[NEWLINE]{2} turns remaining; expires with the empire bonus'),
+('zh_Hans_CN','LOC_PARADE_FORMER_CAPITAL','原阅兵城市'),
+('en_US','LOC_PARADE_FORMER_CAPITAL','Former parade city'),
+('zh_Hans_CN','LOC_PARADE_CELEBRATION_FIRST','盛 大 阅 兵'),
+('en_US','LOC_PARADE_CELEBRATION_FIRST','GRAND MILITARY PARADE'),
+('zh_Hans_CN','LOC_PARADE_CELEBRATION_REPEAT','阅 兵 再 启'),
+('en_US','LOC_PARADE_CELEBRATION_REPEAT','MILITARY PARADE RENEWED'),
+('zh_Hans_CN','LOC_PARADE_CELEBRATION_REPLAY','阅 兵 纪 录'),
+('en_US','LOC_PARADE_CELEBRATION_REPLAY','PARADE RECORD'),
+('zh_Hans_CN','LOC_PARADE_PARTICIPANTS','首都周边参阅部队：{1} 支（展示最多8支）'),
+('en_US','LOC_PARADE_PARTICIPANTS','Nearby forces: {1} units (up to 8 shown)'),
+('zh_Hans_CN','LOC_PARADE_CELEBRATION_REWARD','军事分 {1}  ·  战斗力 +{2}  ·  忠诚度 +{3}/回合  ·  宜居度 +{4}[NEWLINE]军事生产力 +10%  ·  剩余 {5} 回合'),
+('en_US','LOC_PARADE_CELEBRATION_REWARD','Military strength {1} · Combat +{2} · Loyalty +{3}/turn · Amenities +{4}[NEWLINE]Military Production +10% · {5} turns remaining'),
+('zh_Hans_CN','LOC_PARADE_CELEBRATION_TURN','第 {1} 回合完成'),
+('en_US','LOC_PARADE_CELEBRATION_TURN','Completed on turn {1}'),
+('zh_Hans_CN','LOC_PARADE_CELEBRATION_CLOSE','检 阅 结 束'),
+('en_US','LOC_PARADE_CELEBRATION_CLOSE','Conclude Review');
+
+INSERT OR REPLACE INTO LocalizedText (Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_SOUND_TEST','重播配乐'),
+('en_US','LOC_PARADE_SOUND_TEST','Replay music'),
+('zh_Hans_CN','LOC_PARADE_REPLAY_CAMERA','重播镜头'),
+('en_US','LOC_PARADE_REPLAY_CAMERA','Replay camera');
+
+INSERT OR REPLACE INTO LocalizedText (Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_GENERAL_NAME','大将军检阅'),
+('en_US','LOC_PARADE_GENERAL_NAME','General Review'),
+('zh_Hans_CN','LOC_PARADE_GENERAL_DESCRIPTION','大将军在当前首都市中心且阅兵资格有效时，阅兵项目生产力+50%。'),
+('en_US','LOC_PARADE_GENERAL_DESCRIPTION','+50% Production toward Military Parade while a Great General is in the eligible capital center.'),
+('zh_Hans_CN','LOC_PARADE_GENERAL_AWARD','本次获得大将军点数 +{1}'),
+('en_US','LOC_PARADE_GENERAL_AWARD','Great General points awarded: +{1}'),
+('zh_Hans_CN','LOC_PARADE_GENERAL_TIER','大将军检阅：第{1}档 → 第{2}档（最高五档）'),
+('en_US','LOC_PARADE_GENERAL_TIER','General review: tier {1} → {2} (maximum 5)'),
+('zh_Hans_CN','LOC_PARADE_SOUND_CHOICE','试听 {1}/{2}'),
+('en_US','LOC_PARADE_SOUND_CHOICE','Sound {1}/{2}');
+
+INSERT OR REPLACE INTO LocalizedText (Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_AVAILABLE_GENERAL','阅兵：可进行 · 大将军检阅：阅兵生产力+50%，完成奖励提升一档（最高五档）'),
+('en_US','LOC_PARADE_AVAILABLE_GENERAL','Parade available: general supervision gives +50% project Production and +1 reward tier (max 5)');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_FOCUS_NO_GARRISON','首都当前没有军事驻军'),
+('en_US','LOC_PARADE_FOCUS_NO_GARRISON','No military garrison currently in the capital');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_CEREMONY_TITLE',' {1} · 第{2}次盛大阅兵'),
+('en_US','LOC_PARADE_CEREMONY_TITLE','{1} · Grand Parade No. {2}'),
+('zh_Hans_CN','LOC_PARADE_REVIEW_ARMY','诸军列阵 · 首都检阅'),
+('en_US','LOC_PARADE_REVIEW_ARMY','Army assembled · Capital review'),
+('zh_Hans_CN','LOC_PARADE_REVIEW_SIGNATURE','{1} · 主持检阅'),
+('en_US','LOC_PARADE_REVIEW_SIGNATURE','Reviewed by {1}'),
+('zh_Hans_CN','LOC_PARADE_SKIP_TO_AWARD','跳至授赏'),
+('en_US','LOC_PARADE_SKIP_TO_AWARD','Skip to awards'),
+('zh_Hans_CN','LOC_PARADE_STAGE_OPEN','开典 · 举国同庆'),
+('en_US','LOC_PARADE_STAGE_OPEN','Opening · A nation celebrates'),
+('zh_Hans_CN','LOC_PARADE_STAGE_REVIEW','检阅 · 三军肃立'),
+('en_US','LOC_PARADE_STAGE_REVIEW','Review · The army stands ready'),
+('zh_Hans_CN','LOC_PARADE_STAGE_QUOTE','宣告 · 以铭壮志'),
+('en_US','LOC_PARADE_STAGE_QUOTE','Proclamation · Words to remember'),
+('zh_Hans_CN','LOC_PARADE_STAGE_AWARD','礼成 · 国威振奋'),
+('en_US','LOC_PARADE_STAGE_AWARD','Ceremony complete · National pride'),
+('zh_Hans_CN','LOC_PARADE_RANK_1','军容整肃'),
+('en_US','LOC_PARADE_RANK_1','Disciplined Ranks'),
+('zh_Hans_CN','LOC_PARADE_RANK_2','士气振奋'),
+('en_US','LOC_PARADE_RANK_2','Spirits Raised'),
+('zh_Hans_CN','LOC_PARADE_RANK_3','军威赫赫'),
+('en_US','LOC_PARADE_RANK_3','Mighty Host'),
+('zh_Hans_CN','LOC_PARADE_RANK_4','威震四方'),
+('en_US','LOC_PARADE_RANK_4','Far-Reaching Might'),
+('zh_Hans_CN','LOC_PARADE_RANK_5','国威远扬'),
+('en_US','LOC_PARADE_RANK_5','Glory of the Nation'),
+('zh_Hans_CN','LOC_PARADE_NO_GENERAL','首都诸军'),
+('en_US','LOC_PARADE_NO_GENERAL','Capital forces');
+
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES
+('zh_Hans_CN','LOC_PARADE_ERA_FIRST_TITLE','旌旗耀日，国威初扬'),
+('en_US','LOC_PARADE_ERA_FIRST_TITLE','Banners Aloft, A Nation Rises'),
+('zh_Hans_CN','LOC_PARADE_ERA_REPEAT_TITLE','金鼓再振，国威重光'),
+('en_US','LOC_PARADE_ERA_REPEAT_TITLE','Drums Resound, Glory Renewed'),
+('zh_Hans_CN','LOC_PARADE_ERA_FIRST_BODY','旌旗蔽日，铁甲凝霜。[NEWLINE]六军肃列，万众昂扬。[NEWLINE]陈师帝阙，威震八荒。[NEWLINE]山河永固，国祚隆昌。'),
+('en_US','LOC_PARADE_ERA_FIRST_BODY','Banners shade the sun; bright armor gleams.[NEWLINE]Ranks stand firm; the nation lifts its dreams.[NEWLINE]Before the capital, our strength is shown.[NEWLINE]May lasting peace and lasting glory crown our home.'),
+('zh_Hans_CN','LOC_PARADE_ERA_REPEAT_BODY','岁序更始，旌旆重张。[NEWLINE]三军砺刃，万众图强。[NEWLINE]承先启后，奋武扬光。[NEWLINE]长缨在手，永镇八荒。'),
+('en_US','LOC_PARADE_ERA_REPEAT_BODY','An era dawns; our standards rise again.[NEWLINE]Blades are honed, and hope inspires our ranks.[NEWLINE]We honor those before and strive anew.[NEWLINE]Our watch endures across the lands we guard.'),
+('zh_Hans_CN','LOC_PARADE_ERA_GENERAL_BODY','大将秉钺，列阵中央。[NEWLINE]一呼雷动，万甲生光。[NEWLINE]进如山岳，止若金汤。[NEWLINE]扬威四海，卫我封疆。'),
+('en_US','LOC_PARADE_ERA_GENERAL_BODY','The general bears the axe before the line.[NEWLINE]One call rings out; ten thousand armors shine.[NEWLINE]Our march is mighty, our defenses strong.[NEWLINE]We guard these lands, where our people belong.'),
+('zh_Hans_CN','LOC_PARADE_ERA_GAIN','本次时代分 +{1}'),
+('en_US','LOC_PARADE_ERA_GAIN','Era Score awarded: +{1}'),
+('zh_Hans_CN','LOC_PARADE_ERA_ALREADY','本次时代分未发放'),
+('en_US','LOC_PARADE_ERA_ALREADY','No Era Score awarded for this completion'),
+('zh_Hans_CN','LOC_PARADE_ERA_UNAVAILABLE','本次时代分未发放'),
+('en_US','LOC_PARADE_ERA_UNAVAILABLE','No Era Score awarded this time');
+
+
+===== Parade_UI.lua =====
+-- UI context. The military-strength API is UI-only.
+print('[ParadeV38][UI] BOOT')
+local presentationHidden=false
+local project=GameInfo.Projects['PROJECT_MILITARY_PARADE']
+ExposedMembers.ParadeV3UI={}
+function ExposedMembers.ParadeV3UI.GetMilitaryScore(playerID)
+    local player=Players[playerID]
+    if not player then error('Unknown player '..tostring(playerID)) end
+    local stats=player:GetStats()
+    if not stats.GetMilitaryStrengthWithoutTreasury then
+        error('GetMilitaryStrengthWithoutTreasury unavailable in UI')
+    end
+    return stats:GetMilitaryStrengthWithoutTreasury()
+end
+local iconsChecked=false
+local function CheckIcons()
+    if iconsChecked or not IconManager then return end
+    iconsChecked=true
+    for _,name in ipairs({'ICON_PROJECT_MILITARY_PARADE','ICON_PROJECT_MILITARY_PARADE_COLOR'}) do
+        for _,size in ipairs({22,30,32,38,50}) do
+            local ok,x,y,sheet=pcall(function() return IconManager:FindIconAtlas(name,size) end)
+            print('[ParadeV38][ICON] '..name..' size='..size..' found='..tostring(ok and sheet~=nil)
+                ..' texture='..tostring(sheet)..' x='..tostring(x)..' y='..tostring(y))
+        end
+    end
+end
+local lastDiagnostic=''
+local function EligibilityStatus(player)
+    if not project then return 'LOC_PARADE_DATA_MISSING' end
+    local civic=GameInfo.Civics['CIVIC_EARLY_EMPIRE']
+    local permit=GameInfo.Buildings['BUILDING_PARADE_ELIGIBLE']
+    local capital=player:GetCities():GetCapitalCity()
+    local hasCivic=civic and player:GetCulture():HasCivic(civic.Index) or false
+    if not capital then return 'LOC_PARADE_NEED_CAPITAL' end
+    local hasMilitary=false
+    for _,unit in player:GetUnits():Members() do
+        local row=GameInfo.Units[unit:GetType()]
+        if row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
+            and unit:GetX()==capital:GetX() and unit:GetY()==capital:GetY() then
+            hasMilitary=true;break
+        end
+    end
+    local hasPermit=permit and capital:GetBuildings():HasBuilding(permit.Index) or false
+    local canProduce=false
+    if project and project.Hash then
+        local ok,value=pcall(function() return capital:GetBuildQueue():CanProduce(project.Hash,false) end)
+        canProduce=ok and value or false
+    end
+    local xp2=GameInfo.Projects_XP2 and GameInfo.Projects_XP2[project.ProjectType] or nil
+    local diag='capital='..tostring(capital:GetID())..' civic='..tostring(hasCivic)
+        ..' ownGarrison='..tostring(hasMilitary)..' permit='..tostring(hasPermit)
+        ..' canProduce='..tostring(canProduce)..' xp2Required='..tostring(xp2 and xp2.RequiredBuilding)
+    if diag~=lastDiagnostic then print('[ParadeV38][UI] GATE '..diag);lastDiagnostic=diag end
+    if not hasCivic then return 'LOC_PARADE_NEED_CIVIC' end
+    if not hasMilitary then return 'LOC_PARADE_NEED_GARRISON' end
+    if not hasPermit then return 'LOC_PARADE_WAIT_PERMIT' end
+    if not canProduce then return 'LOC_PARADE_ENGINE_BLOCKED' end
+    local general=GameInfo.Buildings['BUILDING_PARADE_GENERAL']
+    if general and capital:GetBuildings():HasBuilding(general.Index) then return 'LOC_PARADE_AVAILABLE_GENERAL' end
+    return 'LOC_PARADE_AVAILABLE'
+end
+local function UpdateStatus()
+    if presentationHidden then Controls.ParadeStatus:SetHide(true);return end
+    local bridge=ExposedMembers.ParadeV3Gameplay
+    if not bridge or not bridge.Ready then Controls.ParadeStatus:SetHide(true);return end
+    CheckIcons()
+    local id=Game.GetLocalPlayer()
+    if type(id)~='number' or id<0 then Controls.ParadeStatus:SetHide(true);return end
+    local player=Players[id]
+    if not player then Controls.ParadeStatus:SetHide(true);return end
+    local endValue=player:GetProperty('PARADE_V3_END')
+    local tierValue=player:GetProperty('PARADE_V3_TIER')
+    local ending=tonumber(endValue) or -1
+    local tier=tonumber(tierValue) or 0
+    local remaining=ending-Game.GetCurrentGameTurn()
+    if remaining<=0 or tier<=0 then
+        Controls.ParadeStatus:SetText(Locale.Lookup(EligibilityStatus(player)))
+        Controls.ParadeStatus:SetHide(false);return
+    end
+    for row in GameInfo.ParadeTiers() do
+        if row.Tier==tier then
+            Controls.ParadeStatus:SetText(Locale.Lookup('LOC_PARADE_ACTIVE_STATUS',
+                remaining,row.Loyalty,row.Combat,row.Amenities))
+            Controls.ParadeStatus:SetHide(false)
+            return
+        end
+    end
+end
+-- Cancel every queued parade when the actual city conditions fail. UI uses
+-- the same native BUILD / VALUE_REMOVE_AT operation as ProductionHelper.lua.
+-- Never call Gameplay mutation closures across ExposedMembers.
+local cleaning=false
+local function CleanInvalidQueue()
+    local bridge=ExposedMembers.ParadeV3Gameplay
+    if cleaning or not bridge or not bridge.Ready or not project then return end
+    local id=Game.GetLocalPlayer()
+    if type(id)~='number' or id<0 then return end
+    local player=Players[id]
+    if not player then return end
+    local civic=GameInfo.Civics['CIVIC_EARLY_EMPIRE']
+    local capital=player:GetCities():GetCapitalCity()
+    local unlocked=civic and player:GetCulture():HasCivic(civic.Index)
+    cleaning=true
+    local ok,err=pcall(function()
+        for _,city in player:GetCities():Members() do
+            local allowed=unlocked and capital and city:GetID()==capital:GetID()
+            local garrison=false
+            if allowed then
+                for _,unit in player:GetUnits():Members() do
+                    local row=GameInfo.Units[unit:GetType()]
+                    if row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
+                        and unit:GetX()==city:GetX() and unit:GetY()==city:GetY() then
+                        garrison=true;break
+                    end
+                end
+            end
+            if not allowed or not garrison then
+                local queue=city:GetBuildQueue()
+                -- Reverse order preserves indices; other production is untouched.
+                for i=queue:GetSize()-1,0,-1 do
+                    local entry=queue:GetAt(i)
+                    local row=entry and entry.ProjectType~=nil and GameInfo.Projects[entry.ProjectType]
+                    if row and row.ProjectType==project.ProjectType then
+                        local params={}
+                        params[CityOperationTypes.PARAM_INSERT_MODE]=CityOperationTypes.VALUE_REMOVE_AT
+                        params[CityOperationTypes.PARAM_QUEUE_LOCATION]=i
+                        CityManager.RequestOperation(city,CityOperationTypes.BUILD,params)
+                        print('[ParadeV38][UI] REMOVE invalid parade city='..city:GetID()..' slot='..i)
+                    end
+                end
+            end
+        end
+    end)
+    cleaning=false
+    if not ok then print('[ParadeV38][UI] QUEUE ERROR: '..tostring(err)) end
+end
+local function Refresh()
+    CleanInvalidQueue()
+    UpdateStatus()
+end
+local function OnCompleted(playerID,cityID,projectID,buildingIndex,x,y,cancelled)
+    if project and (projectID==project.Index or projectID==project.Hash or projectID==project.ProjectType) then
+        print('[ParadeV38][UI] Project completion reported, player='..tostring(playerID))
+    end
+    UpdateStatus()
+end
+Events.CityProjectCompleted.Add(OnCompleted)
+for _,name in ipairs({'LoadGameViewStateDone','PlayerTurnActivated','TurnBegin',
+    'UnitMoved','UnitMoveComplete','UnitTeleported','UnitAddedToMap','UnitRemovedFromMap',
+    'CityUnitsChanged','CapitalCityChanged','PlayerTurnDeactivated','CityProductionChanged','CivicCompleted','CitySelectionChanged','CityProductionUpdated','BuildingAddedToMap','BuildingRemovedFromMap'}) do
+    if Events[name] then Events[name].Add(Refresh) end
+end
+-- Paired XML/Lua contexts are loaded by AddUserInterfaces.
+ContextPtr:SetInitHandler(function() Refresh() end)
+Refresh()
+print('[ParadeV38][UI] READY military-score bridge')
+
+-- Cleanup runs in this persistent UI context, including when the popup is hidden.
+local cameraRestore=nil
+local function ScheduleCameraRestore(snapshot)
+    cameraRestore={Age=0,Step=1,Wait=0.3,Snapshot=snapshot}
+end
+local function CameraCleanupTick(dt)
+    if not cameraRestore then return end
+    local task=cameraRestore;task.Age=task.Age+dt
+    local s=task.Snapshot
+    -- Phase 1: stay on the review pivot and allow yaw to settle.
+    if task.Step==1 and task.Age<task.Wait then pcall(UI.SpinMap,0,0);return end
+    if task.Step==1 then
+        pcall(function()
+            UI.SpinMap(0,0)
+            UI.DeselectAllUnits();UI.DeselectAllCities()
+            if s.UnitOwner and s.UnitID then
+                local player=Players[s.UnitOwner]
+                local unit=player and player:GetUnits():FindID(s.UnitID)
+                if unit then UI.SelectUnit(unit) end
+            elseif s.CityOwner and s.CityID then
+                local player=Players[s.CityOwner]
+                local city=player and player:GetCities():FindID(s.CityID)
+                if city then UI.SelectCity(city) end
+            end
+            if s.X and s.Y then UI.LookAtPlot(s.X,s.Y) end
+            if s.Zoom then UI.SetMapZoom(s.Zoom,0,0) end
+        end)
+        task.Step=2;task.Wait=task.Age+0.3
+        return
+    end
+    if task.Age>=task.Wait and task.Step==2 then
+        if s.X and s.Y then pcall(UI.LookAtPlot,s.X,s.Y) end
+        if s.Zoom then pcall(UI.SetMapZoom,s.Zoom,0,0) end
+        pcall(UI.SpinMap,0,0);task.Step=3;task.Wait=task.Age+0.3
+        return
+    end
+    if task.Step==3 and task.Age>=task.Wait then
+        pcall(UI.SpinMap,0,0);cameraRestore=nil
+        print('[ParadeV312][CAMERA] restore complete: yaw settled before selection/focus')
+    end
+end
+-- A new completed parade must not wait on an old asynchronous restore flag.
+local function FinishCameraRestoreNow()
+    if not cameraRestore then return nil end
+    local snapshot=cameraRestore.Snapshot
+    cameraRestore=nil
+    pcall(UI.SpinMap,0,0)
+    if snapshot.X and snapshot.Y then pcall(UI.LookAtPlot,snapshot.X,snapshot.Y) end
+    if snapshot.Zoom then pcall(UI.SetMapZoom,snapshot.Zoom,0,0) end
+    return snapshot
+end
+local diagnostic=ExposedMembers.MilitaryParadeDiagnostic or {}
+ExposedMembers.MilitaryParadeDiagnostic=diagnostic
+local function DiagnosticText()
+    local db='?'
+    if GameInfo.ParadeBuildInfo then
+        for row in GameInfo.ParadeBuildInfo() do db=row.Version;break end
+    end
+    local hook=diagnostic.TimelineBuild or '未加载'
+    return '3.20 B1 | 数据 '..db..' | 年表扩展 '..hook..' | '..(diagnostic.Stage or '待阅兵')..(diagnostic.ZoomActual and (' | 检阅缩放 '..string.format('%.4f',diagnostic.ZoomActual)) or '')
+end
+local function UpdateDiagnostic()
+    Controls.BuildStatus:SetText(DiagnosticText())
+end
+local pendingAwardTimelines={}
+local queuedAwardTimelines={}
+local function QueueAwardTimeline(data)
+    if type(data)~='table' or data.Replay or (data.EraScore or 0)<=0 then return end
+    local key=tostring(data.Owner)..':'..tostring(data.Count)
+    if queuedAwardTimelines[key] then return end
+    queuedAwardTimelines[key]=true
+    pendingAwardTimelines[#pendingAwardTimelines+1]={Owner=data.Owner,Count=data.Count}
+end
+local function PumpAwardTimelines(dt)
+    local presentation=ExposedMembers.ParadeV38Presentation
+    if presentation and presentation.IsActive and presentation.IsActive() then return end
+    local timeline=ExposedMembers.ParadeV316Timeline
+    if #pendingAwardTimelines>0 then
+        local data=pendingAwardTimelines[1]
+        local suppressed=Options and Options.GetAppOption and Options.GetAppOption('Debug','SuppressInfoPopups')==1
+        local accepted=false
+        if timeline and timeline.Ready then
+            local ok,result=pcall(timeline.RequestAuto,data.Owner,data.Count)
+            accepted=ok and result==true
+        end
+        if suppressed then
+            diagnostic.Stage='信息弹窗已禁用'
+            table.remove(pendingAwardTimelines,1)
+        else
+            -- This is the exact event fired by the stock timeline toolbar.
+            -- Send it once even if the extension bridge was not loaded by Build.
+            diagnostic.TimelineCount=data.Count
+            local ok,err=pcall(function()LuaEvents.PrideMoments_ToggleTimeline(false)end)
+            if ok then
+                diagnostic.Stage='已发原版年表入口 # '..data.Count
+                if not accepted then pcall(UI.PlaySound,'Pride_Moment') end
+                table.remove(pendingAwardTimelines,1)
+            else
+                diagnostic.Stage='原版入口失败: '..tostring(err)
+            end
+        end
+    end
+    if timeline and timeline.Pump then
+        local ok,err=pcall(timeline.Pump,dt)
+        if not ok then diagnostic.Stage='年表处理失败: '..tostring(err) end
+    end
+end
+-- Presentation bridge stays in UI. Gameplay publishes only saved properties.
+ExposedMembers.ParadeV38UI={ScheduleCameraRestore=ScheduleCameraRestore,FinishCameraRestoreNow=FinishCameraRestoreNow,QueueAwardTimeline=QueueAwardTimeline,DiagnosticText=DiagnosticText,
+    IsCameraRestoring=function()return cameraRestore~=nil end,
+    CancelCameraRestore=function()cameraRestore=nil end,SetPresentationHidden=function(hidden)
+    presentationHidden=hidden
+    Controls.ParadeStatus:SetHide(hidden)
+    if not hidden then UpdateStatus() end
+end,BuildClock=function(parent)
+    local badge={}
+    ContextPtr:BuildInstanceForControl('ParadeClockInstance',badge,parent)
+    return badge
+end}
+local observedCount=nil
+local lastWaitingCount=nil
+local lastFailedCount=nil
+local presentationClock=0
+local retryAfter=0
+local function ReadPresentation(player,id)
+    local function number(key,default)
+        local value=player:GetProperty(key)
+        return tonumber(value) or default
+    end
+    local function textProperty(key)
+        local value=player:GetProperty(key)
+        return type(value)=='string' and value or ''
+    end
+    local count=number('PARADE_V35_COUNT',0)
+    if count<=0 then return nil end
+    local city=player:GetCities():FindID(number('PARADE_V35_CITY',-1))
+    local tier=number('PARADE_V3_TIER',0)
+    local row=nil
+    for t in GameInfo.ParadeTiers() do if t.Tier==tier then row=t;break end end
+    if not row then return nil end
+    return {Owner=id,Count=count,CityID=number('PARADE_V35_CITY',-1),
+        CityName=textProperty('PARADE_V312_CITY_NAME')~='' and Locale.Lookup(textProperty('PARADE_V312_CITY_NAME')) or (city and Locale.Lookup(city:GetName()) or Locale.Lookup('LOC_PARADE_FORMER_CAPITAL')),
+        EraName=textProperty('PARADE_V312_ERA_NAME'),GeneralName=textProperty('PARADE_V312_GENERAL_NAME'),
+        X=city and city:GetX(),Y=city and city:GetY(),Score=number('PARADE_V3_SCORE',0),
+        Tier=tier,Loyalty=row.Loyalty,Combat=row.Combat,Amenities=row.Amenities,
+        QuoteID=number('PARADE_V35_QUOTE',1),Turn=number('PARADE_V35_TURN',0),
+        Ending=number('PARADE_V3_END',-1),GeneralReviewed=number('PARADE_V38_GENERAL',0)==1,
+        BaseTier=number('PARADE_V38_BASE_TIER',tier),GeneralPoints=number('PARADE_V38_GENERAL_POINTS',0),
+        EraScore=number('PARADE_V313_ERA_SCORE',0),EraStatus=number('PARADE_V313_ERA_STATUS',3)}
+end
+local function CheckPresentation()
+    local bridge=ExposedMembers.ParadeV3Gameplay
+    if not bridge or not bridge.Ready then return end
+    local id=Game.GetLocalPlayer()
+    if type(id)~='number' or id<0 or not Players[id] then return end
+    local data=ReadPresentation(Players[id],id)
+    local count=data and data.Count or 0
+    -- Establish a load baseline: reopening a save never replays old completions.
+    if observedCount==nil then observedCount=count;print('[ParadeV38][UI] BASELINE count='..count) end
+    if count>observedCount then
+        local presentation=ExposedMembers.ParadeV38Presentation
+        if presentation and presentation.Ready and presentation.Show then
+            if lastFailedCount~=count or presentationClock>=retryAfter then
+                print('[ParadeV38][UI] PRESENT count='..count)
+                local ok,accepted=pcall(presentation.Show,data)
+                if ok and accepted==true then
+                    observedCount=count
+                    lastFailedCount=nil
+                else
+                    lastFailedCount=count
+                    retryAfter=presentationClock+1.5
+                    print('[ParadeV38][UI] PRESENT FAILED count='..count..' detail='..tostring(accepted)..'; automatic retry in 1.5 seconds')
+                end
+            end
+        elseif lastWaitingCount~=count then
+            lastWaitingCount=count
+            print('[ParadeV38][UI] WAIT PRESENTATION count='..count..'; celebration context not ready')
+        end
+    end
+end
+local presentationTimer=0
+ContextPtr:SetUpdate(function(dt)
+    presentationClock=presentationClock+dt
+    UpdateDiagnostic()
+    CameraCleanupTick(dt)
+    local presentation=ExposedMembers.ParadeV38Presentation
+    if presentation and presentation.Pump then presentation.Pump(dt) end
+    PumpAwardTimelines(dt)
+    local audio=ExposedMembers.ParadeV311Audio
+    if audio and audio.Tick then audio.Tick(dt) end
+    presentationTimer=presentationTimer+dt
+    if presentationTimer<0.5 then return end
+    presentationTimer=0
+    CheckPresentation()
+    LuaEvents.ParadeV38_RefreshClocks()
+end)
+if Events.PlayerTurnActivated then Events.PlayerTurnActivated.Add(CheckPresentation) end
+if Events.GameCoreEventPublishComplete then Events.GameCoreEventPublishComplete.Add(CheckPresentation) end
+
+if Events.CityProjectCompleted then Events.CityProjectCompleted.Add(CheckPresentation) end
+
+
+===== Parade_UI.xml =====
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="Parade_UI" Size="parent,parent" ConsumeMouse="0">
+  <Label ID="ParadeStatus" Anchor="C,T" Offset="0,110" Style="FontNormal16"
+    FontStyle="Shadow" ColorSet="BodyTextCool" Hidden="1" String="" />
+  <Label ID="BuildStatus" Anchor="L,B" Offset="20,56" Style="FontNormal12" Color="235,211,153,255" String="3.20 B1" />
+  <Instance Name="ParadeClockInstance">
+    <Box ID="Root" Anchor="C,T" Offset="-36,2" Size="34,23" Color="21,35,48,245" Hidden="1" ConsumeMouse="1">
+      <Label ID="ClockText" Anchor="C,C" Style="FontNormal12" Color="244,211,139,255" String="[ICON_Turn]10" />
+    </Box>
+  </Instance>
+</Context>
+
+
+===== Parade_UnitFlagManager.lua =====
+-- Stock UI extension. Reuse the original flag positioning/visibility and leave
+-- native levy/promotion indicators alone. Our clock is an independent child.
+include('UnitFlagManager.lua')
+if not UnitFlag or not GetUnitFlag then
+    print('[ParadeV38][FLAGS] ERROR: stock unit flags unavailable');return
+end
+local baseStats=UnitFlag.UpdateStats
+local baseDestroy=UnitFlag.destroy
+local function UpdateClock(flag)
+    local instance=flag.m_Instance
+    if not instance or not instance.FlagRoot then return end
+    local badge=instance.ParadeClock
+    local bridge=ExposedMembers.ParadeV3Gameplay
+    local unit=flag:GetUnit()
+    if not bridge or not bridge.Ready or not unit or unit:GetOwner()~=Game.GetLocalPlayer() then
+        if badge then badge.Root:SetHide(true) end
+        return
+    end
+    local player=Players[unit:GetOwner()]
+    local rawEnd=player:GetProperty('PARADE_V3_END')
+    local rawTier=player:GetProperty('PARADE_V3_TIER')
+    local remaining=(tonumber(rawEnd) or -1)-Game.GetCurrentGameTurn()
+    local tier=tonumber(rawTier) or 0
+    local row=GameInfo.Units[unit:GetType()]
+    if remaining<=0 or tier<=0 or not row or ((row.Combat or 0)<=0 and (row.RangedCombat or 0)<=0) then
+        if badge then badge.Root:SetHide(true) end
+        return
+    end
+    local host=ExposedMembers.ParadeV38UI
+    if not badge and host and host.BuildClock then
+        badge=host.BuildClock(instance.FlagRoot)
+        instance.ParadeClock=badge
+    end
+    if not badge then return end
+    local combat=tier
+    for t in GameInfo.ParadeTiers() do if t.Tier==tier then combat=t.Combat;break end end
+    badge.ClockText:SetText('[ICON_Turn]'..tostring(remaining))
+    badge.Root:SetToolTipString(Locale.Lookup('LOC_PARADE_CLOCK_TOOLTIP',combat,remaining))
+    badge.Root:SetHide(false)
+end
+local reportedClockError=false
+local function SafeUpdateClock(flag)
+    local ok,err=pcall(UpdateClock,flag)
+    if not ok and not reportedClockError then
+        reportedClockError=true
+        print('[ParadeV38][FLAGS] CLOCK ERROR: '..tostring(err))
+    end
+end
+function UnitFlag.UpdateStats(self,...)
+    local result=baseStats(self,...)
+    SafeUpdateClock(self)
+    return result
+end
+function UnitFlag.destroy(self,...)
+    if self.m_Instance and self.m_Instance.ParadeClock then
+        pcall(function() self.m_Instance.FlagRoot:DestroyChild(self.m_Instance.ParadeClock.Root) end)
+        self.m_Instance.ParadeClock=nil
+    end
+    return baseDestroy(self,...)
+end
+local function RefreshClocks()
+    local bridge=ExposedMembers.ParadeV3Gameplay
+    if not bridge or not bridge.Ready then return end
+    local id=Game.GetLocalPlayer()
+    if type(id)~='number' or id<0 then return end
+    local player=Players[id]
+    if not player then return end
+    for _,unit in player:GetUnits():Members() do
+        local flag=GetUnitFlag(id,unit:GetID())
+        if flag then SafeUpdateClock(flag) end
+    end
+end
+LuaEvents.ParadeV38_RefreshClocks.Add(RefreshClocks)
+for _,name in ipairs({'PlayerTurnActivated','TurnBegin','UnitAddedToMap','UnitUpgraded',
+    'UnitCaptured','GameCoreEventPublishComplete'}) do
+    if Events[name] then Events[name].Add(RefreshClocks) end
+end
+print('[ParadeV38][FLAGS] READY: independent parade clocks')
+
+
+===== Platforms/Windows/Audio/MilitaryParadeBanks.ini =====
+[Global]
+
+[Menu]
+
+[InGame]
+!MilitaryParade_Internationale_V311_Bank.bnk
+
+[2D]
+
+[3D]
+
+[FMV]
+!MilitaryParade_Internationale_V311_Bank.bnk
+
+
+===== tools/bnktool.py =====
+#!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-only
+"""bnktool: read and build Wwise soundbanks (version 113) as used by Civilization VI. No Wwise installation needed.
+
+  bnktool.py hash NAME                  FNV-1 32-bit id Wwise uses for NAME (case-insensitive): event, bank and object ids
+  bnktool.py dump BANK.bnk              chunks and HIRC object list
+  bnktool.py make-sfx OUTDIR --wav FILE --event NAME --control-from OFFICIAL.bnk --control-source EVENT --chain-from OFFICIAL.bnk
+                                        builds a bank (+ Banks.ini entry) in which event NAME plays FILE (16-bit PCM wav). The sounds hang under a copy of
+                                        the parent mixer chain of an official event (--chain-from, --chain-event); --control-from adds a second event that
+                                        plays a known-good official sound from our bank
+  bnktool.py clone-bank SRC.bnk OUTDIR --bank NAME --rename OLD=NEW
+                                        byte copy of an official bank under a new bank id with renamed events (bisecting aid)
+  bnktool.py extract SRC.bnk OUTDIR --bank NAME --event OLD --new NEW
+                                        minimal bank holding one official event with its sound, parent mixers and media
+
+--section chooses the Banks.ini section (InGame loads at game start; FMV loads on UI.LoadSoundBankGroup(5), handy for reloading without a restart).
+
+Rules a hand-built bank must follow (found by bisecting against official banks, see docs topic 61): the DATA payload starts at a file offset that is a
+multiple of 16 (BKHD is padded), the DIDX media index is sorted by id, HIRC objects are written children first (sounds, mixers bottom to top, actions,
+events), sounds sit under real actor-mixers that route to a real bus. Experimental.
+"""
+import argparse, os, struct, sys, wave
+
+VERSION = 113
+Z = b'\x00'
+
+
+def fnv(name):
+    h = 2166136261
+    for c in name.lower().encode():
+        h = (h * 16777619) & 0xFFFFFFFF
+        h ^= c
+    return h
+
+
+def u32(v): return struct.pack('<I', v & 0xFFFFFFFF)
+
+
+# ---------------------------------------------------------------- reading
+def read_chunks(data):
+    i, out = 0, []
+    while i + 8 <= len(data):
+        tag = data[i:i+4].decode('latin1'); size = struct.unpack_from('<I', data, i + 4)[0]
+        out.append((tag, i + 8, size)); i += 8 + size
+    return out
+
+
+def read_hirc(data):
+    objs = []
+    for tag, off, size in read_chunks(data):
+        if tag == 'HIRC':
+            n = struct.unpack_from('<I', data, off)[0]; q = off + 4
+            for _ in range(n):
+                t = data[q]; s = struct.unpack_from('<I', data, q + 1)[0]
+                objs.append((t, data[q + 5:q + 5 + s])); q += 5 + s
+    return objs
+
+
+HIRC_TYPES = {1: 'settings', 2: 'sound', 3: 'action', 4: 'event', 5: 'random/seq', 6: 'switch', 7: 'actor-mixer', 8: 'bus', 9: 'layer',
+              10: 'music-segment', 11: 'music-track', 12: 'music-switch', 13: 'music-playlist', 14: 'attenuation', 18: 'state', 19: 'fx', 20: 'aux-bus'}
+
+
+def cmd_dump(a):
+    data = open(a.bank, 'rb').read()
+    for tag, off, size in read_chunks(data):
+        extra = ''
+        if tag == 'BKHD':
+            ver, bid = struct.unpack_from('<II', data, off); extra = 'version %d bank id %d' % (ver, bid)
+        print('%-4s offset %-9d size %-9d %s' % (tag, off, size, extra))
+    for t, body in read_hirc(data):
+        print('  %-14s id %-11d %d bytes' % (HIRC_TYPES.get(t, 'type %d' % t), struct.unpack_from('<I', body, 0)[0], len(body)))
+
+
+# ---------------------------------------------------------------- building
+def pcm_wem(wav_path):
+    """Wwise PCM media: RIFF/WAVE with an extensible fmt chunk, like the game's own PCM .wem files."""
+    w = wave.open(wav_path, 'rb')
+    ch, rate, width, frames = w.getnchannels(), w.getframerate(), w.getsampwidth(), w.getnframes()
+    if width != 2: sys.exit('only 16-bit PCM wav is supported')
+    pcm = w.readframes(frames)
+    mask = {1: 4, 2: 3}.get(ch)
+    if mask is None: sys.exit('only mono or stereo wav is supported')
+    fmt = struct.pack('<HHIIHHH', 0xFFFE, ch, rate, rate * ch * 2, ch * 2, 16, 6) + struct.pack('<HI', 0, mask)
+    akd = struct.pack('<ffII', 1.0, 1.0, 0, 0)
+    body = b'WAVE' + b'fmt ' + u32(len(fmt)) + fmt + b'akd ' + u32(len(akd)) + akd + b'JUNK' + u32(12) + bytes(12) + b'data' + u32(len(pcm)) + pcm
+    return b'RIFF' + u32(len(body)) + body
+
+
+# Byte templates from Cinematic_Tutorials_MusicSFX.bnk. Ids/links are patched in by build_bank().
+SOUND_TAIL = bytes.fromhex('000000c000040101000000000000000000')   # after the parent id
+# exact template bodies (hex) from the game
+T_MIXER = '04c6312300000000000000a87723210001000000104100c000000100000000000000000000010000002c261d01'
+T_WORKUNIT = '5f4c193500000037bcb7e2000000000001000000803f00c30000010000000000000000000001000000a8772321'
+
+
+def official_sound(bank_path, sound_id=None, min_media=0):
+    """Pick the smallest in-bank (stream type 0) sound of an official bank: returns (body, media bytes). Used as a control."""
+    data = open(bank_path, 'rb').read()
+    didx, dstart = {}, 0
+    for tag, off, size in read_chunks(data):
+        if tag == 'DIDX':
+            for i in range(size // 12):
+                mid, o, sz = struct.unpack_from('<III', data, off + i * 12); didx[mid] = (o, sz)
+        if tag == 'DATA': dstart = off
+    best = None
+    for t, body in read_hirc(data):
+        if t != 2 or len(body) != 46: continue
+        oid, plugin, stream, src, msz = struct.unpack_from('<IIBII', body, 0)
+        if stream != 0 or src not in didx or body[18:21] != bytes(3): continue
+        o, sz = didx[src]
+        if sound_id is not None and oid != sound_id: continue
+        if sz < min_media: continue
+        if best is None or sz < best[2]: best = (body, data[dstart + o:dstart + o + sz], sz)
+    if best is None: sys.exit('no suitable sound found in ' + bank_path)
+    return best[0], best[1]
+
+
+def official_sound_of_event(bank_path, event):
+    """(sound body, media bytes) of the sound that an official event plays (the event must have one play action targeting an in-bank sound)."""
+    data = open(bank_path, 'rb').read()
+    objs = {struct.unpack_from('<I', body, 0)[0]: (t, body) for t, body in read_hirc(data)}
+    ev = objs[fnv(event)][1]
+    act = objs[struct.unpack_from('<I', ev, 8)[0]][1]
+    snd = objs[struct.unpack_from('<I', act, 6)[0]][1]
+    src = struct.unpack_from('<I', snd, 9)[0]
+    for tag, off, size in read_chunks(data):
+        if tag == 'DIDX':
+            for i in range(size // 12):
+                mid, o, sz = struct.unpack_from('<III', data, off + i * 12)
+                if mid == src: didx = (o, sz)
+        if tag == 'DATA': dstart = off
+    return snd, data[dstart + didx[0]:dstart + didx[0] + didx[1]]
+
+
+def official_chain(bank_path, event):
+    """Bodies of the actor-mixers above the sound that an official event plays (bottom to top), to be reused as the parent chain of our own sounds."""
+    data = open(bank_path, 'rb').read()
+    objs = {struct.unpack_from('<I', body, 0)[0]: (t, body) for t, body in read_hirc(data)}
+    ev = objs[fnv(event)][1]
+    act = objs[struct.unpack_from('<I', ev, 8)[0]][1]
+    snd = objs[struct.unpack_from('<I', act, 6)[0]][1]
+    chain, parent = [], struct.unpack_from('<I', snd, 25)[0]
+    while parent:
+        body = objs[parent][1]
+        chain.append(body)
+        parent = mixer_parent(body)[0]
+    return chain
+
+
+def build_bank(name, voices, align=16, chain=None):
+    """voices: list of dicts {event, wem, body (optional: official sound body to clone)}.
+    Parent objects: our own simple work unit > mixer, or (chain=official_chain(...)) a copy of an official parent chain with new ids."""
+    bank_id = fnv(name)
+    mixer_id = fnv(name + ('/chain0' if chain else '/mixer'))
+    wu_id = fnv(name + '/workunit')
+    objs, media, sound_ids, ids = [], [], [], {'bank': bank_id, 'events': {}}
+    sounds_l, actions_l, events_l = [], [], []   # official banks list children before their parents: sounds, mixers (bottom to top), actions, events
+    for i, v in enumerate(voices):
+        media_id = fnv('%s/media%d' % (name, i)); sound_id = fnv('%s/sound%d' % (name, i)); action_id = fnv('%s/play%d' % (name, i))
+        wem = v['wem']
+        if v.get('body'):
+            sb = bytearray(v['body'])
+            sb[0:4] = u32(sound_id); sb[9:13] = u32(media_id); sb[25:29] = u32(mixer_id)
+            if 'plugin' in v: sb[4:8] = u32(v['plugin']); sb[13:17] = u32(len(wem))   # same sound object, other codec (e.g. PCM)
+            sound = bytes(sb)
+        else:
+            sound = u32(sound_id) + u32(0x00010001) + Z + u32(media_id) + u32(len(wem)) + Z + bytes(3) + u32(0) + u32(mixer_id) + SOUND_TAIL
+        action = u32(action_id) + b'\x03\x04' + u32(sound_id) + bytes(3) + b'\x04' + u32(bank_id)
+        evt = u32(fnv(v['event'])) + u32(1) + u32(action_id)
+        sounds_l.append((2, sound)); actions_l.append((3, action)); events_l.append((4, evt))
+        media.append((media_id, wem)); sound_ids.append(sound_id); ids['events'][v['event']] = fnv(v['event'])
+    if chain:
+        cids = [fnv('%s/chain%d' % (name, i)) for i in range(len(chain))]
+        parents = []
+        for i, body in enumerate(chain):
+            head, _ = split_children(body)
+            h = bytearray(head)
+            h[0:4] = u32(cids[i])
+            orig_parent, pq = mixer_parent(body)
+            h[pq:pq + 4] = u32(cids[i + 1] if i + 1 < len(cids) else orig_parent)
+            kids = sound_ids if i == 0 else [cids[i - 1]]
+            parents.append((7, bytes(h) + u32(len(kids)) + b''.join(u32(x) for x in kids)))
+        objs = sounds_l + parents + actions_l + events_l
+    else:
+        mixer = bytearray(bytes.fromhex(T_MIXER)[:-8])
+        mixer[0:4] = u32(mixer_id); mixer[11:15] = u32(wu_id); mixer[18:22] = struct.pack('<f', 0.0)
+        mixer = bytes(mixer) + u32(len(sound_ids)) + b''.join(u32(x) for x in sound_ids)
+        wu = bytearray(bytes.fromhex(T_WORKUNIT))
+        wu[0:4] = u32(wu_id); wu[-4:] = u32(mixer_id)
+        objs = sounds_l + [(7, mixer), (7, bytes(wu))] + actions_l + events_l
+    return assemble(name, objs, media, align), ids
+
+
+def assemble(name, objs, media, align=16):
+    """objs: [(hirc type, body)], media: [(media id, bytes)] -> bank file bytes."""
+    bank_id = fnv(name)
+    hirc = u32(len(objs)) + b''.join(bytes([t]) + u32(len(b)) + b for t, b in objs)
+    data, entries = b'', []
+    for mid, wem in media:
+        entries.append((mid, len(data), len(wem)))
+        data += wem + bytes((-len(wem)) % align)
+    # the media index is sorted by id in official banks (Wwise looks media up by binary search)
+    didx = b''.join(u32(m) + u32(o) + u32(s) for m, o, s in sorted(entries))
+    bkhd = u32(VERSION) + u32(bank_id) + u32(0) + u32(0) + u32(4)
+    def chunk(tag, body): return tag.encode() + u32(len(body)) + body
+    if not media:   # banks without media have no DIDX / DATA chunks
+        return chunk('BKHD', bkhd + u32(0)) + chunk('HIRC', hirc)
+    # Official banks start the DATA payload at a file offset that is a multiple of 16: Wwise pads the BKHD tail to get there.
+    while (8 + len(bkhd) + 8 + len(didx) + 8) % align:
+        bkhd += u32(0)
+    return chunk('BKHD', bkhd) + chunk('DIDX', didx) + chunk('DATA', data) + chunk('HIRC', hirc)
+
+
+def split_children(body):
+    """Actor-mixer body -> (head, [child ids]); the child list is the tail: u32 count + ids."""
+    for k in range(1, 400):
+        pos = len(body) - 4 - 4 * k
+        if pos >= 0 and struct.unpack_from('<I', body, pos)[0] == k: return body[:pos], [struct.unpack_from('<I', body, pos + 4 + 4 * i)[0] for i in range(k)]
+    sys.exit('cannot find the child list')
+
+
+def mixer_parent(body):
+    """DirectParentID of an actor-mixer: id, ovFx, nfx, [bitsBypass + 7 bytes per fx], ovAttach, bus, parent."""
+    q = 4; q += 1; nfx = body[q]; q += 1
+    if nfx: q += 1 + 7 * nfx
+    q += 1 + 4
+    return struct.unpack_from('<I', body, q)[0], q
+
+
+def cmd_extract(a):
+    """Minimal bank holding one official event: event, play action, sound, and the sound's real parent mixers (child lists trimmed), plus its media."""
+    data = open(a.src, 'rb').read()
+    objs = {struct.unpack_from('<I', body, 0)[0]: (t, body) for t, body in read_hirc(data)}
+    didx, dstart = {}, 0
+    for tag, off, size in read_chunks(data):
+        if tag == 'DIDX':
+            for i in range(size // 12):
+                mid, o, sz = struct.unpack_from('<III', data, off + i * 12); didx[mid] = (o, sz)
+        if tag == 'DATA': dstart = off
+    ev = objs[fnv(a.event)][1]
+    act_id = struct.unpack_from('<I', ev, 8)[0]
+    act = objs[act_id][1]
+    sound_id = struct.unpack_from('<I', act, 6)[0]
+    snd = objs[sound_id][1]
+    src = struct.unpack_from('<I', snd, 9)[0]
+    out = [(4, struct.pack('<II', fnv(a.new), 1) + u32(act_id)), (3, act), (2, snd)]
+    child, parent = sound_id, struct.unpack_from('<I', snd, 25)[0]
+    while parent:
+        t, body = objs[parent]
+        head, kids = split_children(body)
+        body = head + u32(1) + u32(child)
+        out.append((t, body))
+        child = parent
+        parent = mixer_parent(body)[0]
+    o, sz = didx[src]
+    blob = assemble(a.bank, out, [(src, data[dstart + o:dstart + o + sz])])
+    os.makedirs(a.outdir, exist_ok=True)
+    open(os.path.join(a.outdir, a.bank + '.bnk'), 'wb').write(blob)
+    ini_path = os.path.join(a.outdir, a.ini)
+    lines = open(ini_path, encoding='utf-8').read().splitlines() if os.path.exists(ini_path) else ['[Global]', '', '[Menu]', '', '[InGame]', '', '[2D]', '', '[3D]', '', '[FMV]']
+    if (a.bank + '.bnk') not in lines: lines.insert(lines.index('[%s]' % a.section) + 1, a.bank + '.bnk')
+    open(ini_path, 'w', newline='\r\n').write('\n'.join(lines) + '\n')
+    print('wrote %s.bnk (%d bytes): %d objects, media %d (%d bytes), event %s' % (a.bank, len(blob), len(out), src, sz, a.new))
+
+
+def cmd_make_sfx(a):
+    voices = [dict(event=a.event, wem=pcm_wem(a.wav))]
+    if a.control_from:
+        body, wem = official_sound_of_event(a.control_from, a.control_source) if a.control_source else official_sound(a.control_from, min_media=a.control_min)
+        if a.chain_from: voices = [dict(event=a.event, wem=pcm_wem(a.wav), body=body, plugin=0x00010001)]   # our PCM sound on an official sound object
+        voices.append(dict(event=a.control_event, wem=wem, body=body))
+    chain = official_chain(a.chain_from, a.chain_event) if a.chain_from else None
+    blob, ids = build_bank(a.bank, voices, chain=chain)
+    os.makedirs(a.outdir, exist_ok=True)
+    open(os.path.join(a.outdir, a.bank + '.bnk'), 'wb').write(blob)
+    ini_path = os.path.join(a.outdir, a.ini)
+    lines = open(ini_path, encoding='utf-8').read().splitlines() if os.path.exists(ini_path) else ['[Global]', '', '[Menu]', '', '[InGame]', '', '[2D]', '', '[3D]', '', '[FMV]']
+    if (a.bank + '.bnk') not in lines: lines.insert(lines.index('[%s]' % a.section) + 1, a.bank + '.bnk')
+    open(ini_path, 'w', newline='\r\n').write('\n'.join(lines) + '\n')
+    print('wrote %s.bnk (%d bytes), %s' % (a.bank, len(blob), a.ini))
+    print('bank id %d' % ids['bank'])
+    for e, i in ids['events'].items(): print('event "%s" id %d' % (e, i))
+
+
+def cmd_clone_bank(a):
+    """Copy an official bank under a new bank id and rename events (old name -> new name). A bisecting aid: a byte-exact clone with only ids changed."""
+    data = bytearray(open(a.src, 'rb').read())
+    chunks = read_chunks(bytes(data))
+    for tag, off, size in chunks:
+        if tag == 'BKHD': data[off + 4:off + 8] = u32(fnv(a.bank))
+    renames = {fnv(old): fnv(new) for old, new in (r.split('=') for r in a.rename)}
+    done = 0
+    for tag, off, size in chunks:
+        if tag != 'HIRC': continue
+        n = struct.unpack_from('<I', data, off)[0]; q = off + 4
+        for _ in range(n):
+            t = data[q]; s = struct.unpack_from('<I', data, q + 1)[0]
+            if t == 4:
+                oid = struct.unpack_from('<I', data, q + 5)[0]
+                if oid in renames: data[q + 5:q + 9] = u32(renames[oid]); done += 1
+            q += 5 + s
+    if done != len(renames): sys.exit('only %d of %d events found' % (done, len(renames)))
+    os.makedirs(a.outdir, exist_ok=True)
+    open(os.path.join(a.outdir, a.bank + '.bnk'), 'wb').write(bytes(data))
+    ini_path = os.path.join(a.outdir, a.ini)
+    lines = open(ini_path, encoding='utf-8').read().splitlines() if os.path.exists(ini_path) else ['[Global]', '', '[Menu]', '', '[InGame]', '', '[2D]', '', '[3D]', '', '[FMV]']
+    if (a.bank + '.bnk') not in lines:
+        lines.insert(lines.index('[%s]' % a.section) + 1, a.bank + '.bnk')
+    open(ini_path, 'w', newline='\r\n').write('\n'.join(lines) + '\n')
+    print('wrote %s.bnk (%d bytes) bank id %d, renamed %d event(s)' % (a.bank, len(data), fnv(a.bank), done))
+
+
+def parse_switch_tree(body, groups=2):
+    """Music switch container body -> (head bytes before the tree size field, mode, [nodes]) for a decision tree of depth 2.
+    Layout (v113): ... u32 depth, u32 group ids[depth], u8 group types[depth], u32 tree size, u8 mode, nodes (12 bytes each: key u32, audio id or
+    (u16 idx, u16 count), u16 weight, u16 probability). The tree is the tail of the object. Nodes are breadth first, siblings sorted by key."""
+    depth = None
+    for pos in range(0, len(body) - 8):
+        if struct.unpack_from('<I', body, pos)[0] == groups and pos + 4 + 4 * groups + groups + 5 < len(body):
+            q = pos + 4 + 4 * groups + groups
+            size = struct.unpack_from('<I', body, q)[0]
+            if size % 12 == 0 and q + 5 + size == len(body) and size >= 12 * (groups + 1): depth = pos; break
+    if depth is None: sys.exit('cannot find the decision tree (only depth-2 music switch containers are supported)')
+    q = depth + 4 + 4 * groups + groups
+    size = struct.unpack_from('<I', body, q)[0]
+    nodes = [list(struct.unpack_from('<IIHH', body, q + 5 + 12 * i)) for i in range(size // 12)]
+    return body[:q], body[q + 4], nodes, [struct.unpack_from('<I', body, depth + 4 + 4 * i)[0] for i in range(groups)]
+
+
+def cmd_add_civ(a):
+    """Add a civilization (switch value) to a music switch container: a copy of the container with one more leaf under every era, mapped to the
+    same music as an existing civilization (--like). Writes a bank that holds only the modified container."""
+    data = open(a.src, 'rb').read()
+    objs = {struct.unpack_from('<I', body, 0)[0]: (t, body) for t, body in read_hirc(data)}
+    t, body = objs[a.container]
+    if t != 12: sys.exit('object %d is not a music switch container' % a.container)
+    head, mode, nodes, groups = parse_switch_tree(body)
+    root = nodes[0]
+    r_idx, r_cnt = root[1] & 0xFFFF, root[1] >> 16
+    eras = nodes[r_idx:r_idx + r_cnt]
+    new_key, like_key = (fnv(a.civ), fnv(a.like)) if a.civ else (None, None)
+    swap = [(fnv(x), fnv(y)) for x, y in (r.split('=') for r in a.remap)]
+    blocks = []
+    for era in eras:
+        i, c = era[1] & 0xFFFF, era[1] >> 16
+        kids = [list(k) for k in nodes[i:i + c]]
+        for dst, src in swap:   # existing civilization takes the music of another one (an override test)
+            d = next(k for k in kids if k[0] == dst); sk = next(k for k in kids if k[0] == src); d[1] = sk[1]
+        if a.civ:
+            if any(k[0] == new_key for k in kids): sys.exit('%s already exists' % a.civ)
+            like = next((k for k in kids if k[0] == like_key), None)
+            if like is None: sys.exit('%s not found under every era' % a.like)
+            kids.append([new_key, like[1], like[2], like[3]])
+            kids.sort(key=lambda k: k[0])
+        blocks.append(kids)
+    out = [list(root)]
+    out[0][1] = 1 | (len(eras) << 16)
+    nxt = 1 + len(eras)
+    era_nodes = []
+    for era, kids in zip(eras, blocks):
+        era_nodes.append([era[0], nxt | (len(kids) << 16), era[2], era[3]])
+        nxt += len(kids)
+    out += era_nodes
+    for kids in blocks: out += kids
+    tree = b''.join(struct.pack('<IIHH', *n) for n in out)
+    new_body = head + u32(len(tree)) + bytes([mode]) + tree
+    blob = assemble(a.bank, [(12, new_body)], [])
+    os.makedirs(a.outdir, exist_ok=True)
+    open(os.path.join(a.outdir, a.bank + '.bnk'), 'wb').write(blob)
+    ini_path = os.path.join(a.outdir, a.ini)
+    lines = open(ini_path, encoding='utf-8').read().splitlines() if os.path.exists(ini_path) else ['[Global]', '', '[Menu]', '', '[InGame]', '', '[2D]', '', '[3D]', '', '[FMV]']
+    if (a.bank + '.bnk') not in lines: lines.insert(lines.index('[%s]' % a.section) + 1, a.bank + '.bnk')
+    open(ini_path, 'w', newline='\r\n').write('\n'.join(lines) + '\n')
+    print('wrote %s.bnk (%d bytes): container %d now has %d nodes (was %d); civ "%s" (key %s) plays like "%s" under %d eras; remaps %s' % (a.bank, len(blob), a.container, len(out), len(nodes), a.civ, new_key, a.like, len(eras), a.remap))
+
+
+# Switch container (HIRC type 6) template: Unit_Bank_3D.bnk object 30990b2f (Game_Location, four era switch values, one child).
+# Layout (v113): id, NodeBaseParams (parent at offset 11), u8 group type, u32 group id, u32 default switch, u8 continuous validation,
+# u32 child count + ids, u32 switch count (per switch: u32 switch id, u32 item count + node ids), u32 param count (per node: u32 id, u8, u8, i32 fade out, i32 fade in).
+T_SWITCH = ('30990b2f000000000000006ed80f1f0001000000c0c200c0000001000000000000000000000097df40167c02792a00010000006e6d2b32040000007c02792a010000006e6d2b32'
+            'db89329e010000006e6d2b32d7f21f82010000006e6d2b328f70a83a010000006e6d2b32020000006e6d2b32000100000000000000009b6f903500010000000000000000')
+
+
+def switch_container(container_id, parent_id, group, values, children):
+    """values: [(switch value name, [child node ids])]; children: all child ids. Built from T_SWITCH by replacing its group, switch and child lists."""
+    t = bytes.fromhex(T_SWITCH)
+    gpos = t.find(u32(fnv('Game_Location')))
+    head = bytearray(t[:gpos - 1])   # id .. NodeBaseParams (the byte before the group id is the group type)
+    head[0:4] = u32(container_id); head[11:15] = u32(parent_id)
+    assert head[16] == 1 and head[17] == 0   # one property, the volume
+    head[18:22] = struct.pack('<f', 0.0)     # the template's own volume is -96 dB (silent)
+    gtype = t[gpos - 1:gpos]
+    default = u32(fnv(values[0][0]))
+    out = bytes(head) + gtype + u32(fnv(group)) + default + Z + u32(len(children)) + b''.join(u32(c) for c in children)
+    out += u32(len(values))
+    for name, nodes in values: out += u32(fnv(name)) + u32(len(nodes)) + b''.join(u32(n) for n in nodes)
+    out += u32(len(children)) + b''.join(u32(c) + b'\x00\x01' + u32(0) + u32(0) for c in children)
+    return out
+
+
+def cmd_make_switch(a):
+    """A bank with one switch container (new ids) that plays a different sound for each value of a global switch group, e.g. Game_Location (era)."""
+    sound_src, chain_src = a.sounds_from, a.chain_from
+    body, _ = official_sound_of_event(sound_src, a.sound_source)
+    chain = official_chain(chain_src, a.chain_event)
+    name = a.bank
+    bank_id = fnv(name)
+    cont_id = fnv(name + '/switch')
+    cids = [fnv('%s/chain%d' % (name, i)) for i in range(len(chain))]
+    values, objs_s, media, children = [], [], [], []
+    for i, spec in enumerate(a.value):
+        vname, wav = spec.split('=', 1)
+        wem = pcm_wem(wav)
+        sid, mid = fnv('%s/sound%d' % (name, i)), fnv('%s/media%d' % (name, i))
+        sb = bytearray(body)
+        sb[0:4] = u32(sid); sb[9:13] = u32(mid); sb[25:29] = u32(cont_id); sb[4:8] = u32(0x00010001); sb[13:17] = u32(len(wem))
+        objs_s.append((2, bytes(sb))); media.append((mid, wem)); children.append(sid); values.append((vname, [sid]))
+    parents = []
+    for i, cb in enumerate(chain):
+        head, _ = split_children(cb)
+        h = bytearray(head); h[0:4] = u32(cids[i])
+        orig_parent, pq = mixer_parent(cb)
+        h[pq:pq + 4] = u32(cids[i + 1] if i + 1 < len(cids) else orig_parent)
+        kids = [cont_id] if i == 0 else [cids[i - 1]]
+        parents.append((7, bytes(h) + u32(len(kids)) + b''.join(u32(x) for x in kids)))
+    cont = switch_container(cont_id, cids[0], a.group, values, children)
+    action_id = fnv(name + '/play')
+    action = u32(action_id) + b'\x03\x04' + u32(cont_id) + bytes(3) + b'\x04' + u32(bank_id)
+    evt = u32(fnv(a.event)) + u32(1) + u32(action_id)
+    objs = objs_s + [(6, cont)] + parents + [(3, action), (4, evt)]
+    blob = assemble(name, objs, media)
+    os.makedirs(a.outdir, exist_ok=True)
+    open(os.path.join(a.outdir, name + '.bnk'), 'wb').write(blob)
+    ini_path = os.path.join(a.outdir, a.ini)
+    lines = open(ini_path, encoding='utf-8').read().splitlines() if os.path.exists(ini_path) else ['[Global]', '', '[Menu]', '', '[InGame]', '', '[2D]', '', '[3D]', '', '[FMV]']
+    if (name + '.bnk') not in lines: lines.insert(lines.index('[%s]' % a.section) + 1, name + '.bnk')
+    open(ini_path, 'w', newline='\r\n').write('\n'.join(lines) + '\n')
+    print('wrote %s.bnk (%d bytes): event "%s" id %d plays a switch container on %s with %d values' % (name, len(blob), a.event, fnv(a.event), a.group, len(values)))
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sp = p.add_subparsers(dest='cmd', required=True)
+    s = sp.add_parser('hash'); s.add_argument('name'); s.set_defaults(f=lambda a: print(fnv(a.name)))
+    s = sp.add_parser('dump'); s.add_argument('bank'); s.set_defaults(f=cmd_dump)
+    s = sp.add_parser('make-sfx'); s.add_argument('outdir'); s.add_argument('--wav', required=True); s.add_argument('--event', required=True)
+    s.add_argument('--control-from', help='official .bnk to copy a known-good sound from (adds a second event)')
+    s.add_argument('--control-event', default='Play_DevCE_BankTest_Control')
+    s.add_argument('--control-min', type=int, default=0, help='minimum media size in bytes')
+    s.add_argument('--control-source', help='use the sound of this official event of --control-from (instead of the smallest in-bank sound)')
+    s.add_argument('--chain-from', help='official .bnk whose parent mixer chain (above --chain-event) is copied as the parent of our sounds')
+    s.add_argument('--chain-event', default='Alert_Positive')
+    s.add_argument('--bank', default='DevCE_Test_Bank'); s.add_argument('--ini', default='DevCETestBanks.ini'); s.add_argument('--section', default='InGame', help='Banks.ini section: Global, Menu, InGame, 2D, 3D or FMV (FMV banks load only on UI.LoadSoundBankGroup(5))'); s.set_defaults(f=cmd_make_sfx)
+    s = sp.add_parser('clone-bank'); s.add_argument('src'); s.add_argument('outdir'); s.add_argument('--bank', required=True)
+    s.add_argument('--rename', action='append', default=[], help='OLD_EVENT=NEW_EVENT (repeatable)'); s.add_argument('--ini', default='DevCETestBanks.ini'); s.add_argument('--section', default='InGame', help='Banks.ini section: Global, Menu, InGame, 2D, 3D or FMV (FMV banks load only on UI.LoadSoundBankGroup(5))'); s.set_defaults(f=cmd_clone_bank)
+    s = sp.add_parser('extract'); s.add_argument('src'); s.add_argument('outdir'); s.add_argument('--bank', required=True); s.add_argument('--event', required=True); s.add_argument('--new', required=True)
+    s.add_argument('--ini', default='DevCETestBanks.ini'); s.add_argument('--section', default='InGame', help='Banks.ini section: Global, Menu, InGame, 2D, 3D or FMV (FMV banks load only on UI.LoadSoundBankGroup(5))'); s.set_defaults(f=cmd_extract)
+    s = sp.add_parser('add-civ'); s.add_argument('src'); s.add_argument('outdir'); s.add_argument('--bank', required=True); s.add_argument('--container', type=int, required=True, help='music switch container object id')
+    s.add_argument('--civ', help='new switch value (civilization name)'); s.add_argument('--like', help='existing civilization whose music the new one reuses')
+    s.add_argument('--remap', action='append', default=[], help='EXISTING=OTHER: the leaf of EXISTING plays the music of OTHER (repeatable; an override test)')
+    s.add_argument('--ini', default='DevCETestBanks.ini'); s.add_argument('--section', default='InGame'); s.set_defaults(f=cmd_add_civ)
+    s = sp.add_parser('make-switch'); s.add_argument('outdir'); s.add_argument('--bank', required=True); s.add_argument('--event', required=True)
+    s.add_argument('--group', default='Game_Location', help='global switch group (the game sets Game_Location to the current era)')
+    s.add_argument('--value', action='append', required=True, help='SWITCH_VALUE=file.wav (repeatable), e.g. Ancient_Era=a.wav')
+    s.add_argument('--sounds-from', required=True, help='official .bnk with --sound-source: the sound object layout to copy')
+    s.add_argument('--sound-source', default='Alert_Positive'); s.add_argument('--chain-from', required=True); s.add_argument('--chain-event', default='Alert_Positive')
+    s.add_argument('--ini', default='DevCETestBanks.ini'); s.add_argument('--section', default='InGame'); s.set_defaults(f=cmd_make_switch)
+    a = p.parse_args(); a.f(a)
+
+
+if __name__ == '__main__':
+    main()
+
+
+===== tools/build_audio.py =====
+#!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-only
+"""Build only the parade's native v113 bank. No game DLL or Wwise editor required.
+Routing template and bnktool: cru121/civ6-dev-ce (AGPL-3.0-only).
+"""
+from pathlib import Path
+import json, struct
+import bnktool as b
+
+ROOT = Path(__file__).resolve().parents[1]
+NAME = 'MilitaryParade_Internationale_V311_Bank'
+PLAY = 'Play_MilitaryParade_Internationale_V311'
+STOP = 'Stop_MilitaryParade_Internationale_V311'
+
+def build():
+    template = json.loads((ROOT/'tools/parade_audio_template.json').read_text())
+    wav = ROOT/'AudioSource/Parade_Internationale.wav'
+    # A single private 2D mixer routes straight to the stock Master SFX bus.
+    # Discard the copied notification mixers, FX/state references and their buses.
+    mixer = bytearray(bytes.fromhex(template['chain'][0]))
+    assert len(mixer) == 44 and mixer[5] == 0
+    mixer[4] = 1  # override parent FX, with no FX
+    mixer[7:11] = b.u32(3577355056)
+    mixer[11:15] = b.u32(0)
+    mixer[18] = 0xC3  # explicit 2D positioning, no 3D attenuation
+    blob, _ = b.build_bank(NAME, [dict(event=PLAY, wem=b.pcm_wem(str(wav)),
+        body=bytes.fromhex(template['sound']), plugin=0x00010001)],
+        chain=[bytes(mixer)])
+    objects = b.read_hirc(blob)
+    sound = next(body for kind, body in objects if kind == 2)
+    target = struct.unpack_from('<I', sound)[0]
+    stop_id = b.fnv(NAME+'/stop')
+    # Wwise v113 Stop_E, target-specific across game objects. No Stop_ALL.
+    # id, actionType, target, isBus, empty properties/ranges, linear fade, exceptions.
+    stop = b.u32(stop_id) + struct.pack('<H',0x0102) + b.u32(target) + bytes(3) + b'\x04' + b.u32(0)
+    # A play event only plays. Replay stops in Lua and waits a frame before play.
+    events = list(objects)
+    idx = next(i for i,(kind,_) in enumerate(events) if kind == 4)
+    events.insert(idx,(3,stop))
+    events.append((4,b.u32(b.fnv(STOP))+b.u32(1)+b.u32(stop_id)))
+    # Pause/resume only the stock Master Music bus. Parade audio uses Master SFX.
+    # Keep the normal resume count semantics (bIsMasterResume=0).
+    for label,atype in [('Pause',0x0202),('Resume',0x0302)]:
+        aid=b.fnv(NAME+'/'+label.lower()+'_background')
+        action=b.u32(aid)+struct.pack('<H',atype)+b.u32(48433064)+b'\x01'+bytes(2)+b'\x04'+bytes(1)+b.u32(0)
+        idx=next(i for i,(kind,_) in enumerate(events) if kind==4)
+        events.insert(idx,(3,action))
+        ename=label+'_MilitaryParade_Background_V311'
+        events.append((4,b.u32(b.fnv(ename))+b.u32(1)+b.u32(aid)))
+    chunks = {tag:(off,size) for tag,off,size in b.read_chunks(blob)}
+    off,size = chunks['DIDX']; data_off,_ = chunks['DATA']
+    media = []
+    for i in range(0,size,12):
+        mid,start,length = struct.unpack_from('<III',blob,off+i)
+        media.append((mid,blob[data_off+start:data_off+start+length]))
+    out = ROOT/'Platforms/Windows/Audio';out.mkdir(parents=True,exist_ok=True)
+    (out/(NAME+'.bnk')).write_bytes(b.assemble(NAME,events,media))
+    (out/'MilitaryParadeBanks.ini').write_bytes(('\r\n'.join([
+        '[Global]','','[Menu]','','[InGame]','!'+NAME+'.bnk','','[2D]','','[3D]','','[FMV]','!'+NAME+'.bnk',''])).encode())
+    print('Built native v113 bank:',PLAY,STOP)
+
+if __name__ == '__main__': build()
+
+
+===== tools/package_release.py =====
+"""Build a local RC bundle. Does not publish or contact Steam.
+Usage: python tools/package_release.py /path/to/new/output-directory
+"""
+from pathlib import Path
+import hashlib,shutil,sys,xml.etree.ElementTree as E
+
+def build(destination):
+ source=Path(__file__).resolve().parents[1]
+ destination=Path(destination).resolve()
+ if destination.is_relative_to(source):raise ValueError('Output must be outside the source tree')
+ if destination.exists():raise FileExistsError('Choose a new output directory; existing files will not be overwritten')
+ destination.mkdir(parents=True)
+ release=destination/'Release/MilitaryParade';release.mkdir(parents=True)
+ manifest=E.parse(source/'MilitaryParade.modinfo')
+ names=['MilitaryParade.modinfo']+[n.text for n in manifest.findall('./Files/File')]
+ assert len(names)==len(set(names))
+ for name in names:
+  rel=Path(name)
+  if rel.is_absolute()or'..'in rel.parts:raise ValueError('Unsafe manifest path')
+  target=release/rel;target.parent.mkdir(parents=True,exist_ok=True)
+  shutil.copy2(source/rel,target)
+ actual={p.relative_to(release).as_posix()for p in release.rglob('*')if p.is_file()}
+ assert actual==set(names),'runtime file set differs from manifest'
+ shutil.copytree(source,destination/'Source/MilitaryParade',ignore=shutil.ignore_patterns('__pycache__','*.pyc','.git'))
+ docs=destination/'Docs';docs.mkdir()
+ for name in ['README.md','CHANGELOG.md','VALIDATION.md','WORKSHOP_DESCRIPTION_zh_CN.md']:
+  shutil.copy2(source/name,docs/name)
+ (destination/'README_FIRST_zh_CN.txt').write_text(
+  '阅兵 Military Parade 3.20 B1\n\n'
+  '安装：完整退出游戏，将旧版阅兵移出Mods，仅把Release/MilitaryParade复制进去。\n'
+  '不要把整个交付包或Source目录放入Mods。新ArtDefs目录和MilitaryParade.dep必须保留。\n\n'
+  '源码：Source/MilitaryParade/MilitaryParade.sln\n'
+  '说明与工坊简介：Docs\n'
+  '验收：角落必须显示3.20 B1和数据3.20 B1；正常播放及跳至授赏都应衔接原版年表。\n'
+  '此为发布候选版，先在游戏中验收，再采用Release目录准备工坊上传。\n',encoding='utf-8')
+ hashes=[]
+ for name in sorted(names):
+  hashes.append(hashlib.sha256((release/name).read_bytes()).hexdigest()+'  Release/MilitaryParade/'+name)
+ (destination/'SHA256SUMS.txt').write_text('\n'.join(hashes)+'\n')
+ print('Built RC bundle:',destination)
+ print('Runtime files:',len(names))
+
+if __name__=='__main__':
+ if len(sys.argv)!=2:raise SystemExit(__doc__)
+ build(sys.argv[1])
+
+
+===== tools/verify_build.py =====
+"""Inspect a built/installed mod folder; never modifies it.
+Usage: python tools/verify_build.py /path/to/the/built/mod
+This checks files, not whether the game loaded them.
+"""
+from pathlib import Path
+import sys,xml.etree.ElementTree as E
+
+def verify(folder):
+ root=Path(folder).resolve()
+ mod=E.parse(root/'MilitaryParade.modinfo')
+ assert mod.getroot().get('version')=='22','Build is not 3.20 B1 (mod version 22)'
+ action=mod.find('./InGameActions/UpdateArt')
+ assert action is not None,'UpdateArt missing from built manifest'
+ dep_name=action.findtext('File')
+ assert dep_name and dep_name!='(Mod Art Dependency File)','SDK did not resolve the art dependency placeholder'
+ dep=(root/dep_name).read_text(encoding='utf-8-sig')
+ assert 'Camera.artdef'in dep and 'Camera'in dep,'built dependency does not register Camera.artdef'
+ art=(root/'ArtDefs/Camera.artdef').read_text(encoding='utf-8-sig')
+ assert 'AssetObjects::ArtDefSet'in art,'Windows SDK ArtDef type spelling missing'
+ camera=E.fromstring(art.replace('AssetObjects::','AssetObjects..'))
+ heights=[]
+ for item in camera.findall('m_RootCollections/Element/Element'):
+  if item.find('m_Name').get('text')!='DEFAULT_CAMERA':continue
+  for coll in item.findall('m_ChildCollections/Element'):
+   if coll.find('m_CollectionName').get('text')!='HeightCurve':continue
+   for point in coll.findall('Element'):
+    values={v.find('m_ParamName').get('text'):float(v.findtext('m_fValue'))for v in point.findall('m_Fields/m_Values/Element')}
+    if values['Time']==0:heights.append(values['Height'])
+ assert heights==[65.0],f'built near camera height is {heights}, expected 65'
+ replacement=next((a.find('Properties/LuaReplace').text for a in mod.findall('./InGameActions/ReplaceUIScript')if a.findtext('Properties/LuaContext')=='HistoricMoments'),None)
+ assert replacement,'HistoricMoments replacement missing from built manifest'
+ assert "diagnostic.TimelineBuild='3.20 B1'"in(root/replacement).read_text(encoding='utf-8-sig'),'old historic-moment Lua in output'
+ assert 'PrideMoments_ToggleTimeline(false)'in(root/'Parade_UI.lua').read_text(encoding='utf-8-sig'),'old UI dispatch in output'
+ for file in mod.findall('./Files/File'):assert(root/file.text).is_file(),file.text
+ print('PASS: 3.20 B1 manifest, resolved art dependency, height 65, timeline replacement, native entry, all listed runtime files')
+
+if __name__=='__main__':
+ if len(sys.argv)!=2:raise SystemExit(__doc__)
+ verify(sys.argv[1])
+
+

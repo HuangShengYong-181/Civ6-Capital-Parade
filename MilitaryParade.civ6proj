@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup><Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration><Name>Military Parade</Name><Description>首发版1.0.0。完成帝国初期后，可在有本国战斗驻军的当前首都进行阅兵。获得10回合军事鼓舞、大将军点数及时代分。需要迭起兴衰或风云变幻规则集，仅支持单人。</Description><Teaser>首发版 1.0.0：首都阅兵、十回合鼓舞、大将军与时代分奖励。</Teaser><Authors>21587</Authors><AffectsSavedGames>true</AffectsSavedGames><SupportsSinglePlayer>true</SupportsSinglePlayer><SupportsMultiplayer>false</SupportsMultiplayer><SupportsHotSeat>false</SupportsHotSeat><CompatibleVersions>2.0</CompatibleVersions><Guid>73377b9b-1e5f-448a-bbc3-6d79fc86d912</Guid><ProjectGuid>0ad0399b-ef3d-46ac-a28d-e4ced6faa6dc</ProjectGuid><ModVersion>25</ModVersion><AssemblyName>MilitaryParade</AssemblyName><RootNamespace>MilitaryParade</RootNamespace>
+<ActionCriteriaData><![CDATA[<ActionCriteria><Criteria id="ParadeXP2"><GameCoreInUse>Expansion2</GameCoreInUse></Criteria></ActionCriteria>]]></ActionCriteriaData>
+<InGameActionData><![CDATA[<InGameActions>
+    <UpdateDatabase id="ParadeV38_Data">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+      </Properties>
+      <File>Parade_Data.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="ParadeV38_XP2" criteria="ParadeXP2">
+      <Properties>
+        <LoadOrder>1001</LoadOrder>
+      </Properties>
+      <File>Parade_Data_XP2.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="ParadeV38_Quotes">
+      <Properties>
+        <LoadOrder>1002</LoadOrder>
+      </Properties>
+      <File>Parade_Quotes.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="ParadeV38_Text">
+      <File>Parade_Text.sql</File>
+    </UpdateText>
+    <UpdateIcons id="ParadeV38_Icons">
+      <File>Parade_Icons.sql</File>
+    </UpdateIcons>
+    <AddGameplayScripts id="ParadeV38_Gameplay">
+      <File>Parade_Script.lua</File>
+    </AddGameplayScripts>
+    <ImportFiles id="ParadeV38_Files">
+      <File>Parade_UI.lua</File>
+      <File>MP34_MONO_16.dds</File>
+      <File>MP34_MONO_20.dds</File>
+      <File>MP34_MONO_22.dds</File>
+      <File>MP34_MONO_24.dds</File>
+      <File>MP34_MONO_26.dds</File>
+      <File>MP34_MONO_28.dds</File>
+      <File>MP34_MONO_30.dds</File>
+      <File>MP34_MONO_32.dds</File>
+      <File>MP34_MONO_36.dds</File>
+      <File>MP34_MONO_38.dds</File>
+      <File>MP34_MONO_40.dds</File>
+      <File>MP34_MONO_42.dds</File>
+      <File>MP34_MONO_44.dds</File>
+      <File>MP34_MONO_45.dds</File>
+      <File>MP34_MONO_48.dds</File>
+      <File>MP34_MONO_50.dds</File>
+      <File>MP34_MONO_55.dds</File>
+      <File>MP34_MONO_64.dds</File>
+      <File>MP34_MONO_70.dds</File>
+      <File>MP34_MONO_80.dds</File>
+      <File>MP34_MONO_128.dds</File>
+      <File>MP34_MONO_256.dds</File>
+      <File>MP34_COLOR_16.dds</File>
+      <File>MP34_COLOR_20.dds</File>
+      <File>MP34_COLOR_22.dds</File>
+      <File>MP34_COLOR_24.dds</File>
+      <File>MP34_COLOR_26.dds</File>
+      <File>MP34_COLOR_28.dds</File>
+      <File>MP34_COLOR_30.dds</File>
+      <File>MP34_COLOR_32.dds</File>
+      <File>MP34_COLOR_36.dds</File>
+      <File>MP34_COLOR_38.dds</File>
+      <File>MP34_COLOR_40.dds</File>
+      <File>MP34_COLOR_42.dds</File>
+      <File>MP34_COLOR_44.dds</File>
+      <File>MP34_COLOR_45.dds</File>
+      <File>MP34_COLOR_48.dds</File>
+      <File>MP34_COLOR_50.dds</File>
+      <File>MP34_COLOR_55.dds</File>
+      <File>MP34_COLOR_64.dds</File>
+      <File>MP34_COLOR_70.dds</File>
+      <File>MP34_COLOR_80.dds</File>
+      <File>MP34_COLOR_128.dds</File>
+      <File>MP34_COLOR_256.dds</File>
+      <File>Parade_ProductionPanel.lua</File>
+      <File>Parade_CivicIcons.lua</File>
+      <File>Parade_CivicsTree.lua</File>
+      <File>Parade_CivicsChooser.lua</File>
+      <File>Parade_Celebration.lua</File>
+      <File>Parade_UnitFlagManager.lua</File>
+      <File>Parade_Camera.lua</File>
+      <File>Parade_Audio.lua</File>
+      <File>Parade_EraMoment.dds</File>
+      <File>Parade_HistoricMoments.lua</File>
+      <File>Parade_TimelineMoment.dds</File>
+    </ImportFiles>
+    <AddUserInterfaces id="ParadeV38_UI">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>Parade_UI.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="ParadeV38_ProductionPanel">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>ProductionPanel</LuaContext>
+        <LuaReplace>Parade_ProductionPanel.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="ParadeV38_CivicsTree">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>CivicsTree</LuaContext>
+        <LuaReplace>Parade_CivicsTree.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="ParadeV38_CivicsChooser">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>CivicsChooser</LuaContext>
+        <LuaReplace>Parade_CivicsChooser.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <AddUserInterfaces id="ParadeV38_Celebration">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>Parade_Celebration.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="ParadeV38_UnitFlags">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>UnitFlagManager</LuaContext>
+        <LuaReplace>Parade_UnitFlagManager.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <UpdateAudio id="ParadeV39_Audio">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+      </Properties>
+      <File>Platforms/Windows/Audio/MilitaryParadeBanks.ini</File>
+      <File>Platforms/Windows/Audio/MilitaryParade_Internationale_V311_Bank.bnk</File>
+    </UpdateAudio>
+    <ReplaceUIScript id="ParadeV314_HistoricMoments">
+      <Properties>
+        <LoadOrder>1000</LoadOrder>
+        <LuaContext>HistoricMoments</LuaContext>
+        <LuaReplace>Parade_HistoricMoments.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <UpdateArt id="MilitaryParade_Camera">
+      <Properties>
+        <LoadOrder>1100</LoadOrder>
+      </Properties>
+      <File>(Mod Art Dependency File)</File>
+    </UpdateArt>
+  </InGameActions>]]></InGameActionData></PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)' == 'Default' "><OutputPath>.</OutputPath></PropertyGroup>
+<ItemGroup>
+  <Folder Include="Platforms\"/><Folder Include="Platforms\Windows\"/><Folder Include="Platforms\Windows\Audio\"/><Folder Include="Icons\" />
+  <Content Include="Parade_Data.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Data_XP2.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Text.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Icons.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Script.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_UI.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_UI.xml"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_16.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_20.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_22.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_24.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_26.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_28.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_30.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_32.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_36.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_38.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_40.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_42.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_44.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_45.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_48.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_50.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_55.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_64.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_70.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_80.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_128.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_MONO_256.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_16.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_20.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_22.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_24.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_26.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_28.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_30.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_32.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_36.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_38.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_40.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_42.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_44.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_45.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_48.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_50.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_55.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_64.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_70.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_80.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_128.dds"><SubType>Content</SubType></Content>
+  <Content Include="MP34_COLOR_256.dds"><SubType>Content</SubType></Content>
+  <Content Include="Parade_ProductionPanel.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_CivicIcons.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_CivicsTree.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_CivicsChooser.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Quotes.sql"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Celebration.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Celebration.xml"><SubType>Content</SubType></Content>
+  <Content Include="Parade_UnitFlagManager.lua"><SubType>Content</SubType></Content>
+  <Content Include="Parade_Camera.lua"><SubType>Content</SubType></Content>
+<Content Include="Platforms\Windows\Audio\MilitaryParadeBanks.ini"><SubType>Content</SubType></Content>
+<Content Include="Platforms\Windows\Audio\MilitaryParade_Internationale_V311_Bank.bnk"><SubType>Content</SubType></Content>
+<Content Include="Parade_Audio.lua"><SubType>Content</SubType></Content>
+<Content Include="Parade_EraMoment.dds"><SubType>Content</SubType></Content>
+<Content Include="Parade_HistoricMoments.lua"><SubType>Content</SubType></Content>
+<Content Include="Parade_TimelineMoment.dds"><SubType>Content</SubType></Content>
+<Content Include="ArtDefs\Camera.artdef"><SubType>Content</SubType></Content>
+<Content Include="MilitaryParade.dep"><SubType>Content</SubType></Content>
+<Content Include="CREDITS.txt"><SubType>Content</SubType></Content>
+<None Include="Mod.Art.xml" />
+</ItemGroup>
+<Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" /></Project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssetObjects::GameDependencyData>
+  <ID><name text="MilitaryParadeCamera"/><id text="24c1d57a-9b8a-5a13-bbe9-a0b559828b96"/></ID>
+  <SystemDependencies><Element>
+    <ConsumerName text="Camera"/>
+    <ArtDefDependencyPaths><Element text="Camera.artdef"/></ArtDefDependencyPaths>
+  </Element></SystemDependencies>
+</AssetObjects::GameDependencyData>

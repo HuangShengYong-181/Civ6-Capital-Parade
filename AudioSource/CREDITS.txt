@@ -1,0 +1,30 @@
+The Internationale — orchestral arrangement
+Music: Pierre De Geyter (1888).
+Arrangement: Jerry Engelbach (2003).
+Audio source: https://commons.wikimedia.org/wiki/File:Internationale_orchestral_arrangement.ogg
+Original download: https://upload.wikimedia.org/wikipedia/commons/d/d1/Internationale_orchestral_arrangement.ogg
+Downloaded: 2026-10-27.
+
+Permission on the file page: Jerry Engelbach allows use for any purpose, including
+redistribution, derivative work and commercial use, provided that the copyright
+holder is properly attributed. Wikimedia VRT permission ticket: 2008011810001789.
+The public-domain melody and the attributed orchestral arrangement are separate.
+
+本模组使用上述管弦乐版本，无人声。Jerry Engelbach 改编，Pierre De Geyter 作曲。
+修改：取原音频64.000000秒至86.996871秒，约23秒；48kHz双声道16位PCM；
+FFmpeg loudnorm I=-18 LUFS / TP=-2dB / LRA=11，0.25秒淡入，结尾约1.5秒淡出。
+音频处理后的实测响度与峰值见验证结果，不把过滤器目标当作实测值。
+本包包含剪辑后的WAV源文件和嵌入它的原生Wwise v113声音库。
+没有下载或使用其他商业录音。
+
+Reproduce clip with FFmpeg:
+ffmpeg -ss 64 -i Internationale_orchestral_arrangement.ogg -t 22.996871 -af "loudnorm=I=-18:TP=-2:LRA=11,afade=t=in:st=0:d=0.25,afade=t=out:st=21.5:d=1.496871" -ar 48000 -ac 2 -c:a pcm_s16le Parade_Internationale.wav
+
+Soundbank tooling: cru121/civ6-dev-ce, dev-ce/tools/bnktool.py (AGPL-3.0-only).
+https://github.com/cru121/civ6-dev-ce
+Independent format verification: bnnm/wwiser (not required to run the mod).
+https://github.com/bnnm/wwiser
+Bundled tools and structural template are licensed under AGPL-3.0-only;
+see tools/AGPL-3.0.txt. This does not change the attribution terms of the music.
+
+Audio tooling source snapshot commit: 6eb7ef180b36c4517e96791279f9166ceb738c45

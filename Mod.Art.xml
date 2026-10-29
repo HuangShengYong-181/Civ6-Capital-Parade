@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssetObjects::GameArtSpecification>
+  <id><name text="MilitaryParadeCamera"/><id text="24c1d57a-9b8a-5a13-bbe9-a0b559828b96"/></id>
+  <artConsumers><Element>
+    <consumerName text="Camera"/>
+    <relativeArtDefPaths><Element text="Camera.artdef"/></relativeArtDefPaths>
+    <libraryDependencies><Element text="CameraAnimation"/></libraryDependencies>
+    <loadsLibraries>true</loadsLibraries>
+  </Element></artConsumers>
+  <gameLibraries><Element><libraryName text="CameraAnimation"/><relativePackagePaths/></Element></gameLibraries>
+  <requiredGameArtIDs><Element><name text="Civ6"/><id text="cb2f71b7-843e-4af3-9ca7-992acda9c195"/></Element></requiredGameArtIDs>
+</AssetObjects::GameArtSpecification>

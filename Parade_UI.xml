@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="Parade_UI" Size="parent,parent" ConsumeMouse="0">
+  <Label ID="ParadeStatus" Anchor="C,T" Offset="0,110" Style="FontNormal16"
+    FontStyle="Shadow" ColorSet="BodyTextCool" Hidden="1" String="" />
+  <Label Hidden="1" ID="BuildStatus" Anchor="L,B" Offset="20,56" Style="FontNormal12" Color="235,211,153,255" String="3.20 B1" />
+  <Instance Name="ParadeClockInstance">
+    <Box ID="Root" Anchor="C,T" Offset="-36,2" Size="34,23" Color="21,35,48,245" Hidden="1" ConsumeMouse="1">
+      <Label ID="ClockText" Anchor="C,C" Style="FontNormal12" Color="244,211,139,255" String="[ICON_Turn]10" />
+    </Box>
+  </Instance>
+</Context>
