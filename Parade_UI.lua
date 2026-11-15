@@ -12,6 +12,18 @@ function ExposedMembers.ParadeV3UI.GetMilitaryScore(playerID)
     end
     return stats:GetMilitaryStrengthWithoutTreasury()
 end
+-- GetSize/GetAt are UI-only. Return primitives across the bridge.
+function ExposedMembers.ParadeV3UI.GetActiveParade(playerID)
+ local p=Players[playerID];if not p then return end
+ for _,c in p:GetCities():Members() do
+  local kind=ParadeRules.ActiveProject(c)
+  if kind then return c:GetID(),ParadeRules.Project(kind) end
+ end
+end
+function ExposedMembers.ParadeV3UI.GetFacilities(playerID,cityID)
+ local p=Players[playerID];local city=p and p:GetCities():FindID(cityID)
+ if city then return ParadeRules.Facilities(city) end
+end
 local iconsChecked=false
 local function CheckIcons()
     if iconsChecked or not IconManager then return end
@@ -24,141 +36,39 @@ local function CheckIcons()
         end
     end
 end
-local lastDiagnostic=''
-local function EligibilityStatus(player)
-    if not project then return 'LOC_PARADE_DATA_MISSING' end
-    local civic=GameInfo.Civics['CIVIC_EARLY_EMPIRE']
-    local permit=GameInfo.Buildings['BUILDING_PARADE_ELIGIBLE']
-    local capital=player:GetCities():GetCapitalCity()
-    local hasCivic=civic and player:GetCulture():HasCivic(civic.Index) or false
-    if not capital then return 'LOC_PARADE_NEED_CAPITAL' end
-    local hasMilitary=false
-    for _,unit in player:GetUnits():Members() do
-        local row=GameInfo.Units[unit:GetType()]
-        if row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
-            and unit:GetX()==capital:GetX() and unit:GetY()==capital:GetY() then
-            hasMilitary=true;break
-        end
-    end
-    local hasPermit=permit and capital:GetBuildings():HasBuilding(permit.Index) or false
-    local canProduce=false
-    if project and project.Hash then
-        local ok,value=pcall(function() return capital:GetBuildQueue():CanProduce(project.Hash,false) end)
-        canProduce=ok and value or false
-    end
-    local xp2=GameInfo.Projects_XP2 and GameInfo.Projects_XP2[project.ProjectType] or nil
-    local diag='capital='..tostring(capital:GetID())..' civic='..tostring(hasCivic)
-        ..' ownGarrison='..tostring(hasMilitary)..' permit='..tostring(hasPermit)
-        ..' canProduce='..tostring(canProduce)..' xp2Required='..tostring(xp2 and xp2.RequiredBuilding)
-    if diag~=lastDiagnostic then print('[ParadeV38][UI] GATE '..diag);lastDiagnostic=diag end
-    if not hasCivic then return 'LOC_PARADE_NEED_CIVIC' end
-    if not hasMilitary then return 'LOC_PARADE_NEED_GARRISON' end
-    if not hasPermit then return 'LOC_PARADE_WAIT_PERMIT' end
-    if not canProduce then return 'LOC_PARADE_ENGINE_BLOCKED' end
-    local general=GameInfo.Buildings['BUILDING_PARADE_GENERAL']
-    if general and capital:GetBuildings():HasBuilding(general.Index) then return 'LOC_PARADE_AVAILABLE_GENERAL' end
-    return 'LOC_PARADE_AVAILABLE'
+include('Parade_Rules.lua')
+local R=ParadeRules
+local queueSyncPending=true
+local queueSyncConfirmed=false
+for _,name in ipairs({'CityProductionChanged','CityProductionUpdated','CityProductionCompleted','CityProjectCompleted','LoadGameViewStateDone','PlayerTurnActivated'}) do
+ if Events[name] then Events[name].Add(function()queueSyncPending=true;queueSyncConfirmed=false end) end
 end
-local function UpdateStatus()
-    if presentationHidden then Controls.ParadeStatus:SetHide(true);return end
-    local bridge=ExposedMembers.ParadeV3Gameplay
-    if not bridge or not bridge.Ready then Controls.ParadeStatus:SetHide(true);return end
-    CheckIcons()
-    local id=Game.GetLocalPlayer()
-    if type(id)~='number' or id<0 then Controls.ParadeStatus:SetHide(true);return end
-    local player=Players[id]
-    if not player then Controls.ParadeStatus:SetHide(true);return end
-    local endValue=player:GetProperty('PARADE_V3_END')
-    local tierValue=player:GetProperty('PARADE_V3_TIER')
-    local ending=tonumber(endValue) or -1
-    local tier=tonumber(tierValue) or 0
-    local remaining=ending-Game.GetCurrentGameTurn()
-    if remaining<=0 or tier<=0 then
-        Controls.ParadeStatus:SetText(Locale.Lookup(EligibilityStatus(player)))
-        Controls.ParadeStatus:SetHide(false);return
-    end
-    for row in GameInfo.ParadeTiers() do
-        if row.Tier==tier then
-            Controls.ParadeStatus:SetText(Locale.Lookup('LOC_PARADE_ACTIVE_STATUS',
-                remaining,row.Loyalty,row.Combat,row.Amenities))
-            Controls.ParadeStatus:SetHide(false)
-            return
-        end
-    end
-end
--- Cancel every queued parade when the actual city conditions fail. UI uses
--- the same native BUILD / VALUE_REMOVE_AT operation as ProductionHelper.lua.
--- Never call Gameplay mutation closures across ExposedMembers.
-local cleaning=false
-local function CleanInvalidQueue()
-    local bridge=ExposedMembers.ParadeV3Gameplay
-    if cleaning or not bridge or not bridge.Ready or not project then return end
-    local id=Game.GetLocalPlayer()
-    if type(id)~='number' or id<0 then return end
-    local player=Players[id]
-    if not player then return end
-    local civic=GameInfo.Civics['CIVIC_EARLY_EMPIRE']
-    local capital=player:GetCities():GetCapitalCity()
-    local unlocked=civic and player:GetCulture():HasCivic(civic.Index)
-    cleaning=true
-    local ok,err=pcall(function()
-        for _,city in player:GetCities():Members() do
-            local allowed=unlocked and capital and city:GetID()==capital:GetID()
-            local garrison=false
-            if allowed then
-                for _,unit in player:GetUnits():Members() do
-                    local row=GameInfo.Units[unit:GetType()]
-                    if row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
-                        and unit:GetX()==city:GetX() and unit:GetY()==city:GetY() then
-                        garrison=true;break
-                    end
-                end
-            end
-            if not allowed or not garrison then
-                local queue=city:GetBuildQueue()
-                -- Reverse order preserves indices; other production is untouched.
-                for i=queue:GetSize()-1,0,-1 do
-                    local entry=queue:GetAt(i)
-                    local row=entry and entry.ProjectType~=nil and GameInfo.Projects[entry.ProjectType]
-                    if row and row.ProjectType==project.ProjectType then
-                        local params={}
-                        params[CityOperationTypes.PARAM_INSERT_MODE]=CityOperationTypes.VALUE_REMOVE_AT
-                        params[CityOperationTypes.PARAM_QUEUE_LOCATION]=i
-                        CityManager.RequestOperation(city,CityOperationTypes.BUILD,params)
-                        print('[ParadeV38][UI] REMOVE invalid parade city='..city:GetID()..' slot='..i)
-                    end
-                end
-            end
-        end
-    end)
-    cleaning=false
-    if not ok then print('[ParadeV38][UI] QUEUE ERROR: '..tostring(err)) end
-end
+-- Only publish-complete can confirm a removed project as cancelled. It must
+-- not dirty the queue itself, or REFRESH operations would send an endless loop.
+if Events.GameCoreEventPublishComplete then Events.GameCoreEventPublishComplete.Add(function()
+ if queueSyncPending then queueSyncConfirmed=true end
+end) end
 local function Refresh()
-    CleanInvalidQueue()
-    UpdateStatus()
-end
-local function OnCompleted(playerID,cityID,projectID,buildingIndex,x,y,cancelled)
-    if project and (projectID==project.Index or projectID==project.Hash or projectID==project.ProjectType) then
-        print('[ParadeV38][UI] Project completion reported, player='..tostring(playerID))
+    local bridge=ExposedMembers.ParadeV3Gameplay
+    if presentationHidden or not bridge or not bridge.Ready then Controls.ParadeStatus:SetHide(true);return end
+    local id=Game.GetLocalPlayer();local p=id and id>=0 and Players[id]
+    if not p then return end
+    CheckIcons()
+    local remaining=R.Number(p,'PARADE_V3_END',-1)-Game.GetCurrentGameTurn()
+    local text=''
+    if remaining>0 then text='阅兵鼓舞：剩余 '..remaining..' 回合'
+    else
+        local c=p:GetCities():GetCapitalCity()
+        for _,kind in ipairs(R.Kinds) do local ok,reason=R.Legal(p,c,kind);if ok then text=R.Names[kind]..'可筹备 · '..reason;break end end
+        if text=='' then text='阅兵：完成帝国初期，等待战事大捷、失城或强军里程碑' end
     end
-    UpdateStatus()
+    Controls.ParadeStatus:SetText(text);Controls.ParadeStatus:SetHide(false)
 end
-Events.CityProjectCompleted.Add(OnCompleted)
-for _,name in ipairs({'LoadGameViewStateDone','PlayerTurnActivated','TurnBegin',
-    'UnitMoved','UnitMoveComplete','UnitTeleported','UnitAddedToMap','UnitRemovedFromMap',
-    'CityUnitsChanged','CapitalCityChanged','PlayerTurnDeactivated','CityProductionChanged','CivicCompleted','CitySelectionChanged','CityProductionUpdated','BuildingAddedToMap','BuildingRemovedFromMap'}) do
+for _,name in ipairs({'LoadGameViewStateDone','PlayerTurnActivated','TurnBegin','UnitMoved','UnitAddedToMap','UnitRemovedFromMap','CityProductionChanged','CivicCompleted','CitySelectionChanged','GameCoreEventPublishComplete'}) do
     if Events[name] then Events[name].Add(Refresh) end
 end
--- Paired XML/Lua contexts are loaded by AddUserInterfaces.
-ContextPtr:SetInitHandler(function()
-    -- InGame.Initialize loads EVERY AddUserInterfaces context hidden=true.
-    -- This is a transparent controller, not a popup. Keep its update loop alive.
-    ContextPtr:SetHide(false)
-    Refresh()
-end)
+ContextPtr:SetInitHandler(function()ContextPtr:SetHide(false);Refresh()end)
 Refresh()
-print('[ParadeV38][UI] READY military-score bridge')
 
 -- Cleanup runs in this persistent UI context, including when the popup is hidden.
 local cameraRestore=nil
@@ -219,7 +129,7 @@ local function DiagnosticText()
         for row in GameInfo.ParadeBuildInfo() do db=row.Version;break end
     end
     local hook=diagnostic.TimelineBuild or '未加载'
-    return '3.20 B1 | 数据 '..db..' | 年表扩展 '..hook..' | '..(diagnostic.Stage or '待阅兵')..(diagnostic.ZoomActual and (' | 检阅缩放 '..string.format('%.4f',diagnostic.ZoomActual)) or '')
+    return '2.0.5 | 数据 '..db..' | 年表扩展 '..hook..' | '..(diagnostic.Stage or '待阅兵')..(diagnostic.ZoomActual and (' | 检阅缩放 '..string.format('%.4f',diagnostic.ZoomActual)) or '')
 end
 local function UpdateDiagnostic()
     if Controls.BuildStatus then Controls.BuildStatus:SetText(DiagnosticText()) end
@@ -278,7 +188,7 @@ ExposedMembers.ParadeV38UI={ScheduleCameraRestore=ScheduleCameraRestore,FinishCa
     CancelCameraRestore=function()cameraRestore=nil end,SetPresentationHidden=function(hidden)
     presentationHidden=hidden
     Controls.ParadeStatus:SetHide(hidden)
-    if not hidden then UpdateStatus() end
+    if not hidden then Refresh() end
 end,BuildClock=function(parent)
     local badge={}
     ContextPtr:BuildInstanceForControl('ParadeClockInstance',badge,parent)
@@ -305,11 +215,11 @@ local function ReadPresentation(player,id)
     local row=nil
     for t in GameInfo.ParadeTiers() do if t.Tier==tier then row=t;break end end
     if not row then return nil end
-    return {Owner=id,Count=count,CityID=number('PARADE_V35_CITY',-1),
+    return {GiftSession=number('PARADE2_COMPLETED_SESSION',-1),Kind=textProperty('PARADE2_COMPLETED_KIND'),Size=number('PARADE2_COMPLETED_SIZE',0),Scale=number('PARADE2_SCALE',0),Cost=number('PARADE2_COMPLETED_COST',0),Owner=id,Count=count,CityID=number('PARADE_V35_CITY',-1),
         CityName=textProperty('PARADE_V312_CITY_NAME')~='' and Locale.Lookup(textProperty('PARADE_V312_CITY_NAME')) or (city and Locale.Lookup(city:GetName()) or Locale.Lookup('LOC_PARADE_FORMER_CAPITAL')),
         EraName=textProperty('PARADE_V312_ERA_NAME'),GeneralName=textProperty('PARADE_V312_GENERAL_NAME'),
         X=city and city:GetX(),Y=city and city:GetY(),Score=number('PARADE_V3_SCORE',0),
-        Tier=tier,Loyalty=row.Loyalty,Combat=row.Combat,Amenities=row.Amenities,
+        Tier=tier,Loyalty=row.Loyalty+number('PARADE2_SCALE',0),Combat=row.Combat,Amenities=row.Amenities+(number('PARADE2_SCALE',0)>=3 and 1 or 0),
         QuoteID=number('PARADE_V35_QUOTE',1),Turn=number('PARADE_V35_TURN',0),
         Ending=number('PARADE_V3_END',-1),GeneralReviewed=number('PARADE_V38_GENERAL',0)==1,
         BaseTier=number('PARADE_V38_BASE_TIER',tier),GeneralPoints=number('PARADE_V38_GENERAL_POINTS',0),
@@ -323,7 +233,20 @@ local function CheckPresentation()
     local data=ReadPresentation(Players[id],id)
     local count=data and data.Count or 0
     -- Establish a load baseline: reopening a save never replays old completions.
-    if observedCount==nil then observedCount=count;print('[ParadeV38][UI] BASELINE count='..count) end
+    if observedCount==nil then
+        observedCount=count;print('[ParadeV38][UI] BASELINE count='..count)
+        -- The temporary cinematic movement flag is UI-local; after loading use
+        -- the player's saved menu preference instead of retaining the override.
+        if count>0 and UserConfiguration and UserConfiguration.SetValue and Options and Options.GetUserOption then
+            local ok,pref=pcall(Options.GetUserOption,'Gameplay','QuickMovement')
+            local flag=(pref==true or pref==1 or pref=='1') and 1 or ((pref==false or pref==0 or pref=='0') and 0 or nil)
+            if ok and flag~=nil then pcall(UserConfiguration.SetValue,'QuickMovement',flag) end
+        end
+        local diplomacy=ExposedMembers.ParadeV2UI
+        if data and data.Kind=='STRENGTH' and data.GiftSession>ParadeRules.Number(Players[id],'PARADE2_GIFT_SUMMARY_ACK',-1) and diplomacy and diplomacy.ShowGifts then
+            pcall(diplomacy.ShowGifts,data)
+        end
+    end
     if count>observedCount then
         local presentation=ExposedMembers.ParadeV38Presentation
         if presentation and presentation.Ready and presentation.Show then
@@ -348,6 +271,10 @@ end
 local presentationTimer=0
 ContextPtr:SetUpdate(function(dt)
     presentationClock=presentationClock+dt
+    if queueSyncPending and queueSyncConfirmed and ExposedMembers.ParadeV3Gameplay and ExposedMembers.ParadeV3Gameplay.Ready then
+        queueSyncPending=false;queueSyncConfirmed=false
+        UI.RequestPlayerOperation(Game.GetLocalPlayer(),PlayerOperations.EXECUTE_SCRIPT,{OnStart='Parade2Action',Action='REFRESH',ConfirmQueue=1})
+    end
     UpdateDiagnostic()
     CameraCleanupTick(dt)
     local presentation=ExposedMembers.ParadeV38Presentation

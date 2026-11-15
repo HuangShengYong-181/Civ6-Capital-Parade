@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Mod id="73377b9b-1e5f-448a-bbc3-6d79fc86d912" version="25">
+<Mod id="73377b9b-1e5f-448a-bbc3-6d79fc86d912" version="46">
   <Properties>
     <Name>阅兵 · Military Parade</Name>
-    <Description>首发版1.0.0。完成帝国初期后，可在有本国战斗驻军的当前首都进行阅兵。获得10回合军事鼓舞、大将军点数及时代分。需要迭起兴衰或风云变幻规则集，仅支持单人。</Description>
-    <Teaser>首发版 1.0.0：首都阅兵、十回合鼓舞、大将军与时代分奖励。</Teaser>
+    <Description>战事与军力里程碑解锁四类首都阅兵：三军检阅、将军督礼、领袖来贺与使团研习。支持单人游戏，推荐风云变幻新档。</Description>
+    <Teaser>2.0.5 · 三军列阵，万邦来贺，观兵问道。</Teaser>
     <Authors>21587</Authors>
     <AffectsSavedGames>1</AffectsSavedGames>
     <SupportsSinglePlayer>1</SupportsSinglePlayer>
@@ -98,9 +98,18 @@
       <File>Parade_UnitFlagManager.lua</File>
       <File>Parade_Camera.lua</File>
       <File>Parade_Audio.lua</File>
+      <File>Parade_CustomMusic.lua</File>
       <File>Parade_EraMoment.dds</File>
+      <File>ParadeCeremony.dds</File>
+      <File>ParadeDiplomacy.dds</File>
+      <File>ParadeVisit.dds</File>
       <File>Parade_HistoricMoments.lua</File>
       <File>Parade_TimelineMoment.dds</File>
+      <File>Parade_Rules.lua</File>
+      <File>Parade_Diplomacy.lua</File>
+      <File>Parade_Campaign.lua</File>
+      <File>Parade_Delegation.lua</File>
+      <File>Parade_March.lua</File>
     </ImportFiles>
     <AddUserInterfaces id="ParadeV38_UI">
       <Properties>
@@ -148,6 +157,7 @@
       </Properties>
       <File>Platforms/Windows/Audio/MilitaryParadeBanks.ini</File>
       <File>Platforms/Windows/Audio/MilitaryParade_Internationale_V311_Bank.bnk</File>
+      <File>Platforms/Windows/Audio/MilitaryParade_Custom_Bank.bnk</File>
     </UpdateAudio>
     <ReplaceUIScript id="ParadeV314_HistoricMoments">
       <Properties>
@@ -162,6 +172,24 @@
       </Properties>
       <File>MilitaryParade.dep</File>
     </UpdateArt>
+    <UpdateDatabase id="Parade_Upgrade">
+      <Properties>
+        <LoadOrder>1010</LoadOrder>
+      </Properties>
+      <File>Parade_Upgrade.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="Parade_Upgrade_XP2" criteria="ParadeXP2">
+      <Properties>
+        <LoadOrder>1011</LoadOrder>
+      </Properties>
+      <File>Parade_Upgrade_XP2.sql</File>
+    </UpdateDatabase>
+    <AddUserInterfaces id="Parade2_Delegation">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>Parade_Delegation.xml</File>
+    </AddUserInterfaces>
   </InGameActions>
   <Files>
     <File>Parade_Data.sql</File>
@@ -227,11 +255,42 @@
     <File>Platforms/Windows/Audio/MilitaryParadeBanks.ini</File>
     <File>Platforms/Windows/Audio/MilitaryParade_Internationale_V311_Bank.bnk</File>
     <File>Parade_Audio.lua</File>
+    <File>Parade_CustomMusic.lua</File>
     <File>Parade_EraMoment.dds</File>
+    <File>ParadeCeremony.dds</File>
+    <File>ParadeDiplomacy.dds</File>
+    <File>ParadeVisit.dds</File>
     <File>Parade_HistoricMoments.lua</File>
     <File>Parade_TimelineMoment.dds</File>
     <File>ArtDefs/Camera.artdef</File>
     <File>MilitaryParade.dep</File>
     <File>CREDITS.txt</File>
+    <File>Parade_Rules.lua</File>
+    <File>Parade_Diplomacy.lua</File>
+    <File>Parade_Campaign.lua</File>
+    <File>Parade_Delegation.lua</File>
+    <File>Parade_Delegation.xml</File>
+    <File>Parade_March.lua</File>
+    <File>Parade_Setup.xml</File>
+    <File>Parade_Upgrade.sql</File>
+    <File>Parade_Upgrade_XP2.sql</File>
+    <File>Platforms/Windows/Audio/MilitaryParade_Custom_Bank.bnk</File>
+    <File>LICENSE_NOTICE.txt</File>
+    <File>README.md</File>
+    <File>选择阅兵音乐.cmd</File>
+    <File>安装阅兵近景.cmd</File>
+    <File>恢复原版近景.cmd</File>
+    <File>tools/ImportMusic.ps1</File>
+    <File>tools/InstallCloseCamera.ps1</File>
+    <File>tools/custom_music.py</File>
+    <File>tools/build_audio.py</File>
+    <File>tools/bnktool.py</File>
+    <File>tools/parade_audio_template.json</File>
+    <File>tools/AGPL-3.0.txt</File>
   </Files>
+  <FrontEndActions>
+    <UpdateDatabase id="Parade2_Setup">
+      <File>Parade_Setup.xml</File>
+    </UpdateDatabase>
+  </FrontEndActions>
 </Mod>

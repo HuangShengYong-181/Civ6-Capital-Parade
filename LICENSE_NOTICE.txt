@@ -1,0 +1,1 @@
+本项目原创代码沿用根目录LICENSE中的MIT许可。第三方音频工具与结构模板沿用AGPL-3.0-only，见tools/AGPL-3.0.txt。音乐、游戏资产及其他内容适用各自条款；详见CREDITS.txt与THIRD_PARTY_NOTICES.md。

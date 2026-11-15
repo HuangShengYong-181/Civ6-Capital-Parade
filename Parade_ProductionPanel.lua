@@ -8,53 +8,33 @@ if not GetData or not AdvanceProject then
 end
 local baseGetData=GetData
 local baseAdvanceProject=AdvanceProject
-local paradeType='PROJECT_MILITARY_PARADE'
+include('Parade_Rules.lua')
+local R=ParadeRules
 local function IsCurrentCapital(city)
-    if not city then return false end
-    local player=Players[city:GetOwner()]
-    local capital=player and player:GetCities():GetCapitalCity()
-    return capital~=nil and city:GetID()==capital:GetID()
-end
-local function CanStartParade(city)
-    if not IsCurrentCapital(city) then return false end
-    local player=Players[city:GetOwner()]
-    local civic=GameInfo.Civics['CIVIC_EARLY_EMPIRE']
-    if not civic or not player:GetCulture():HasCivic(civic.Index) then return false end
-    for _,unit in player:GetUnits():Members() do
-        local row=GameInfo.Units[unit:GetType()]
-        if row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
-            and unit:GetX()==city:GetX() and unit:GetY()==city:GetY() then
-            return true
-        end
-    end
-    return false
+    local p=city and Players[city:GetOwner()];local c=p and p:GetCities():GetCapitalCity()
+    return c and c:GetID()==city:GetID()
 end
 function GetData(...)
     local data=baseGetData(...)
     if not data or not data.ProjectItems then return data end
     local city=data.City or UI.GetHeadSelectedCity()
-    local capital=IsCurrentCapital(city)
-    local canStart=capital and CanStartParade(city)
     for i=#data.ProjectItems,1,-1 do
-        local item=data.ProjectItems[i]
-        if item.Type==paradeType then
-            if not capital then
-                -- HIDE, not merely disable, even with "show disabled items" on.
-                table.remove(data.ProjectItems,i)
-            elseif not canStart then
-                item.Disabled=true
-                item.ToolTip=(item.ToolTip or '')..'[NEWLINE]'..Locale.Lookup('LOC_PARADE_NEED_GARRISON')
+        local item=data.ProjectItems[i];local kind=R.Kind(item.Type)
+        if item.Type=='PROJECT_MILITARY_PARADE' then table.remove(data.ProjectItems,i)
+        elseif kind then
+            if not IsCurrentCapital(city) then table.remove(data.ProjectItems,i)
+            else
+                local ok,reason=R.Legal(Players[city:GetOwner()],city,kind)
+                item.Disabled=not ok
+                item.ToolTip=(item.ToolTip or '')..'[NEWLINE]'..reason..'[NEWLINE]筹备开始时扣费；取消不退费。'
             end
         end
     end
     return data
 end
 function AdvanceProject(city,entry,...)
-    if entry and entry.ProjectType==paradeType and not CanStartParade(city) then
-        print('[ParadeV38][PANEL] BLOCK stale parade click')
-        Refresh()
-        return
-    end
+    local kind=entry and R.Kind(entry.ProjectType or entry.Type)
+    if kind and not R.Legal(Players[city:GetOwner()],city,kind) then Refresh();return end
     return baseAdvanceProject(city,entry,...)
 end
 -- The stock refresh function resolves GetData dynamically. Refresh the visible

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Context Name="Parade_UI" Size="parent,parent" ConsumeMouse="0">
-  <Label ID="ParadeStatus" Anchor="C,T" Offset="0,110" Style="FontNormal16"
-    FontStyle="Shadow" ColorSet="BodyTextCool" Hidden="1" String="" />
-  <Label Hidden="1" ID="BuildStatus" Anchor="L,B" Offset="20,56" Style="FontNormal12" Color="235,211,153,255" String="3.20 B1" />
+<?xml version='1.0' encoding='utf-8'?>
+<Context Name="Parade_UI" Size="parent,parent" ConsumeMouse="0" ColorSet="Beige_Black" FontStyle="Shadow" Style="FontNormal14">
+  <Label ID="ParadeStatus" Anchor="C,T" Offset="0,110" Style="FontNormal16" FontStyle="Shadow" ColorSet="BodyTextCool" Hidden="1" String="" Color0="238,235,226,255" Color1="0,0,0,200" Color="255,255,255,255" Align="Center" />
+  <Label Hidden="1" ID="BuildStatus" Anchor="L,B" Offset="20,56" Style="FontNormal12" String="3.20 B1" Color0="235,211,153,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" />
   <Instance Name="ParadeClockInstance">
-    <Box ID="Root" Anchor="C,T" Offset="-36,2" Size="34,23" Color="21,35,48,245" Hidden="1" ConsumeMouse="1">
-      <Label ID="ClockText" Anchor="C,C" Style="FontNormal12" Color="244,211,139,255" String="[ICON_Turn]10" />
-    </Box>
+    <Container ID="Root" Anchor="C,T" Offset="-36,2" Size="34,23" Hidden="1" ConsumeMouse="1">
+      <Box Size="parent,parent" Color="21,35,48,245" Anchor="C,C" />
+      <Label ID="ClockText" Anchor="C,C" Style="FontNormal12" String="[ICON_Turn]10" Color0="244,211,139,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" Align="Center" />
+    </Container>
   </Instance>
 </Context>

@@ -35,7 +35,7 @@
               <m_ParamName text="ExtraExposureRange" />
             </Element>
             <Element class="AssetObjects::FloatValue">
-              <m_fValue>3.000000</m_fValue>
+              <m_fValue>1.500000</m_fValue>
               <m_ParamName text="MinHexesVisible" />
             </Element>
             <Element class="AssetObjects::FloatValue">
@@ -43,7 +43,7 @@
               <m_ParamName text="MaxHexesVisible" />
             </Element>
             <Element class="AssetObjects::FloatValue">
-              <m_fValue>10.000000</m_fValue>
+              <m_fValue>3.000000</m_fValue>
               <m_ParamName text="NearClip" />
             </Element>
             <Element class="AssetObjects::FloatValue">
@@ -140,7 +140,7 @@
                     <m_ParamName text="Time" />
                   </Element>
                   <Element class="AssetObjects::FloatValue">
-                    <m_fValue>50.000000</m_fValue>
+                    <m_fValue>18.000000</m_fValue>
                     <m_ParamName text="Height" />
                   </Element>
                 </m_Values>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<GameInfo>
+  <DomainValues>
+    <Row Domain="Parade2Music" Value="DEFAULT" Name="国际歌（默认）" Description="播放随模组提供的国际歌片段。" SortIndex="0" />
+    <Row Domain="Parade2Music" Value="CUSTOM" Name="本地自定义音乐" Description="选择已导入的本地曲目。首次请退出游戏，用模组目录中的“选择阅兵音乐.cmd”选MP3，工具自动处理。未导入时保留游戏背景音乐。" SortIndex="1" />
+    <Row Domain="Parade2Music" Value="OFF" Name="不播放阅兵音乐" Description="关闭阅兵曲目，保留原背景音乐。" SortIndex="2" />
+  </DomainValues>
+  <Parameters>
+    <Row Key1="Ruleset" ParameterId="Parade2Music" Name="阅兵音乐" Description="选择默认、已导入的自选曲目或关闭；游戏内阅兵画面也可切换。自选曲目由附带工具自动导入。" Domain="Parade2Music" DefaultValue="DEFAULT" ConfigurationGroup="Game" ConfigurationId="PARADE2_MUSIC" GroupId="GameOptions" SortIndex="970" Key2="RULESET_STANDARD" SupportsSinglePlayer="1" SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SupportsHotSeat="0" Visible="1" />
+    <Row Key1="Ruleset" ParameterId="Parade2Music" Name="阅兵音乐" Description="选择默认、已导入的自选曲目或关闭；游戏内阅兵画面也可切换。自选曲目由附带工具自动导入。" Domain="Parade2Music" DefaultValue="DEFAULT" ConfigurationGroup="Game" ConfigurationId="PARADE2_MUSIC" GroupId="GameOptions" SortIndex="970" Key2="RULESET_EXPANSION_1" SupportsSinglePlayer="1" SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SupportsHotSeat="0" Visible="1" />
+    <Row Key1="Ruleset" ParameterId="Parade2Music" Name="阅兵音乐" Description="选择默认、已导入的自选曲目或关闭；游戏内阅兵画面也可切换。自选曲目由附带工具自动导入。" Domain="Parade2Music" DefaultValue="DEFAULT" ConfigurationGroup="Game" ConfigurationId="PARADE2_MUSIC" GroupId="GameOptions" SortIndex="970" Key2="RULESET_EXPANSION_2" SupportsSinglePlayer="1" SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SupportsHotSeat="0" Visible="1" />
+  </Parameters>
+</GameInfo>

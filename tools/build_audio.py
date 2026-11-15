@@ -12,9 +12,14 @@ NAME = 'MilitaryParade_Internationale_V311_Bank'
 PLAY = 'Play_MilitaryParade_Internationale_V311'
 STOP = 'Stop_MilitaryParade_Internationale_V311'
 
-def build():
+def build(wav_path=None, custom=False, output_root=None):
+    global NAME, PLAY, STOP
+    if custom:
+        NAME="MilitaryParade_Custom_Bank"
+        PLAY="Play_MilitaryParade_Custom"
+        STOP="Stop_MilitaryParade_Custom"
     template = json.loads((ROOT/'tools/parade_audio_template.json').read_text())
-    wav = ROOT/'AudioSource/Parade_Internationale.wav'
+    wav = Path(wav_path) if wav_path else ROOT/'AudioSource/Parade_Internationale.wav'
     # A single private 2D mixer routes straight to the stock Master SFX bus.
     # Discard the copied notification mixers, FX/state references and their buses.
     mixer = bytearray(bytes.fromhex(template['chain'][0]))
@@ -40,7 +45,7 @@ def build():
     events.append((4,b.u32(b.fnv(STOP))+b.u32(1)+b.u32(stop_id)))
     # Pause/resume only the stock Master Music bus. Parade audio uses Master SFX.
     # Keep the normal resume count semantics (bIsMasterResume=0).
-    for label,atype in [('Pause',0x0202),('Resume',0x0302)]:
+    for label,atype in ([] if custom else [('Pause',0x0202),('Resume',0x0302)]):
         aid=b.fnv(NAME+'/'+label.lower()+'_background')
         action=b.u32(aid)+struct.pack('<H',atype)+b.u32(48433064)+b'\x01'+bytes(2)+b'\x04'+bytes(1)+b.u32(0)
         idx=next(i for i,(kind,_) in enumerate(events) if kind==4)
@@ -53,10 +58,10 @@ def build():
     for i in range(0,size,12):
         mid,start,length = struct.unpack_from('<III',blob,off+i)
         media.append((mid,blob[data_off+start:data_off+start+length]))
-    out = ROOT/'Platforms/Windows/Audio';out.mkdir(parents=True,exist_ok=True)
+    out = (Path(output_root) if output_root else ROOT)/'Platforms/Windows/Audio';out.mkdir(parents=True,exist_ok=True)
     (out/(NAME+'.bnk')).write_bytes(b.assemble(NAME,events,media))
     (out/'MilitaryParadeBanks.ini').write_bytes(('\r\n'.join([
-        '[Global]','','[Menu]','','[InGame]','!'+NAME+'.bnk','','[2D]','','[3D]','','[FMV]','!'+NAME+'.bnk',''])).encode())
+        '[Global]','','[Menu]','','[InGame]','!MilitaryParade_Internationale_V311_Bank.bnk','!MilitaryParade_Custom_Bank.bnk','','[2D]','','[3D]','','[FMV]','!MilitaryParade_Internationale_V311_Bank.bnk','!MilitaryParade_Custom_Bank.bnk',''])).encode())
     print('Built native v113 bank:',PLAY,STOP)
 
 if __name__ == '__main__': build()

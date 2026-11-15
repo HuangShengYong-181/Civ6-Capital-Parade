@@ -132,3 +132,19 @@ INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES
 ('en_US','LOC_PARADE_ERA_ALREADY','No Era Score awarded for this completion'),
 ('zh_Hans_CN','LOC_PARADE_ERA_UNAVAILABLE','本次时代分未发放'),
 ('en_US','LOC_PARADE_ERA_UNAVAILABLE','No Era Score awarded this time');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES('zh_Hans_CN','LOC_PARADE2_VICTORY_NAME','凯旋阅兵'),('zh_Hans_CN','LOC_PARADE2_VICTORY_DESCRIPTION','首都驻军阅兵，另付金币筹备费。[NEWLINE]获得帝国加成、大将军点数和1位使者。');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES('en_US','LOC_PARADE2_VICTORY_NAME','凯旋阅兵'),('en_US','LOC_PARADE2_VICTORY_DESCRIPTION','首都驻军阅兵，另付金币筹备费。[NEWLINE]获得帝国加成、大将军点数和1位使者。');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES('zh_Hans_CN','LOC_PARADE2_LIBERATION_NAME','光复阅兵'),('zh_Hans_CN','LOC_PARADE2_LIBERATION_DESCRIPTION','首都驻军阅兵，另付金币筹备费。[NEWLINE]获得帝国加成、大将军点数和1位使者。');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES('en_US','LOC_PARADE2_LIBERATION_NAME','光复阅兵'),('en_US','LOC_PARADE2_LIBERATION_DESCRIPTION','首都驻军阅兵，另付金币筹备费。[NEWLINE]获得帝国加成、大将军点数和1位使者。');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES('zh_Hans_CN','LOC_PARADE2_RALLY_NAME','振军阅兵'),('zh_Hans_CN','LOC_PARADE2_RALLY_DESCRIPTION','首都驻军阅兵，另付金币筹备费。[NEWLINE]获得帝国加成、大将军点数和1位使者。');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES('en_US','LOC_PARADE2_RALLY_NAME','振军阅兵'),('en_US','LOC_PARADE2_RALLY_DESCRIPTION','首都驻军阅兵，另付金币筹备费。[NEWLINE]获得帝国加成、大将军点数和1位使者。');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES('zh_Hans_CN','LOC_PARADE2_STRENGTH_NAME','强军阅兵'),('zh_Hans_CN','LOC_PARADE2_STRENGTH_DESCRIPTION','首都驻军阅兵，另付金币筹备费。[NEWLINE]获得帝国加成、大将军点数和1位使者。');
+
+INSERT OR REPLACE INTO LocalizedText(Language,Tag,Text) VALUES('en_US','LOC_PARADE2_STRENGTH_NAME','强军阅兵'),('en_US','LOC_PARADE2_STRENGTH_DESCRIPTION','首都驻军阅兵，另付金币筹备费。[NEWLINE]获得帝国加成、大将军点数和1位使者。');

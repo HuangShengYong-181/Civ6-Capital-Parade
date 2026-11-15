@@ -9,8 +9,8 @@ local function ColorIcon(real)
     return setmetatable({}, {__index=function(_,key)
         if key=='SetIcon' then
             return function(_,name,...)
-                if name=='ICON_PROJECT_MILITARY_PARADE' then
-                    name='ICON_PROJECT_MILITARY_PARADE_COLOR'
+                if name=='ICON_PROJECT_MILITARY_PARADE' or (type(name)=='string' and string.match(name,'^ICON_PROJECT_PARADE_')) then
+                    name=name..'_COLOR'
                 end
                 return real:SetIcon(name,...)
             end

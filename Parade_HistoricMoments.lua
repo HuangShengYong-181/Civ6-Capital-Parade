@@ -2,6 +2,7 @@
 -- Records below are UI cards backed by saved player properties, not fabricated
 -- GameCore moment IDs. Gameplay awards the actual score separately, once.
 include('HistoricMoments.lua')
+include('Parade_Rules.lua')
 local BaseDisplay=DisplayTimeline
 local BaseAdd=AddMoment
 local BaseIllustration=AddIllustration
@@ -11,7 +12,7 @@ local automaticOpen=false
 local autoQueue={}
 local diagnostic=ExposedMembers.MilitaryParadeDiagnostic or {}
 ExposedMembers.MilitaryParadeDiagnostic=diagnostic
-diagnostic.TimelineBuild='3.20 B1'
+diagnostic.TimelineBuild='2.0 β1'
 function GetPopupParameters()
     local original=BasePopupParameters()
     if not automaticOpen and #autoQueue==0 then return original end
@@ -45,7 +46,7 @@ local function ReadRecords(playerID)
         if value('READY')==1 then
             result[#result+1]={ID=-1000000-era.Index,Type=kind,GameEra=era.Index,
                 Turn=tonumber(value('TURN')) or 0,EraScore=tonumber(value('SCORE')) or 0,
-                Parade=true,City=value('CITY') or '',General=value('GENERAL')==1,
+                Kind=value('KIND'),Parade=true,City=value('CITY') or '',General=value('GENERAL')==1,
                 GeneralName=value('NAME') or '',ExtraData={},HasEverBeenCommemorated=false}
         end
     end
@@ -56,7 +57,7 @@ local function ReadRecords(playerID)
         if value('READY')==1 then
             result[#result+1]={ID=-2000000-number,Type=kind,GameEra=tonumber(value('ERA')) or 0,
                 Turn=tonumber(value('TURN')) or 0,EraScore=tonumber(value('SCORE')) or 0,
-                Parade=true,City=value('CITY') or '',General=value('GENERAL')==1,
+                Kind=value('KIND'),Parade=true,City=value('CITY') or '',General=value('GENERAL')==1,
                 GeneralName=value('NAME') or '',ExtraData={},HasEverBeenCommemorated=false}
         end
     end
@@ -90,9 +91,10 @@ end
 function AddMoment(data,isNew)
     if not data.Parade then return BaseAdd(data,isNew) end
     local first=data.EraScore==2
-    local title=Locale.Lookup(first and 'LOC_PARADE_ERA_FIRST_TITLE' or 'LOC_PARADE_ERA_REPEAT_TITLE')
+    local title=ParadeRules.Names[data.Kind] or Locale.Lookup(first and 'LOC_PARADE_ERA_FIRST_TITLE' or 'LOC_PARADE_ERA_REPEAT_TITLE')
     local body=Locale.Lookup(data.General and 'LOC_PARADE_ERA_GENERAL_BODY' or
         (first and 'LOC_PARADE_ERA_FIRST_BODY' or 'LOC_PARADE_ERA_REPEAT_BODY'))
+    body=ParadeRules.Verses[data.Kind] or body
     local signature=Locale.Lookup(data.City)
     if data.GeneralName~='' then signature=signature..' · '..Locale.Lookup(data.GeneralName) end
     local card={}

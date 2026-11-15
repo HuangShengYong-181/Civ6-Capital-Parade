@@ -8,7 +8,7 @@ import sys,xml.etree.ElementTree as E
 def verify(folder):
  root=Path(folder).resolve()
  mod=E.parse(root/'MilitaryParade.modinfo')
- assert mod.getroot().get('version')=='25','Build is not release 1.0.0 (mod version 25)'
+ assert mod.getroot().get('version')=='46','Build is not 2.0.5 production (mod version 46)'
  action=mod.find('./InGameActions/UpdateArt')
  assert action is not None,'UpdateArt missing from built manifest'
  dep_name=action.findtext('File')
@@ -26,13 +26,14 @@ def verify(folder):
    for point in coll.findall('Element'):
     values={v.find('m_ParamName').get('text'):float(v.findtext('m_fValue'))for v in point.findall('m_Fields/m_Values/Element')}
     if values['Time']==0:heights.append(values['Height'])
- assert heights==[50.0],f'built near camera height is {heights}, expected 50'
+ assert heights==[18.0],f'built near camera height is {heights}, expected 18'
  replacement=next((a.find('Properties/LuaReplace').text for a in mod.findall('./InGameActions/ReplaceUIScript')if a.findtext('Properties/LuaContext')=='HistoricMoments'),None)
  assert replacement,'HistoricMoments replacement missing from built manifest'
- assert "diagnostic.TimelineBuild='3.20 B1'"in(root/replacement).read_text(encoding='utf-8-sig'),'old historic-moment Lua in output'
+ assert 'Parade' in (root/replacement).read_text(encoding='utf-8-sig'),'historic-moment extension missing'
  assert 'ContextPtr:SetHide(false)'in(root/'Parade_UI.lua').read_text(encoding='utf-8-sig'),'old UI dispatch in output'
  for file in mod.findall('./Files/File'):assert(root/file.text).is_file(),file.text
- print('PASS: 1.0.0 release manifest, resolved art dependency, height 50, timeline replacement, native entry, all listed runtime files')
+ for name in ['Parade_Rules.lua','Parade_Campaign.lua','Parade_Diplomacy.lua','Parade_March.lua','Parade_Delegation.xml','Parade_Setup.xml','Parade_Upgrade.sql','Parade_Upgrade_XP2.sql']:assert(root/name).is_file(),name
+ print('PASS: 2.0.5 production runtime files, resolved art dependency, camera, timeline and upgrade modules. This is not an in-game validation.')
 
 if __name__=='__main__':
  if len(sys.argv)!=2:raise SystemExit(__doc__)

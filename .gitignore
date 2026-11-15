@@ -399,3 +399,14 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Local-only files
+.env
+.env.*
+*.log
+*.sav
+*.Civ6Save
+*Backup*/
+*.bak
+.DS_Store
+dist/

@@ -1,6 +1,9 @@
 -- Gameplay only. Military-score queries belong to Parade_UI.lua, not this file.
 print('[ParadeV38][Gameplay] BOOT')
-local VERSION = '3.20.0-b1'
+include('Parade_Rules.lua')
+include('Parade_Diplomacy.lua')
+include('Parade_Campaign.lua')
+local VERSION = '2.0.5'
 local DURATION = 10
 local GENERAL_POINTS_BY_ERA={
     ERA_ANCIENT=5,ERA_CLASSICAL=10,ERA_MEDIEVAL=20,ERA_RENAISSANCE=35,
@@ -65,6 +68,9 @@ local function IsMilitary(unit)
     return row and ((row.Combat or 0)>0 or (row.RangedCombat or 0)>0)
 end
 local function HasGarrison(player,city)
+    return #ParadeRules.Participants(player,city)>0
+end
+local function LegacyHasGarrison(player,city)
     for _,unit in player:GetUnits():Members() do
         if IsMilitary(unit) and unit:GetX()==city:GetX() and unit:GetY()==city:GetY() then
             return true
@@ -85,17 +91,9 @@ local function GeneralPointsReward(player)
     return 5
 end
 local function ReviewGeneral(player,city)
-    local found=nil
-    for _,unit in player:GetUnits():Members() do
-        local row=GameInfo.Units[unit:GetType()]
-        if row and row.UnitType==generalClass.UnitType
-            and unit:GetX()==city:GetX() and unit:GetY()==city:GetY() then
-            if not found or (unit.GetID and found.GetID and unit:GetID()<found:GetID()) then found=unit end
-        end
-    end
-    return found
+    return ParadeCampaign.Officer(player,city)
 end
-local function HasGeneral(player,city)return ReviewGeneral(player,city)~=nil end
+local function HasGeneral(player,city)return ParadeCampaign.Supervised(player,city) end
 local function ReviewGeneralName(player,city)
     local unit=city and ReviewGeneral(player,city)
     if not unit then return '' end
@@ -124,6 +122,7 @@ local function AwardEraScore(player,playerID)
         or type(eras.ChangePlayerEraScore)~='function' then return 0,3,-1 end
     eraID=math.floor(eraID)
     local key='PARADE_V313_ERA_DONE_'..eraID
+    if NumberProperty(player,key,0)==1 then return 0,2,eraID end
     local first=NumberProperty(player,'PARADE_V313_ERA_HAS_AWARD',0)==0
     local amount=first and 2 or 1
     local awarded,err=pcall(function()eras:ChangePlayerEraScore(playerID,amount)end)
@@ -135,7 +134,10 @@ local function AwardEraScore(player,playerID)
     Log('ERA SCORE player='..playerID..' worldEra='..eraID..' amount='..amount)
     return amount,first and 1 or 2,eraID
 end
-local function IsEligible(player,cityID)
+local function IsEligible(player,cityID,projectID)
+    return ParadeCampaign.CanComplete(player,cityID,projectID)
+end
+local function LegacyIsEligible(player,cityID,projectID)
     if not player:GetCulture():HasCivic(civic.Index) then return false,'Early Empire incomplete' end
     local capital=player:GetCities():GetCapitalCity()
     if not capital or capital:GetID()~=cityID then return false,'not current capital' end
@@ -179,13 +181,9 @@ local function SyncPlayer(player)
     local capitalID=capital and capital:GetID() or -1
     local unlocked=player:GetCulture():HasCivic(civic.Index)
     for _,city in player:GetCities():Members() do
-        local allowed=unlocked and city:GetID()==capitalID and HasGarrison(player,city)
+        local allowed=false -- Legacy project retired; v2 uses four independent permits.
         local hadPermit=city:GetBuildings():HasBuilding(permit.Index)
         SetBuilding(city,permit.Index,allowed)
-        local supervised=allowed and HasGeneral(player,city)
-        local hadGeneral=city:GetBuildings():HasBuilding(generalPermit.Index)
-        SetBuilding(city,generalPermit.Index,supervised)
-        if hadGeneral~=supervised then Log('GENERAL city='..city:GetID()..' active='..tostring(supervised)) end
         if hadPermit~=allowed then
             Log('PERMIT city='..tostring(city:GetID())..' allowed='..tostring(allowed))
         end
@@ -207,6 +205,7 @@ local function SyncPlayer(player)
             if row.Tier==active then SetBuilding(city,row.BuildingIndex,true) end
         end
     end
+    ParadeCampaign.Sync(player,active)
     if refreshModifiers then player:SetProperty('PARADE_V316_MODIFIERS_VERSION',316) end
     for _,unit in player:GetUnits():Members() do
         local ability=unit:GetAbility()
@@ -233,7 +232,7 @@ local function SyncAll()
     syncing=false
 end
 local function IsParade(id)
-    return id==project.Index or id==project.Hash or id==project.ProjectType
+    return ParadeRules.Kind(id)~=nil
 end
 local function ReadUIScore(playerID)
     local ui=ExposedMembers.ParadeV3UI
@@ -250,15 +249,16 @@ local function Complete(playerID,cityID,projectID,cancelled)
     if not ready or not IsParade(projectID) or cancelled==true or cancelled==1 then return end
     local player=RememberPlayer(playerID)
     if not player then return end
-    local ok,reason=IsEligible(player,cityID)
+    local ok,reason=IsEligible(player,cityID,projectID)
     if not ok then Log('REJECTED player='..playerID..' city='..cityID..': '..reason);return end
     -- Native and UI reporting can describe the same completion. Process it once.
-    local stamp=tostring(Turn())..':'..tostring(cityID)
+    local stamp=tostring(Turn())..':'..tostring(cityID)..':'..tostring(player:GetProperty('PARADE2_SESSION') or 0)
     if player:GetProperty(KEY_LAST)==stamp then return end
     local score=ReadUIScore(playerID)
     if score==nil then
         player:SetProperty(KEY_PENDING,cityID)
         player:SetProperty(KEY_PENDING_TURN,Turn())
+        player:SetProperty('PARADE2_PENDING_PROJECT',projectID)
         Log('PENDING completion: waiting for UI bridge, player='..playerID)
         return
     end
@@ -270,22 +270,27 @@ local function Complete(playerID,cityID,projectID,cancelled)
     if reviewed then selected=tiers[math.min(#tiers,baseTier+1)] end
     local previousQuote=NumberProperty(player,'PARADE_V35_QUOTE',-1)
     local choices={}
-    for _,id in ipairs(quoteIDs) do if id~=previousQuote then choices[#choices+1]=id end end
+    local quoteGroup=1
+    for i,k in ipairs(ParadeRules.Kinds) do if k==ParadeRules.Kind(projectID) then quoteGroup=i end end
+    for _,id in ipairs(quoteIDs) do if id~=previousQuote and ((id-1)%4)+1==quoteGroup then choices[#choices+1]=id end end
     if #choices==0 then choices=quoteIDs end
     local quoteID=choices[1] or 1
     if #choices>1 then quoteID=choices[Game.GetRandNum(#choices,'Parade quotation')+1] end
     local count=NumberProperty(player,'PARADE_V35_COUNT',0)+1
-    local ending=Turn()+DURATION
+    local ending=Turn()+ParadeRules.Turns(DURATION)
     player:SetProperty(KEY_SCORE,score)
     player:SetProperty(KEY_TIER,selected.Tier)
     player:SetProperty(KEY_END,ending)
     player:SetProperty(KEY_LAST,stamp)
     player:SetProperty(KEY_PENDING,-1)
-    SyncPlayer(player)
     local points=0
     local rewardPoints=GeneralPointsReward(player)
     local gave,err=pcall(function()player:GetGreatPeoplePoints():ChangePointsTotal(generalClass.Index,rewardPoints)end)
     if gave then points=rewardPoints else Log('GENERAL POINTS ERROR: '..tostring(err)) end
+    ParadeCampaign.Committing=true
+    ParadeCampaign.Complete(player,ParadeRules.Kind(projectID),points,count)
+    SyncPlayer(player)
+    ParadeCampaign.Committing=false
     player:SetProperty('PARADE_V38_BASE_TIER',baseTier)
     player:SetProperty('PARADE_V38_GENERAL',reviewed and 1 or 0)
     player:SetProperty('PARADE_V38_GENERAL_POINTS',points)
@@ -312,6 +317,7 @@ local function Complete(playerID,cityID,projectID,cancelled)
         player:SetProperty(prefix..'TURN',Turn())
         player:SetProperty(prefix..'ERA',worldEra)
         player:SetProperty(prefix..'SCORE',eraScore)
+        player:SetProperty(prefix..'KIND',ParadeRules.Kind(projectID))
         player:SetProperty(prefix..'CITY',cityName)
         player:SetProperty(prefix..'GENERAL',reviewed and 1 or 0)
         player:SetProperty(prefix..'NAME',generalName)
@@ -324,11 +330,20 @@ local function Complete(playerID,cityID,projectID,cancelled)
 end
 local function SafeComplete(...)
     local ok,err=pcall(Complete,...)
+    ParadeCampaign.Committing=false
     if not ok then Log('COMPLETION ERROR: '..tostring(err)) end
 end
 local function OnNativeComplete(playerID,cityID,projectID,buildingIndex,x,y,cancelled)
     if IsParade(projectID) then
         Log('NATIVE COMPLETE player='..tostring(playerID)..' city='..tostring(cityID)..' ready='..tostring(ready)..' cancelled='..tostring(cancelled))
+    end
+    if (cancelled==true or cancelled==1) and IsParade(projectID) then
+        local player=Players[playerID]
+        if player and player:GetProperty('PARADE2_ACTIVE_KIND')==ParadeRules.Kind(projectID)
+            and NumberProperty(player,'PARADE2_ACTIVE_CITY',-1)==cityID then
+            ParadeCampaign.CancelActive(player,'native cancellation')
+        end
+        return
     end
     SafeComplete(playerID,cityID,projectID,cancelled)
 end
@@ -340,7 +355,7 @@ local function Refresh()
             local pending=NumberProperty(player,KEY_PENDING,-1)
             if pending>=0 then
                 if player:GetProperty(KEY_PENDING_TURN)==Turn() then
-                    SafeComplete(playerID,pending,project.Index,false)
+                    SafeComplete(playerID,pending,player:GetProperty('PARADE2_PENDING_PROJECT'),false)
                 else
                     player:SetProperty(KEY_PENDING,-1)
                     Log('Pending completion expired without UI score, player='..playerID)
@@ -360,6 +375,7 @@ local function OnPlayerTurnActivated(playerID)
         ExposedMembers.ParadeV3Gameplay.Ready=true
         Log('WORLD READY: first activated player='..tostring(playerID))
     end
+    ParadeCampaign.OnTurn(player)
     Refresh()
 end
 Events.CityProjectCompleted.Add(OnNativeComplete)

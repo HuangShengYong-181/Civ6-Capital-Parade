@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context Name="Parade_Delegation" Size="parent,parent" ConsumeMouse="0" ColorSet="Beige_Black" FontStyle="Shadow" Style="FontNormal14">
+  <GridButton ID="Open" Anchor="R,T" Offset="24,190" Size="176,34" Style="ButtonMainSmall">
+    <Label ID="OpenText" Anchor="C,C" Style="FontNormal14" String="" Color0="238,235,226,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" Align="Center" />
+  </GridButton>
+  <Container ID="Panel" Hidden="1" Anchor="C,C" Size="720,520" ConsumeMouse="1">
+    <Box Size="parent,parent" Color="16,29,43,250" Anchor="C,C" />
+    <Image Texture="ParadeDiplomacy.dds" Size="parent,parent" Anchor="C,C" />
+    <Label ID="Title" Anchor="C,T" Offset="0,24" Style="FontNormal18" String="" Color0="244,216,154,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" Align="Center" />
+    <Label ID="Description" Anchor="L,T" Offset="28,76" WrapWidth="664" Style="FontNormal16" String="" Color0="238,235,226,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" />
+    <ScrollPanel ID="Scroll" Anchor="L,T" Offset="28,190" Size="664,206" Vertical="1">
+      <Stack ID="Rows" StackGrowth="Bottom" Size="644,auto" StackPadding="6" />
+    </ScrollPanel>
+    <GridButton ID="Close" Anchor="L,B" Offset="538,28" Size="154,36" Style="ButtonMainSmall">
+      <Label ID="CloseText" Anchor="C,C" Style="FontNormal14" String="" Color0="238,235,226,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" Align="Center" />
+    </GridButton>
+    <Box Size="parent,2" Anchor="C,T" Color="178,144,79,255" />
+    <Box Size="parent,1" Anchor="C,B" Color="178,144,79,255" />
+    <ScrollPanel ID="NoticeScroll" Anchor="L,T" Offset="28,404" Size="664,45" Vertical="1">
+      <Label Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" ID="StatusNotice" Anchor="L,T" Offset="0,0" WrapWidth="638" />
+    </ScrollPanel>
+  </Container>
+  <Instance Name="DelegationRow">
+    <GridButton ID="Button" Size="644,64" Style="ButtonMainSmall">
+      <Label ID="ButtonText" Anchor="L,C" Style="FontNormal14" String="" Color0="238,235,226,255" Color1="0,0,0,200" FontStyle="Shadow" Offset="16,0" WrapWidth="612" Align="Left" Color="255,255,255,255" />
+    </GridButton>
+  </Instance>
+  <Container ID="InvitePanel" Hidden="1" Size="parent,parent" ConsumeMouse="1" ConsumeMouseButton="1">
+    <Box Size="parent,parent" Color="0,0,0,155" />
+    <Container Size="720,600" Anchor="C,C">
+      <Box Size="parent,parent" Color="13,27,39,255" />
+      <Image Size="parent,parent" Texture="ParadeVisit.dds" />
+      <Label ID="InviteTitle" Anchor="C,T" Offset="0,28" WrapWidth="500" Style="FontNormal18" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+      <Label ID="InviteHost" Anchor="L,T" Offset="36,82" WrapWidth="648" Style="FontNormal18" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+      <Container Size="648,138" Anchor="L,T" Offset="36,124">
+        <Box Size="parent,parent" Color="24,43,54,245" />
+        <Box Size="3,parent" Anchor="L,C" Color="187,156,94,255" />
+        <Label ID="InviteStudyTitle" Anchor="L,T" Offset="22,16" WrapWidth="604" Style="FontNormal18" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+        <Label ID="InviteStudyBody" Anchor="L,T" Offset="22,52" WrapWidth="604" Style="FontNormal14" FontStyle="Shadow" Color0="226,231,234,255" Color1="0,0,0,200" String="" />
+      </Container>
+      <Container Size="648,164" Anchor="L,T" Offset="36,278">
+        <Box Size="parent,parent" Color="24,43,54,245" />
+        <Label ID="InviteGiftTitle" Anchor="L,T" Offset="22,16" WrapWidth="604" Style="FontNormal18" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+        <Label ID="GiftText" Anchor="L,T" Offset="22,50" WrapWidth="604" Style="FontNormal14" String="" Color0="238,235,226,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" />
+        <EditBox ID="GoldInput" Anchor="L,T" Offset="330,106" Size="140,36" MaxLength="9" String="0" Style="FontNormal18" Color0="238,235,226,255" />
+        <Label ID="GoldLabel" Anchor="L,T" Offset="484,112" Style="FontNormal14" String="" Color0="238,235,226,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" />
+        <ScrollPanel ID="GiftChoiceScroll" Anchor="L,T" Offset="22,88" Size="290,70" Vertical="1">
+          <Stack ID="GiftChoices" Size="270,auto" StackGrowth="Bottom" StackPadding="3" />
+        </ScrollPanel>
+      </Container>
+      <GridButton ID="Accept" Anchor="L,B" Offset="36,36" Size="420,42" Style="ButtonMainSmall">
+        <Label ID="AcceptText" Anchor="C,C" Style="FontNormal14" String="" Color0="238,235,226,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" Align="Center" />
+      </GridButton>
+      <GridButton ID="Decline" Anchor="R,B" Offset="36,36" Size="200,42" Style="ButtonMainSmall">
+        <Label ID="DeclineText" Anchor="C,C" Style="FontNormal14" String="" Color0="238,235,226,255" Color1="0,0,0,200" FontStyle="Shadow" Color="255,255,255,255" Align="Center" />
+      </GridButton>
+      <Label ID="InviteFootnote" Anchor="L,T" Offset="36,462" WrapWidth="648" Style="FontNormal14" FontStyle="Shadow" Color0="173,189,194,255" Color1="0,0,0,200" String="" />
+      <GridButton ID="InviteDismiss" Size="96,28" Anchor="R,T" Offset="24,24" Style="ButtonMainSmall">
+        <Label ID="InviteDismissText" Anchor="C,C" Offset="0,0" WrapWidth="90" Style="FontNormal14" FontStyle="Shadow" Color0="226,231,234,255" Color1="0,0,0,200" String="" Align="Center" />
+      </GridButton>
+    </Container>
+  </Container>
+  <Instance Name="GiftChoiceRow">
+    <GridButton ID="Choice" Style="ButtonMainSmall" Size="270,30">
+      <Label Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" ID="ChoiceText" Anchor="C,C" Align="Center" />
+    </GridButton>
+  </Instance>
+  <Container ID="WaiverPanel" Size="parent,parent" Hidden="1" ConsumeMouse="1" ConsumeMouseButton="1">
+    <Box Size="parent,parent" Color="0,0,0,170" />
+    <Container Anchor="C,C" Size="720,410">
+      <Box Size="parent,parent" Color="13,27,39,255" />
+      <Box Size="parent,2" Color="187,148,71,255" Anchor="C,T" />
+      <Label Style="FontNormal18" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="无礼观摩请求" ID="WaiverTitle" Anchor="C,T" Offset="0,24" />
+      <Label Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" ID="WaiverSubtitle" Anchor="L,T" Offset="36,76" WrapWidth="648" />
+      <Label Style="FontNormal16" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" ID="WaiverBody" Anchor="L,T" Offset="36,116" WrapWidth="648" />
+      <GridButton ID="WaiverAccept" Style="ButtonMainSmall" Anchor="L,B" Offset="36,30" Size="200,40">
+        <Label Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="准许观摩" ID="WaiverAcceptText" Anchor="C,C" Align="Center" />
+      </GridButton>
+      <GridButton ID="WaiverDecline" Style="ButtonMainSmall" Anchor="L,B" Offset="260,30" Size="200,40">
+        <Label Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="拒绝出席" ID="WaiverDeclineText" Anchor="C,C" Align="Center" />
+      </GridButton>
+      <GridButton ID="WaiverLater" Style="ButtonMainSmall" Anchor="L,B" Offset="484,30" Size="200,40">
+        <Label Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="稍后决定" ID="WaiverLaterText" Anchor="C,C" Align="Center" />
+      </GridButton>
+    </Container>
+  </Container>
+  <Container ID="GiftPanel" Size="parent,parent" Hidden="1" ConsumeMouse="1" ConsumeMouseButton="1">
+    <Box Size="parent,parent" Color="0,0,0,175" />
+    <Container Size="800,610" Anchor="C,C">
+      <Box Size="parent,parent" Color="12,25,37,252" />
+      <Image Texture="ParadeDiplomacy.dds" Size="parent,parent" Anchor="C,C" Alpha="0.35" />
+      <Box Size="parent,3" Anchor="C,T" Color="192,157,84,255" />
+      <Label ID="GiftTitle" Anchor="L,T" Offset="32,24" WrapWidth="736" Style="FontNormal18" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+      <Label ID="GiftSubtitle" Anchor="L,T" Offset="32,66" WrapWidth="736" Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" />
+      <Container Size="354,66" Anchor="L,T" Offset="32,104">
+        <Box Size="parent,parent" Color="28,47,62,245" />
+        <Label ID="GiftCountLabel" Anchor="L,T" Offset="16,10" WrapWidth="214" Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" />
+        <Label ID="GiftCount" Anchor="L,T" Offset="230,22" WrapWidth="108" Style="FontNormal18" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+      </Container>
+      <Container Size="354,66" Anchor="L,T" Offset="414,104">
+        <Box Size="parent,parent" Color="28,47,62,245" />
+        <Label ID="GiftSettledLabel" Anchor="L,T" Offset="16,10" WrapWidth="214" Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" />
+        <Label ID="GiftSettled" Anchor="L,T" Offset="230,22" WrapWidth="108" Style="FontNormal18" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+      </Container>
+      <ScrollPanel ID="GiftScroll" Anchor="L,T" Offset="32,190" Size="736,278" Vertical="1">
+        <Stack ID="GiftRows" Size="714,auto" StackGrowth="Bottom" StackPadding="10" />
+      </ScrollPanel>
+      <Label ID="GiftFooter" Anchor="L,T" Offset="32,486" WrapWidth="736" Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" />
+      <GridButton ID="GiftClose" Anchor="C,B" Offset="0,26" Size="250,40" Style="ButtonMainSmall">
+        <Label ID="GiftCloseText" Anchor="C,C" Style="FontNormal16" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+      </GridButton>
+    </Container>
+  </Container>
+  <Instance Name="GiftResultRow">
+    <Container ID="ResultRow" Size="714,108">
+      <Box Size="parent,parent" Color="25,43,58,245" />
+      <Box Size="3,parent" Color="192,157,84,255" Anchor="L,C" />
+      <Label ID="GiftLeader" Anchor="L,T" Offset="20,12" WrapWidth="400" Style="FontNormal18" FontStyle="Shadow" Color0="244,216,154,255" Color1="0,0,0,200" String="" />
+      <Label ID="GiftState" Anchor="L,T" Offset="440,16" WrapWidth="254" Style="FontNormal14" FontStyle="Shadow" Color0="153,203,181,255" Color1="0,0,0,200" String="" />
+      <Label ID="GiftDetail" Anchor="L,T" Offset="20,46" WrapWidth="674" Style="FontNormal14" FontStyle="Shadow" Color0="238,235,226,255" Color1="0,0,0,200" String="" />
+    </Container>
+  </Instance>
+</Context>

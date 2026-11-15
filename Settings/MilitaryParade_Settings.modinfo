@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Mod id="3c09e670-3815-4a5a-acf2-df4176530b85" version="3">
+  <Properties>
+    <Name>[阅兵] 音乐设置</Name>
+    <Description>为阅兵2.0提供创建游戏时的音乐选项。请与阅兵主模组同时启用。</Description>
+    <Teaser>阅兵2.0.0 · 创建游戏音乐设置。</Teaser>
+    <Authors>Military Parade</Authors>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>0</SupportsMultiplayer>
+    <SupportsHotSeat>0</SupportsHotSeat>
+    <CompatibleVersions>2.0</CompatibleVersions>
+  </Properties>
+  <FrontEndActions>
+    <UpdateDatabase id="MilitaryParadeStandaloneSettingsV1">
+      <Properties>
+        <LoadOrder>20000</LoadOrder>
+      </Properties>
+      <File>Parade_Standalone_Settings.sql</File>
+    </UpdateDatabase>
+  </FrontEndActions>
+  <Files>
+    <File>Parade_Standalone_Settings.sql</File>
+  </Files>
+</Mod>
